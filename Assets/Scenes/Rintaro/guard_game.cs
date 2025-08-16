@@ -7,16 +7,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
-public class MessageCharactor : FieldObjectBase
+public class guard_game : FieldObjectBase
 {
     [SerializeField] private string messages;
     [SerializeField] private int pushGoal;
-    //  親クラスから呼ばれるコールバックメソッド（接触時に実行）
-    //　時間制限→オートスクロールで勝手に接触が切れる
+    //ガードレール→かんかんってするのがリズムゲーっぽい
+    //タイミングよくスペースキーを押すのを繰り返すとおーけー
+    //複数ミスまでオーケー　難しくね？押したら開始とかどうすか
     protected override IEnumerator OnAction()
     {
         isActioned = true;
         int i = 0;
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) || !isContacted);
         for (i = 0; i < pushGoal; ++i)
         {
             yield return null;
