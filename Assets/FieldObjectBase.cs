@@ -17,7 +17,7 @@ public abstract class FieldObjectBase : MonoBehaviour
     private IEnumerator coroutine;
 
     //colliderをもつオブジェクトの領域に入ったとき
-    private void OnTriggerEnter2D(Collider2D other)    
+    private void OnTriggerEnter2D(Collider2D other)
     {
         isContacted = other.gameObject.CompareTag("Player");
     }
