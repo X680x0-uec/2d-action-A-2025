@@ -65,7 +65,7 @@ public abstract class FieldObjectBase : MonoBehaviour
     protected abstract IEnumerator OnAction();
 
     //メッセージを表示する
-    protected void showMessage(string message)
+    public void showMessage(string message)
     {
         this.target.text = message;
     }
