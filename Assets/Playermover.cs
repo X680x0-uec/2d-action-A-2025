@@ -3,14 +3,11 @@ using UnityEngine;
 public class Playermover : MonoBehaviour
 {
     [SerializeField] public float moveSpeed;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] public float normalSpeed;
     void Start()
     {
-
+        moveSpeed = normalSpeed; //初期化
     }
-
-    // Update is called once per frame
     void Update()
     {
         var x = Input.GetAxisRaw("Horizontal");
@@ -25,8 +22,6 @@ public class Playermover : MonoBehaviour
     void Move(Vector3 moveDirection)
     {
         var pos = transform.position;
-
-        moveSpeed = 4f;
 
         pos += moveDirection * moveSpeed * Time.deltaTime;
 
