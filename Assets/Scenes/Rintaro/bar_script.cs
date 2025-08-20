@@ -17,6 +17,7 @@ public class bar_script : MonoBehaviour
         targetc.gameObject.SetActive(true);
         Debug.Log("started");
         rec.anchoredPosition = new Vector2(-limit, 0);
+        //anchoredPosition: Canvas内でのpositionのこと
         StartCoroutine(Moveroop());
         started = true;
         yield return new WaitUntil(() => (score.failed + score.correct) == score.challengeCount || !score.isContacted);
@@ -26,6 +27,7 @@ public class bar_script : MonoBehaviour
     }
     IEnumerator Moveroop()
     {
+        //無限ループ処理　while (true) {} でもいいけどフリーズが怖くてこうしました
         for (int i = 0; i <= 100000; i++)
         {
             rec.anchoredPosition += Vector2.right * speed * Time.deltaTime;
