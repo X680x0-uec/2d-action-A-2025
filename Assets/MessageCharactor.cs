@@ -13,6 +13,7 @@ public class MessageCharactor : FieldObjectBase
     [SerializeField] private int pushGoal;
     //  親クラスから呼ばれるコールバックメソッド（接触時に実行）
     //　時間制限→オートスクロールで勝手に接触が切れる
+    
     protected override IEnumerator OnAction()
     {
         isActioned = true;
@@ -31,26 +32,27 @@ public class MessageCharactor : FieldObjectBase
             }
         }
 
-        Playermover playermover;
-        GameObject obj = GameObject.Find("Player");
-        playermover = obj.GetComponent<Playermover>();
+        PlayerController PlayerController;
+        GameObject obj = GameObject.Find("Actor");
+        PlayerController = obj.GetComponent<PlayerController>();
+        WetnessCounter wet = obj.GetComponent<WetnessCounter>(); // 濡れゲージ取得
 
         if (i == pushGoal)
         {
-            showMessage("Success! 5秒間移動速度上昇");
-            playermover.moveSpeed = 2 * playermover.normalSpeed;
-            //　ここに濡れゲージ減少のコマンドを入れることもできる
+            showMessage("Success! 服が乾いて身軽になった気がする");
+            PlayerController.moveSpeed = 2 * PlayerController.normalSpeed;
+            wet.wetness += 20;
             yield return new WaitForSeconds(5f);
-            playermover.moveSpeed = playermover.normalSpeed;
+            PlayerController.moveSpeed = PlayerController.normalSpeed;
             yield break;
         }
         else
         {
-            showMessage("Failed... 5秒間移動速度低下");
-            playermover.moveSpeed = 0.5f * playermover.normalSpeed;
-            //　ここに濡れゲージ増加のコマンドを入れることもできる
+            showMessage("Failed... びちょ濡れで足取りが重くなった");
+            PlayerController.moveSpeed = 0.5f * PlayerController.normalSpeed;
+            wet.wetness += 20;
             yield return new WaitForSeconds(5f);
-            playermover.moveSpeed = playermover.normalSpeed;
+            PlayerController.moveSpeed = PlayerController.normalSpeed;
             yield break;
         }
     }

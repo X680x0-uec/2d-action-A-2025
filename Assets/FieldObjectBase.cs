@@ -19,13 +19,16 @@ public abstract class FieldObjectBase : MonoBehaviour
     //colliderをもつオブジェクトの領域に入ったとき
     private void OnTriggerEnter2D(Collider2D other)
     {
-        isContacted = other.gameObject.CompareTag("Player");
+        isContacted = other.gameObject.CompareTag("walker");
     }
 
     //colliderをもつオブジェクトの領域外にでたとき
     private void OnTriggerExit2D(Collider2D other)
     {
-        isContacted = !other.gameObject.CompareTag("Player");
+        if (isContacted) // 雨が判定から「出た」とき、ここにtrueが入るのを防止する
+        {
+            isContacted = !other.gameObject.CompareTag("walker");
+        }
     }
 
     private void FixedUpdate()

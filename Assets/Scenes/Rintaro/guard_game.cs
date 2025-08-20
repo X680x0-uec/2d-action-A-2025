@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Permissions;
 using Mono.Cecil.Cil;
+using NUnit.Framework;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -36,26 +37,27 @@ public class guard_game : FieldObjectBase
 
         yield return new WaitUntil(() => targets.finished || !isContacted);
 
-        Playermover playermover;
-        GameObject obj = GameObject.Find("Player");
-        playermover = obj.GetComponent<Playermover>();
+        PlayerController PlayerController;
+        GameObject obj = GameObject.Find("Actor");
+        PlayerController = obj.GetComponent<PlayerController>();
+        WetnessCounter wet = obj.GetComponent<WetnessCounter>();  // 濡れゲージ取得
 
         if (correct >= pushGoal)
         {
-            showMessage("Success! 5秒間移動速度上昇");
-            playermover.moveSpeed = 2 * playermover.normalSpeed;
-            //　ここに濡れゲージ減少のコマンドを入れることもできる
+            showMessage("Success! 服が乾いて身軽になった気がする");
+            PlayerController.moveSpeed = 2 * PlayerController.normalSpeed;
+            wet.wetness -= 20;
             yield return new WaitForSeconds(5f);
-            playermover.moveSpeed = playermover.normalSpeed;
+            PlayerController.moveSpeed = PlayerController.normalSpeed;
             yield break;
         }
         else
         {
-            showMessage("Failed... 5秒間移動速度低下");
-            playermover.moveSpeed = 0.5f * playermover.normalSpeed;
-            //　ここに濡れゲージ増加のコマンドを入れることもできる
+            showMessage("Failed... びちょ濡れで足取りが重くなった");
+            PlayerController.moveSpeed = 0.5f * PlayerController.normalSpeed;
+            wet.wetness += 20;
             yield return new WaitForSeconds(5f);
-            playermover.moveSpeed = playermover.normalSpeed;
+            PlayerController.moveSpeed = PlayerController.normalSpeed;
             yield break;
         }
     }
