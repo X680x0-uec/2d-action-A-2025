@@ -218,7 +218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &559963474
 RectTransform:
   m_ObjectHideFlags: 0
@@ -639,6 +639,7 @@ MonoBehaviour:
   failed: 0
   challengeC: 8
   targets: {fileID: 957207791}
+  gage_canvas: {fileID: 559963477}
 --- !u!1 &638398152
 GameObject:
   m_ObjectHideFlags: 0

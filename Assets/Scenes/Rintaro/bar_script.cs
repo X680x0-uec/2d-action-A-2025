@@ -14,11 +14,12 @@ public class bar_script : MonoBehaviour
 
     public IEnumerator Move()
     {
+        targetc.gameObject.SetActive(true);
         Debug.Log("started");
         rec.anchoredPosition = new Vector2(-limit, 0);
         StartCoroutine(Moveroop());
         started = true;
-        yield return new WaitUntil(() => (score.failed + score.correct) == score.challengeC || !score.isContacted);
+        yield return new WaitUntil(() => (score.failed + score.correct) == score.challengeCount || !score.isContacted);
         StopCoroutine(Moveroop());
         finished = true;
         targetc.gameObject.SetActive(false);
