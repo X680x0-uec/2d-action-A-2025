@@ -6,6 +6,8 @@ TagManager:
   tags:
   - badzone
   - goodzone
+  - walker
+  - raindrops
   layers:
   - Default
   - TransparentFX
