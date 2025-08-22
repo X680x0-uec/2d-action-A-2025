@@ -48,7 +48,7 @@ public class bar_script : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && started)
         {
             Debug.Log("spaced");
-            if (0.4f <= rec.anchoredPosition.x || rec.anchoredPosition.x <= -0.72f)
+            if (0.4f <= rec.anchoredPosition.x)
             {
                 if (!pushed)
                 {

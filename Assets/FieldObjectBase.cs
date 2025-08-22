@@ -16,6 +16,10 @@ public abstract class FieldObjectBase : MonoBehaviour
     public bool isActioned = false;
     private IEnumerator coroutine;
 
+    //静的変数 ほかのオブジェクトが値を変更すると、
+    //その結果がほかのオブジェクトにも反映されるってやつ
+    public static bool isActioning = false;
+
     //colliderをもつオブジェクトの領域に入ったとき
     private void OnTriggerEnter2D(Collider2D other)
     {
