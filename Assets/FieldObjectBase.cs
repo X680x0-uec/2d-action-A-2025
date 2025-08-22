@@ -23,7 +23,10 @@ public abstract class FieldObjectBase : MonoBehaviour
     //colliderをもつオブジェクトの領域に入ったとき
     private void OnTriggerEnter2D(Collider2D other)
     {
-        isContacted = other.gameObject.CompareTag("walker");
+        if (!isContacted) // 雨が判定に「触れた」とき、ここにfalseが入るのを防止する
+        {
+            isContacted = other.gameObject.CompareTag("walker");
+        }
     }
 
     //colliderをもつオブジェクトの領域外にでたとき
