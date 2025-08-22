@@ -6,12 +6,12 @@ public class rain_move : MonoBehaviour
 {
 
     GameObject rain_make;
-    rain_maker rain;
+    public rain_maker rain;
     float angle;
     Vector3 startPosition;
     void Start()
     {
-        rain_make = this.transform.parent.gameObject; // 親オブジェクトの参照
+        rain_make = this.transform.parent.gameObject;
         rain = rain_make.GetComponent<rain_maker>(); // 親のスクリプトゲット
         startPosition = transform.localPosition;
 
@@ -37,7 +37,7 @@ public class rain_move : MonoBehaviour
         {
             angle = -Vector3.Angle(rain.moveDirection, Vector3.down); //なす角が負だった場合の処理
         }
-        transform.rotation = Quaternion.Euler(0,0,angle);
+        transform.rotation = Quaternion.Euler(0, 0, angle);
         var pos = transform.position;
         pos += moveDirection * rain.moveSpeed * Time.deltaTime;
         transform.position = pos;
