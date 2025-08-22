@@ -29,12 +29,6 @@ public class WetnessCounter : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            wetness = Mathf.Max(0, wetness - 1);
-            Debug.Log("濡れた量を減らした！現在の濡れた量: " + wetness);
-        }
-
         wetnessPercentage = (float)wetness / (float)wetnessSup * 100f;
     }
 }
