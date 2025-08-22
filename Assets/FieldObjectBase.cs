@@ -12,25 +12,28 @@ public abstract class FieldObjectBase : MonoBehaviour
     public Text target;
 
     //接触判定
-    private bool isContacted = false;
-    private bool notContacted = false;
+    public bool isContacted = false;
+    public bool isActioned = false;
     private IEnumerator coroutine;
 
     //colliderをもつオブジェクトの領域に入ったとき
-    private void OnTriggerEnter2D(Collider2D other)    
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        isContacted = other.gameObject.CompareTag("Player");
+        isContacted = other.gameObject.CompareTag("walker");
     }
 
     //colliderをもつオブジェクトの領域外にでたとき
     private void OnTriggerExit2D(Collider2D other)
     {
-        notContacted = other.gameObject.CompareTag("Player");
+        if (isContacted) // 雨が判定から「出た」とき、ここにtrueが入るのを防止する
+        {
+            isContacted = !other.gameObject.CompareTag("walker");
+        }
     }
 
     private void FixedUpdate()
     {
-        if (isContacted && coroutine == null && Input.GetKeyDown(KeyCode.Space))
+        if (isContacted && !isActioned && coroutine == null && Input.GetKeyDown(KeyCode.Space))
         {
             coroutine = CreateCoroutine();
             //コルーチンの起動
@@ -65,20 +68,9 @@ public abstract class FieldObjectBase : MonoBehaviour
     protected abstract IEnumerator OnAction();
 
     //メッセージを表示する
-    protected void showMessage(string message)
+    public void showMessage(string message)
     {
         this.target.text = message;
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 }

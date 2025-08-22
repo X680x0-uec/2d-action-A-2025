@@ -2,60 +2,58 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Permissions;
 using Mono.Cecil.Cil;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
 public class MessageCharactor : FieldObjectBase
 {
-    [SerializeField] private List<string> messages;
-    [SerializeField] private Collider2D objectExistence;
-
-    private bool notContacted = false;
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        notContacted = other.gameObject.CompareTag("Player");
-    }
-
+    [SerializeField] private string messages;
+    [SerializeField] private int pushGoal;
     //  親クラスから呼ばれるコールバックメソッド（接触時に実行）
+    //　時間制限→オートスクロールで勝手に接触が切れる
+    
     protected override IEnumerator OnAction()
     {
-        for (int i = 0; i < messages.Count; ++i)
+        isActioned = true;
+        int i = 0;
+        for (i = 0; i < pushGoal; ++i)
         {
             yield return null;
 
-            showMessage(messages[i]);
+            showMessage(messages + " " + (pushGoal - i) + "!");
 
-            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) || !isContacted);
 
-            //if (notContacted)
-            //{
-            //    yield break;
-            //}
-            
-            if (i == 10) //messages.Count && Input.GetKeyDown(KeyCode.Space))
+            if (!isContacted)
             {
-                Playermover playermover;
-                GameObject obj = GameObject.Find("Player");
-                playermover = obj.GetComponent<Playermover>();
-                playermover.moveSpeed = 8f;
-                yield return new WaitForSeconds(5f);
-                yield break;
+                break;
             }
         }
 
-    }
+        PlayerController PlayerController;
+        GameObject obj = GameObject.Find("Actor");
+        PlayerController = obj.GetComponent<PlayerController>();
+        WetnessCounter wet = obj.GetComponent<WetnessCounter>(); // 濡れゲージ取得
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (i == pushGoal)
+        {
+            showMessage("Success! 服が乾いて身軽になった気がする");
+            PlayerController.moveSpeed = 2 * PlayerController.normalSpeed;
+            wet.wetness -= 20;
+            yield return new WaitForSeconds(5f);
+            PlayerController.moveSpeed = PlayerController.normalSpeed;
+            yield break;
+        }
+        else
+        {
+            showMessage("Failed... びちょ濡れで足取りが重くなった");
+            PlayerController.moveSpeed = 0.5f * PlayerController.normalSpeed;
+            wet.wetness += 20;
+            yield return new WaitForSeconds(5f);
+            PlayerController.moveSpeed = PlayerController.normalSpeed;
+            yield break;
+        }
     }
 }
