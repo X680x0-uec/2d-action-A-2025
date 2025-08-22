@@ -41,7 +41,7 @@ public class MessageCharactor : FieldObjectBase
         {
             showMessage("Success! 服が乾いて身軽になった気がする");
             PlayerController.moveSpeed = 2 * PlayerController.normalSpeed;
-            wet.wetness += 20;
+            wet.wetness -= 20;
             yield return new WaitForSeconds(5f);
             PlayerController.moveSpeed = PlayerController.normalSpeed;
             yield break;
