@@ -491,7 +491,7 @@ Transform:
   m_GameObject: {fileID: 207585139}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -580,7 +580,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 3.125, y: 1, z: 0}
+  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -1426,46 +1426,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 21, y: -8, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 47, y: -8, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 3
-      m_TileSpriteIndex: 3
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 6, y: -5, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 37, y: -4, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 2
-      m_TileSpriteIndex: 2
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: -14, y: -2, z: 0}
     second:
       serializedVersion: 2
@@ -2300,23 +2260,23 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 166
     m_Data: {fileID: 11400000, guid: c2dd12e2ac78af149a4dbb30f86126ad, type: 2}
-  - m_RefCount: 2
-    m_Data: {fileID: 11400000, guid: 7a4b20469614756479e9e8f7962f89bf, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: e2df1762339b9564c9c5358c76c84166, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 336419873f564ec418f0fac006a470e4, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 166
     m_Data: {fileID: -954470042, guid: f985a55e3fd8ebe438256bcb5a9c62c5, type: 3}
-  - m_RefCount: 2
-    m_Data: {fileID: 878910223, guid: f126719566db4184895baff0d20bb8bb, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -824426682, guid: f126719566db4184895baff0d20bb8bb, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -212696476, guid: f126719566db4184895baff0d20bb8bb, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 87
+  - m_RefCount: 83
     m_Data:
       e00: 1
       e01: 0
@@ -2353,7 +2313,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 170
+  - m_RefCount: 166
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -2940,6 +2900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb4b8fed8ca39f14db586342a779f66d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetCollider: {fileID: 1634546848}
   wetness: 0
   wetnessPercentage: 0
   wetnessSup: 200
@@ -3695,6 +3656,11 @@ PrefabInstance:
 --- !u!4 &1634546847 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7147184410510650781, guid: ead6625473fdf374ca584612816589ca, type: 3}
+  m_PrefabInstance: {fileID: 1634546846}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1634546848 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 2276068595395466990, guid: ead6625473fdf374ca584612816589ca, type: 3}
   m_PrefabInstance: {fileID: 1634546846}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1784939067
