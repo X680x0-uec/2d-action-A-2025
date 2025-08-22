@@ -37,7 +37,7 @@ public abstract class FieldObjectBase : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isContacted && !isActioned && coroutine == null && Input.GetKeyDown(KeyCode.Space))
+        if (!isActioning && isContacted && !isActioned && coroutine == null && Input.GetKeyDown(KeyCode.Space))
         {
             coroutine = CreateCoroutine();
             //コルーチンの起動
@@ -52,6 +52,7 @@ public abstract class FieldObjectBase : MonoBehaviour
         window.gameObject.SetActive(true);
 
         //抽象メソッド呼び出し
+        isActioning = true;
         yield return OnAction();
 
         //window終了
@@ -67,6 +68,7 @@ public abstract class FieldObjectBase : MonoBehaviour
 
         StopCoroutine(coroutine);
         coroutine = null;
+        isActioning = false;
     }
 
     protected abstract IEnumerator OnAction();
