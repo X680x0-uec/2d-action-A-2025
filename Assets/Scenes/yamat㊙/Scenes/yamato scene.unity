@@ -4627,6 +4627,7 @@ MonoBehaviour:
   interval: 0.1
   damege1: 30
   damege2: 2
+  Actor: {fileID: 1634546848}
 --- !u!19719996 &474242878
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -5942,8 +5943,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2276068595395466990, guid: ead6625473fdf374ca584612816589ca, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276068595395466990, guid: ead6625473fdf374ca584612816589ca, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276068595395466990, guid: ead6625473fdf374ca584612816589ca, type: 3}
+      propertyPath: m_Offset.x
+      value: 1.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 2276068595395466990, guid: ead6625473fdf374ca584612816589ca, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4813100399626120196, guid: ead6625473fdf374ca584612816589ca, type: 3}
       propertyPath: normalSpeed
