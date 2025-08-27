@@ -19,7 +19,6 @@ public class rain_maker : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(player.linearVelocityX);
         moveDirection = new Vector2(wind, -moveSpeed).normalized; // 動く向き獲得
     }
     // Update is called once per frame

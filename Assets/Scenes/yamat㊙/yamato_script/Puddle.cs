@@ -9,12 +9,12 @@ public class Puddle : MonoBehaviour
     private WetnessCounter wetnessCounter;
     private bool isPlayerInside = false;
     private bool hasAddedInitialWetness = false;
-
+    [SerializeField] Collider2D Actor;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        wetnessCounter = other.GetComponent<WetnessCounter>();
-        if (wetnessCounter != null)
+        if (other == Actor)
         {
+            wetnessCounter = Actor.GetComponent<WetnessCounter>();
             if (!hasAddedInitialWetness)
             {
                 wetnessCounter.wetness = Mathf.Min(wetnessCounter.wetness + 10, 200);
@@ -38,6 +38,8 @@ public class Puddle : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(isPlayerInside);
+        Debug.Log(wetnessCounter);
         if (isPlayerInside && wetnessCounter != null)
         {
             timer += Time.deltaTime;
