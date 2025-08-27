@@ -5707,6 +5707,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas@gauge
       objectReference: {fileID: 0}
+    - target: {fileID: 4535287603397214380, guid: d7702ac2f72aa4d4094cec2825e23323, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8856734238104353388, guid: 3732021e4915eda46808acf16dc9b824, type: 3}
     - target: {fileID: 5809870139146011624, guid: d7702ac2f72aa4d4094cec2825e23323, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -5803,6 +5807,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5941446507470052462, guid: d7702ac2f72aa4d4094cec2825e23323, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6705314160496581714, guid: 8e9b743d738234e489ac21d47b48cb4e, type: 3}
+    - target: {fileID: 6855570277389155081, guid: d7702ac2f72aa4d4094cec2825e23323, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3459269581723087994, guid: 4c8460896b01449418cc01d57f3297e4, type: 3}
+    - target: {fileID: 7558929398015051650, guid: d7702ac2f72aa4d4094cec2825e23323, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8617265341666291330, guid: 444bd7f1de29e2c4d96a017199f7bc57, type: 3}
+    - target: {fileID: 7670932865051537806, guid: d7702ac2f72aa4d4094cec2825e23323, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6100829211494362362, guid: 1962a3aa1cf8ba747bc0d1c7b85ec03f, type: 3}
     - target: {fileID: 7966999272690679263, guid: d7702ac2f72aa4d4094cec2825e23323, type: 3}
       propertyPath: Wetnesscounter
       value: 
