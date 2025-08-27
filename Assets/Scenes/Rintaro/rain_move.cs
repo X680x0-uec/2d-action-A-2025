@@ -11,7 +11,7 @@ public class rain_move : MonoBehaviour
     Vector3 startPosition;
     void Start()
     {
-        rain_make = this.transform.parent.gameObject;
+        rain_make = GameObject.Find("raincreator");
         rain = rain_make.GetComponent<rain_maker>(); // 親のスクリプトゲット
         startPosition = transform.localPosition;
 
@@ -20,7 +20,7 @@ public class rain_move : MonoBehaviour
     {
         Move(rain.moveDirection);
 
-        if ((startPosition - this.transform.localPosition).sqrMagnitude >= 400.0f)
+        if ((startPosition - this.transform.localPosition).sqrMagnitude >= 625.0f)
         {
             Destroy(this.gameObject);
         }
