@@ -5574,6 +5574,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4813100399626120196, guid: ead6625473fdf374ca584612816589ca, type: 3}
+      propertyPath: wetGage
+      value: 
+      objectReference: {fileID: 2074534920}
+    - target: {fileID: 4813100399626120196, guid: ead6625473fdf374ca584612816589ca, type: 3}
       propertyPath: normalSpeed
       value: 5
       objectReference: {fileID: 0}
@@ -15355,6 +15359,17 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &2074534920 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7966999272690679263, guid: d7702ac2f72aa4d4094cec2825e23323, type: 3}
+  m_PrefabInstance: {fileID: 1784939067}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84e4c15957f6416469f9e5a60dff53ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2082362546
 GameObject:
   m_ObjectHideFlags: 0
