@@ -9,6 +9,6 @@ public class camera_controll : MonoBehaviour
     void Update()
     {
         plpos = playerTf.position;
-        transform.position = new Vector3(plpos.x+compX,-5,-26);
+        transform.position = new Vector3(plpos.x+compX,transform.position.y,-26);
     }
 }
