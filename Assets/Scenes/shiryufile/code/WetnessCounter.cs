@@ -5,7 +5,7 @@ public class WetnessCounter : MonoBehaviour
     public Collider2D targetCollider; // 濡れ判定対象のコライダーを指定
     public int wetness = 0;
     public float wetnessPercentage = 0;
-    [SerializeField] int wetnessSup = 200;
+    [SerializeField] public int wetnessSup = 200;
 
     void OnTriggerEnter2D(Collider2D other)
     {

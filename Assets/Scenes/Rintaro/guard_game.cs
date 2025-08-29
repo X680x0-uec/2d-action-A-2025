@@ -20,6 +20,8 @@ public class guard_game : FieldObjectBase
     //挑戦回数
     [SerializeField] bar_script targets;
     [SerializeField] Canvas gage_canvas;
+    [SerializeField] GameUIManager GUM;
+    [SerializeField] int scoreAmount;
 
     protected override IEnumerator OnAction()
     {
@@ -46,7 +48,8 @@ public class guard_game : FieldObjectBase
         {
             showMessage("Success! 服が乾いて身軽になった気がする");
             PlayerController.moveSpeed = 2 * PlayerController.normalSpeed;
-            wet.wetness -= 20;
+            wet.wetness = Mathf.Max(wet.wetness - 20, 0);
+            GUM.AddScore(scoreAmount);
             yield return new WaitForSeconds(5f);
             PlayerController.moveSpeed = PlayerController.normalSpeed;
             yield break;
@@ -55,7 +58,7 @@ public class guard_game : FieldObjectBase
         {
             showMessage("Failed... びちょ濡れで足取りが重くなった");
             PlayerController.moveSpeed = 0.5f * PlayerController.normalSpeed;
-            wet.wetness += 20;
+            wet.wetness = Mathf.Max(wet.wetness + 20, wet.wetnessSup);
             yield return new WaitForSeconds(5f);
             PlayerController.moveSpeed = PlayerController.normalSpeed;
             yield break;
