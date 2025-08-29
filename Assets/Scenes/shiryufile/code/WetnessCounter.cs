@@ -6,10 +6,11 @@ public class WetnessCounter : MonoBehaviour
     public int wetness = 0;
     public float wetnessPercentage = 0;
     [SerializeField] public int wetnessSup = 200;
+    [SerializeField] PlayerController pl;
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("raindrops"))
+        if (other.CompareTag("raindrops") && pl.flag == 0)
         {
             // 雨粒が targetCollider に当たった場合のみ濡れた量を加算
             if (other.IsTouching(targetCollider))

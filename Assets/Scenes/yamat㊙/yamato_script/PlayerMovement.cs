@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using UnityEditor.ShortcutManagement;
 using UnityEngine;
@@ -9,14 +10,13 @@ public class PlayerController : MonoBehaviour
     public float normalSpeed; // 基準の速さ(傘技成功/失敗時に速度を操るために参照する値)
     private Rigidbody2D rb;
     private Vector2 movement;
-<<<<<<< HEAD
     [SerializeField] MultiStageGauge2 wetGage;
-=======
-    GameObject CAMERA;
-    int flag = 0;
+    [SerializeField] GameObject CAMERA;
+    public int flag = 0;
     private IEnumerator coroutine = null;
     public Collider2D targetCollider2;
->>>>>>> 9fac05c4150e5f1a2ddc73e6ec1caa6329b77d4a
+    [SerializeField] float shakeSpeed;
+    [SerializeField] GameObject grip;
 
     void Start()
     {
@@ -29,27 +29,6 @@ public class PlayerController : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
-
-        switch (flag)
-        {
-            case 1:
-                goto case 2;
-            case 3:
-                CAMERA.transform.Translate(30 * Time.deltaTime, 0, 0);
-                if (CAMERA.transform.position.x >= transform.position.x + 1.0f)
-                    flag++;
-                break;
-            case 2:
-                CAMERA.transform.Translate(-30 * Time.deltaTime, 0, 0);
-                if (CAMERA.transform.position.x <= transform.position.x + -1.0f)
-                    flag++;
-                break;
-            case 4:
-                CAMERA.transform.Translate(-30 * Time.deltaTime, 0, 0);
-                if (CAMERA.transform.position.x <= transform.position.x + 0)
-                    flag = 0;
-                break;
-        }
     }
 
     void FixedUpdate()
@@ -64,24 +43,57 @@ public class PlayerController : MonoBehaviour
             if (other.IsTouching(targetCollider2))
             {
                 coroutine = Wait();
-
                 StartCoroutine(coroutine);
             }
         }
     }
-
+    IEnumerator shake()
+    {
+        float storeX = CAMERA.transform.position.x;
+        switch (flag)
+        {
+            case 1:
+                flag++;
+                goto case 2;
+            case 3:
+                while (CAMERA.transform.position.x <= storeX + 0.2f)
+                {
+                    CAMERA.transform.Translate(shakeSpeed, 0, 0);
+                    yield return null;
+                }
+                flag++;
+                goto case 4;
+            case 2:
+                while (CAMERA.transform.position.x >= storeX - 0.2f)
+                {
+                    CAMERA.transform.Translate(-shakeSpeed, 0, 0);
+                    yield return null;
+                }
+                flag++;
+                goto case 3;
+            case 4:
+                while (CAMERA.transform.position.x >= storeX)
+                {
+                    CAMERA.transform.Translate(-shakeSpeed, 0, 0);
+                    yield return null;
+                }
+                flag = 0;
+                break;
+        }
+        CAMERA.transform.position = new Vector3(storeX,CAMERA.transform.position.y,CAMERA.transform.position.z);
+        yield return null;
+    }
     IEnumerator Wait()
     {
-        var v1 = new Vector2(-70, 70);
+        var v1 = new Vector2(0, 1);
+        grip.SetActive(false);
 
         var posOrigin = transform.position;
-
-        var posCameraOrigin = CAMERA.transform.position;
 
         yield return null;
 
         flag = 1;
-
+        StartCoroutine(shake());
         moveSpeed = 0;
 
         yield return null;
@@ -89,12 +101,11 @@ public class PlayerController : MonoBehaviour
         Accident(v1);
 
         yield return new WaitForSeconds(4.0f);
+        grip.SetActive(true);
 
         moveSpeed = normalSpeed;
 
         transform.position = posOrigin;
-
-        CAMERA.transform.position = posCameraOrigin;
 
         yield return new WaitForSeconds(2.0f);
 
@@ -104,9 +115,7 @@ public class PlayerController : MonoBehaviour
     void Accident(Vector3 moveDirection)
     {
         var posNew = transform.position;
-
-        posNew += moveDirection * 6f * Time.deltaTime;
-
+        posNew = new Vector3(transform.position.x,-1,-1);
         transform.position = posNew;
     }
 }
