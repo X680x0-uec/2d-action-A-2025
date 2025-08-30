@@ -3117,7 +3117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce3401d7d3183dc4c89d6b6bd26e2cc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCollider3: {fileID: 329643294}
+  targetCollider3: {fileID: 1634546848}
   playerSpriteRenderer: {fileID: 329643291}
 --- !u!61 &329643294
 BoxCollider2D:
@@ -5006,7 +5006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb4b8fed8ca39f14db586342a779f66d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCollider: {fileID: 1634546848}
+  targetCollider: {fileID: 329643294}
   wetness: 0
   wetnessPercentage: 0
   wetnessSup: 200
@@ -5768,7 +5768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2276068595395466990, guid: ead6625473fdf374ca584612816589ca, type: 3}
       propertyPath: m_Size.y
-      value: 1
+      value: 0.68
       objectReference: {fileID: 0}
     - target: {fileID: 2276068595395466990, guid: ead6625473fdf374ca584612816589ca, type: 3}
       propertyPath: m_Offset.x
@@ -5776,7 +5776,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2276068595395466990, guid: ead6625473fdf374ca584612816589ca, type: 3}
       propertyPath: m_Offset.y
-      value: -0.016765833
+      value: -0.91
       objectReference: {fileID: 0}
     - target: {fileID: 2276068595395466990, guid: ead6625473fdf374ca584612816589ca, type: 3}
       propertyPath: m_IsTrigger
@@ -15970,11 +15970,11 @@ PrefabInstance:
       objectReference: {fileID: 1238135148}
     - target: {fileID: 2815541471280105761, guid: ba9e22ceb01aa0b4eb6e08952066da40, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.78
+      value: 48.75
       objectReference: {fileID: 0}
     - target: {fileID: 2815541471280105761, guid: ba9e22ceb01aa0b4eb6e08952066da40, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.74
+      value: -8.21
       objectReference: {fileID: 0}
     - target: {fileID: 2815541471280105761, guid: ba9e22ceb01aa0b4eb6e08952066da40, type: 3}
       propertyPath: m_LocalPosition.z

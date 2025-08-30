@@ -16,7 +16,7 @@ public class rain_move : MonoBehaviour
         startPosition = transform.localPosition;
 
     }
-    void Update()
+    void FixedUpdate()
     {
         Move(rain.moveDirection);
 
