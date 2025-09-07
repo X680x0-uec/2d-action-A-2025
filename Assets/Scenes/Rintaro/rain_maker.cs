@@ -30,7 +30,9 @@ public class rain_maker : MonoBehaviour
             spawnPosition = -moveDirection * 10f;
             spawnPosition += new Vector2(-moveDirection.y,moveDirection.x) * Random.Range(-range,range) + new Vector2(transform.position.x-10,transform.position.y);
             var rain = Instantiate(raindropPrefab, spawnPosition, Quaternion.identity);
-            //rain.transform.SetParent(this.transform);
+            spawnPosition = -moveDirection * 10f;
+            spawnPosition += new Vector2(-moveDirection.y,moveDirection.x) * Random.Range(-range,range) + new Vector2(transform.position.x-10,transform.position.y);
+            rain = Instantiate(raindropPrefab, spawnPosition, Quaternion.identity);
             yield return new WaitForSeconds(time);
             i += 1;
             if (i == 10000) { break; }

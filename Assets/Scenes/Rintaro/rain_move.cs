@@ -20,7 +20,7 @@ public class rain_move : MonoBehaviour
     {
         Move(rain.moveDirection);
 
-        if ((startPosition - this.transform.localPosition).sqrMagnitude >= 625.0f)
+        if ((startPosition - this.transform.localPosition).sqrMagnitude >= 400.0f)
         {
             Destroy(this.gameObject);
         }
