@@ -36,17 +36,27 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = movement.normalized * moveSpeed * (10-wetGage.levelOfWetness)/10;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+  
+void OnTriggerEnter2D(Collider2D other)
+{
+    if (other.gameObject.CompareTag("Car") && coroutine == null)
     {
-        if (other.gameObject.CompareTag("Car") && coroutine == null)
+        if (other.IsTouching(targetCollider2))
         {
-            if (other.IsTouching(targetCollider2))
+            // ジャンプ中なら処理をスキップ
+            PlayerJump playerJump = GetComponent<PlayerJump>();
+            if (playerJump != null && playerJump.isJumping)
             {
-                coroutine = Wait();
-                StartCoroutine(coroutine);
+                Debug.Log("ジャンプ中なので車との衝突処理をスキップ");
+                return;
             }
+
+            coroutine = Wait();
+            StartCoroutine(coroutine);
         }
     }
+}
+
     IEnumerator shake()
     {
         float storeX = CAMERA.transform.position.x;

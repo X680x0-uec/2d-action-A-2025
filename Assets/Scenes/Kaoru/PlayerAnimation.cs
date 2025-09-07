@@ -1,3 +1,4 @@
+
 using System.Collections;
 using UnityEngine;
 
@@ -9,13 +10,14 @@ public class PlayerAnimation : MonoBehaviour
     public Collider2D targetCollider3;
     [SerializeField] private SpriteRenderer playerSpriteRenderer;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // プレイヤーのジャンプ状態を参照するための public 変数
+    public PlayerJump playerJump;
+
     void Start()
     {
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         movement.x = Input.GetAxisRaw("Horizontal");
@@ -30,7 +32,6 @@ public class PlayerAnimation : MonoBehaviour
             if (other.IsTouching(targetCollider3))
             {
                 coroutine = CarAccident();
-
                 StartCoroutine(coroutine);
             }
         }
@@ -38,8 +39,14 @@ public class PlayerAnimation : MonoBehaviour
 
     IEnumerator CarAccident()
     {
-        playerSpriteRenderer.flipX = false;
+        // ジャンプ中ならアニメーション処理をスキップ
+        if (playerJump != null && playerJump.isJumping)
+        {
+            Debug.Log("ジャンプ中なのでアニメーション処理をスキップ");
+            yield break;
+        }
 
+        playerSpriteRenderer.flipX = false;
         animator.SetTrigger("DamagedByCar");
 
         yield return new WaitForSeconds(4.0f);
