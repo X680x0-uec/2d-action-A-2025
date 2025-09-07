@@ -13,10 +13,12 @@ public class PlayerJump : MonoBehaviour
     [Header("ジャンプ中に無効化するスクリプト")]
     public MonoBehaviour[] scriptsToDisable;
 
-    public bool isJumping { get; private set; }
+    public bool isJumping { get; private set; } // 他スクリプトから参照可能
 
     private float jumpTimer = 0f;
     private float baseY;
+
+    private Collider2D playerCollider;
 
     void Start()
     {
@@ -24,6 +26,8 @@ public class PlayerJump : MonoBehaviour
         {
             shadowObject.SetActive(false);
         }
+
+        playerCollider = GetComponent<Collider2D>();
     }
 
     void Update()
@@ -39,12 +43,10 @@ public class PlayerJump : MonoBehaviour
             float normalizedTime = jumpTimer / jumpDuration;
             float yOffset = Mathf.Sin(normalizedTime * Mathf.PI) * jumpHeight;
 
-            // Y軸だけジャンプさせる
             Vector3 pos = transform.position;
             pos.y = baseY + yOffset;
             transform.position = pos;
 
-            // 影の位置を地面に固定
             if (shadowObject != null)
             {
                 shadowObject.SetActive(true);
@@ -55,7 +57,6 @@ public class PlayerJump : MonoBehaviour
                 );
             }
 
-            // ジャンプ終了判定
             if (normalizedTime >= 1f)
             {
                 EndJump();
@@ -65,6 +66,10 @@ public class PlayerJump : MonoBehaviour
 
     void StartJump()
     {
+        isJumping = true;
+        jumpTimer = 0f;
+        baseY = transform.position.y;
+
         foreach (var script in scriptsToDisable)
         {
             if (script != null)
@@ -73,18 +78,17 @@ public class PlayerJump : MonoBehaviour
                 Debug.Log($"スクリプト {script.GetType().Name} を無効化しました");
             }
         }
-        isJumping = true;
-        jumpTimer = 0f;
-        baseY = transform.position.y;
 
-        
+        if (playerCollider != null)
+        {
+            playerCollider.enabled = false; // 必要に応じてColliderも無効化
+        }
     }
 
     void EndJump()
     {
         isJumping = false;
 
-        // Y座標を地面に戻す
         Vector3 pos = transform.position;
         pos.y = baseY;
         transform.position = pos;
@@ -101,6 +105,11 @@ public class PlayerJump : MonoBehaviour
                 script.enabled = true;
                 Debug.Log($"スクリプト {script.GetType().Name} を再有効化しました");
             }
+        }
+
+        if (playerCollider != null)
+        {
+            playerCollider.enabled = true;
         }
     }
 }
