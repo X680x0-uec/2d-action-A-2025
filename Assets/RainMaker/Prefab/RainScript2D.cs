@@ -36,11 +36,13 @@ namespace DigitalRuby.RainMaker
 
         [Tooltip("Lifetime to assign to rain particles that have collided. 0 for instant death. This can allow the rain to penetrate a little bit beyond the collision point.")]
         [Range(0.0f, 0.5f)]
-        public float CollisionLifeTimeRain = 0.02f;
+        public float CollisionLifeTimeRain = 0.0f;
 
         [Tooltip("Multiply the velocity of any mist colliding by this amount")]
         [Range(0.0f, 0.99f)]
         public float RainMistCollisionMultiplier = 0.75f;
+
+        public BoxCollider2D player;
 
         private void EmitExplosion(ref Vector3 pos)
         {
@@ -106,6 +108,11 @@ namespace DigitalRuby.RainMaker
                     {
                         if (CollisionLifeTimeRain == 0.0f)
                         {
+                            if (hit.collider == player && !hit.collider.gameObject.CompareTag("umbrella")) {
+                                var wet = player.gameObject.GetComponentInParent<WetnessCounter>();
+                                wet.wetness = Mathf.Min(wet.wetnessSup, wet.wetness + 1);
+                                Debug.Log("濡れた！現在の濡れた量: " + wet.wetness);
+                            }
                             particles[i].remainingLifetime = 0.0f;
                         }
                         else

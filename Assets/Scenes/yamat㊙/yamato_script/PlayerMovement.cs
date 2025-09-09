@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
+using DigitalRuby.RainMaker;
 using UnityEditor.ShortcutManagement;
 using UnityEngine;
 
@@ -33,7 +34,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.linearVelocity = movement.normalized * moveSpeed * (10-wetGage.levelOfWetness)/10;
+        rb.linearVelocity = movement.normalized * moveSpeed * (10 - wetGage.levelOfWetness) / 10;
     }
 
   
