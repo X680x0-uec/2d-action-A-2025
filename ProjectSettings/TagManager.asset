@@ -9,6 +9,7 @@ TagManager:
   - walker
   - raindrops
   - Car
+  - umbrella
   layers:
   - Default
   - TransparentFX
@@ -17,7 +18,7 @@ TagManager:
   - Water
   - UI
   - actor
-  - 
+  - field
   - 
   - 
   - 
