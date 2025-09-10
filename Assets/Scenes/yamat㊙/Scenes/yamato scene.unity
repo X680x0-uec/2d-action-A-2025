@@ -3117,8 +3117,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce3401d7d3183dc4c89d6b6bd26e2cc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCollider3: {fileID: 1634546848}
+  targetCollider3: {fileID: 329643294}
   playerSpriteRenderer: {fileID: 329643291}
+  playerJump: {fileID: 1634546852}
 --- !u!61 &329643294
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4774,7 +4775,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interval: 0.1
-  damege1: 30
+  damege1: 10
   damege2: 2
   Actor: {fileID: 1634546848}
 --- !u!19719996 &474242878
@@ -5006,7 +5007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb4b8fed8ca39f14db586342a779f66d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCollider: {fileID: 329643294}
+  targetCollider: {fileID: 1634546848}
   wetness: 0
   wetnessPercentage: 0
   wetnessSup: 200
@@ -5473,7 +5474,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1426530314}
-  - {fileID: 1808212817}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1328991385
@@ -5582,11 +5582,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2636450918690313874, guid: 2ff73e2b606f8804a8f641969b47784c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2747030810332808928, guid: 2ff73e2b606f8804a8f641969b47784c, type: 3}
       propertyPath: time
-      value: 0.001
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2747030810332808928, guid: 2ff73e2b606f8804a8f641969b47784c, type: 3}
       propertyPath: range
@@ -5856,7 +5856,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2276068595395466990, guid: ead6625473fdf374ca584612816589ca, type: 3}
       propertyPath: m_Size.y
-      value: 0.68
+      value: 0.96263206
       objectReference: {fileID: 0}
     - target: {fileID: 2276068595395466990, guid: ead6625473fdf374ca584612816589ca, type: 3}
       propertyPath: m_Offset.x
@@ -5864,7 +5864,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2276068595395466990, guid: ead6625473fdf374ca584612816589ca, type: 3}
       propertyPath: m_Offset.y
-      value: -0.91
+      value: -0.8949811
       objectReference: {fileID: 0}
     - target: {fileID: 2276068595395466990, guid: ead6625473fdf374ca584612816589ca, type: 3}
       propertyPath: m_IsTrigger
@@ -6167,8 +6167,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f2cbcc58e1094b4bbbcedc6e6c0f702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpHeight: 3
-  jumpDuration: 0.7
+  jumpHeight: 1.5
+  jumpDuration: 0.6
   shadowObject: {fileID: 1328991385}
   shadowOffsetY: 0.6
   scriptsToDisable:
@@ -6314,11 +6314,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7702ac2f72aa4d4094cec2825e23323, type: 3}
---- !u!4 &1808212817 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 465656, guid: b046278bb9b6e104790392b566667ba5, type: 3}
-  m_PrefabInstance: {fileID: 1107468495}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1931312796
 GameObject:
   m_ObjectHideFlags: 0
@@ -16008,6 +16003,10 @@ PrefabInstance:
       propertyPath: window
       value: 
       objectReference: {fileID: 96148055}
+    - target: {fileID: 1809429236243934877, guid: 75ad44005f761f047abd13866dc5f3dd, type: 3}
+      propertyPath: messages
+      value: Click left
+      objectReference: {fileID: 0}
     - target: {fileID: 4894466360831609426, guid: 75ad44005f761f047abd13866dc5f3dd, type: 3}
       propertyPath: m_Name
       value: Fence
@@ -16087,11 +16086,11 @@ PrefabInstance:
       objectReference: {fileID: 1238135148}
     - target: {fileID: 2815541471280105761, guid: ba9e22ceb01aa0b4eb6e08952066da40, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 48.75
+      value: -0.78
       objectReference: {fileID: 0}
     - target: {fileID: 2815541471280105761, guid: ba9e22ceb01aa0b4eb6e08952066da40, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.21
+      value: -7.74
       objectReference: {fileID: 0}
     - target: {fileID: 2815541471280105761, guid: ba9e22ceb01aa0b4eb6e08952066da40, type: 3}
       propertyPath: m_LocalPosition.z
