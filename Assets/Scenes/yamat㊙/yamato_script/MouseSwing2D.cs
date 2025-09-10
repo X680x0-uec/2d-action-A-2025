@@ -11,13 +11,13 @@ public class DragRotate2D : MonoBehaviour
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 currentMouseDir = (Vector2)(mouseWorldPos - pivot.position);
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             initialMouseDir = currentMouseDir.normalized;
             dragging = true;
         }
 
-        if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(1))
         {
             dragging = false;
         }

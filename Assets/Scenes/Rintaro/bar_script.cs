@@ -45,7 +45,7 @@ public class bar_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && started)
+        if (Input.GetMouseButtonDown(0) && started)
         {
             Debug.Log("spaced");
             if (0.4f <= rec.anchoredPosition.x)

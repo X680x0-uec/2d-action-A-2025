@@ -40,7 +40,7 @@ public abstract class FieldObjectBase : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!isActioning && isContacted && !isActioned && coroutine == null && Input.GetKeyDown(KeyCode.Space))
+        if (!isActioning && isContacted && !isActioned && coroutine == null && Input.GetMouseButtonDown(0))
         {
             coroutine = CreateCoroutine();
             //コルーチンの起動
