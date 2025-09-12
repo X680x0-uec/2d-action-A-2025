@@ -3278,7 +3278,7 @@ PrefabInstance:
     - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 329643294}
+      objectReference: {fileID: 0}
     - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
       propertyPath: CollisionMask.m_Bits
       value: 128
@@ -3508,10 +3508,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce3401d7d3183dc4c89d6b6bd26e2cc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetCollider3: {fileID: 329643294}
+  targetCollider3: {fileID: 329643296}
   playerSpriteRenderer: {fileID: 329643291}
-
   playerJump: {fileID: 0}
+--- !u!61 &329643296
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3544,17 +3545,17 @@ MonoBehaviour:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0063046217, y: -0.88268006}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.38, y: 2.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.38, y: 2.5}
+  m_Size: {x: 1.3908768, y: 1.0253181}
   m_EdgeRadius: 0
 --- !u!1001 &410937531
 PrefabInstance:
@@ -6182,7 +6183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2276068595395466990, guid: ead6625473fdf374ca584612816589ca, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2594469552734433847, guid: ead6625473fdf374ca584612816589ca, type: 3}
       propertyPath: m_Sprite
@@ -6352,6 +6353,10 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6288262199124235421, guid: ead6625473fdf374ca584612816589ca, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4921510234028616217, guid: a5ae5fe3f80bf4e4abd8ab6dc14b0717, type: 3}
     - target: {fileID: 7147184410510650781, guid: ead6625473fdf374ca584612816589ca, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -6471,13 +6476,13 @@ PrefabInstance:
       addedObject: {fileID: 1634546852}
     - targetCorrespondingSourceObject: {fileID: 2831749316065783986, guid: ead6625473fdf374ca584612816589ca, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 329643294}
-    - targetCorrespondingSourceObject: {fileID: 2831749316065783986, guid: ead6625473fdf374ca584612816589ca, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 329643292}
     - targetCorrespondingSourceObject: {fileID: 2831749316065783986, guid: ead6625473fdf374ca584612816589ca, type: 3}
       insertIndex: -1
       addedObject: {fileID: 329643293}
+    - targetCorrespondingSourceObject: {fileID: 2831749316065783986, guid: ead6625473fdf374ca584612816589ca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 329643296}
   m_SourcePrefab: {fileID: 100100000, guid: ead6625473fdf374ca584612816589ca, type: 3}
 --- !u!4 &1634546847 stripped
 Transform:
