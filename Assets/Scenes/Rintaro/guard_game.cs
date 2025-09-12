@@ -30,10 +30,12 @@ public class guard_game : FieldObjectBase
         failed = 0;
         gage_canvas.gameObject.SetActive(true);
         showMessage("Push Space on green area! Press space");
-        //スペースキーを押したら開始っていうことをしたい
-        yield return new WaitUntil(() => !Input.GetKey(KeyCode.Space));
-        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
-        yield return new WaitUntil(() => !Input.GetKey(KeyCode.Space));
+        //左クリックで開始っていうことをしたい
+    
+yield return new WaitUntil(() => !Input.GetMouseButton(0));
+yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+yield return new WaitUntil(() => !Input.GetMouseButton(0));
+
         //ここまでそれ
         StartCoroutine(targets.Move());
 

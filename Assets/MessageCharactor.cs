@@ -26,7 +26,7 @@ public class MessageCharactor : FieldObjectBase
 
             showMessage(messages + " " + (pushGoal - i) + "!");
 
-            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space) || !isContacted);
+            yield return new WaitUntil(() => Input.GetMouseButtonDown(0) || !isContacted);
 
             if (!isContacted)
             {
