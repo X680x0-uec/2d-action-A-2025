@@ -3585,7 +3585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetCollider3: {fileID: 329643296}
   playerSpriteRenderer: {fileID: 329643291}
-  playerJump: {fileID: 0}
+  playerJump: {fileID: 1634546852}
 --- !u!61 &329643296
 BoxCollider2D:
   m_ObjectHideFlags: 0
