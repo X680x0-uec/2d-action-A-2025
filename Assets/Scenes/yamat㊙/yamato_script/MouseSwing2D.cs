@@ -2,9 +2,20 @@ using UnityEngine;
 
 public class DragRotate2D : MonoBehaviour
 {
-    public Transform pivot; // 回転の基点（プレイヤーや手元など）
+    public Transform pivot;
+    public float tiltSpeed = 2f;
+
     private Vector2 initialMouseDir;
     private bool dragging = false;
+    private Quaternion targetRotation;
+    private bool windTiltApplied = false;
+
+    private PlayerController player;
+
+    void Start()
+    {
+        player = FindObjectOfType<PlayerController>();
+    }
 
     void Update()
     {
@@ -24,14 +35,32 @@ public class DragRotate2D : MonoBehaviour
 
         if (dragging)
         {
-            // 変位ベクトルと初期ベクトルの角度差を計算
             float angleDelta = Vector2.SignedAngle(initialMouseDir, currentMouseDir.normalized);
-
-            // 現在の角度に差分を加算
             pivot.rotation = Quaternion.Euler(0f, 0f, pivot.rotation.eulerAngles.z + angleDelta);
-
-            // 初期ベクトルを更新して連続的に回転させる
             initialMouseDir = currentMouseDir.normalized;
+        }
+
+        // 風による傾き処理
+        if (player != null)
+        {
+            Vector2 windForce = player.GetWindForce();
+            if (Mathf.Abs(windForce.x) > 0.01f && !windTiltApplied)
+            {
+                float tiltDirection = Mathf.Sign(windForce.x);
+                float targetZ = -90f + (-tiltDirection * 90f);
+                targetRotation = Quaternion.Euler(0f, 0f, targetZ);
+                windTiltApplied = true;
+            }
+
+            if (windTiltApplied)
+            {
+                pivot.rotation = Quaternion.Slerp(pivot.rotation, targetRotation, Time.deltaTime * tiltSpeed);
+            }
+
+            if (player.GetWindForce() == Vector2.zero)
+            {
+                windTiltApplied = false;
+            }
         }
     }
 }
