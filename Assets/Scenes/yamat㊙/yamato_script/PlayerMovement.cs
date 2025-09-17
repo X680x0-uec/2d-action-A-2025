@@ -7,10 +7,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed;
-    public float normalSpeed; // 基準の速さ(傘技成功/失敗時に速度を操るために参照する値)
+   
+public float moveSpeed;
+    public float normalSpeed;
     private Rigidbody2D rb;
     private Vector2 movement;
+
+    private CustomWindZone currentWindZone;
+
     [SerializeField] MultiStageGauge2 wetGage;
     [SerializeField] GameObject CAMERA;
     public int flag = 0;
@@ -18,6 +22,8 @@ public class PlayerController : MonoBehaviour
     public Collider2D targetCollider2;
     [SerializeField] float shakeSpeed;
     [SerializeField] GameObject grip;
+
+
 
     void Start()
     {
@@ -32,9 +38,32 @@ public class PlayerController : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
     }
 
-    void FixedUpdate()
+   
+
+void FixedUpdate()
+{
+    Vector2 windForce = currentWindZone != null ? currentWindZone.WindForce : Vector2.zero;
+    Vector2 totalMovement = movement.normalized * moveSpeed * (10 - wetGage.levelOfWetness) / 10 + windForce;
+    rb.linearVelocity = totalMovement;
+}
+
+
+public void SetCurrentWindZone(CustomWindZone zone)
     {
-        rb.linearVelocity = movement.normalized * moveSpeed * (10 - wetGage.levelOfWetness) / 10;
+        currentWindZone = zone;
+    }
+
+    public void ClearWindZone(CustomWindZone zone)
+    {
+        if (currentWindZone == zone)
+        {
+            currentWindZone = null;
+        }
+    }
+
+    public Vector2 GetWindForce()
+    {
+        return currentWindZone != null ? currentWindZone.WindForce : Vector2.zero;
     }
 
   
