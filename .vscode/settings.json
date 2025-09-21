@@ -66,5 +66,5 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj"
     },
-    "dotnet.defaultSolution": "2d-action-A-2025.sln"
+    "dotnet.defaultSolution": "２ｄアクション（重要）.sln"
 }

@@ -23,7 +23,12 @@ namespace DigitalRuby.RainMaker
         private Vector2 initialStartSizeMist;
         private Vector2 initialStartSpeedExplosion;
         private Vector2 initialStartSizeExplosion;
-        private readonly ParticleSystem.Particle[] particles = new ParticleSystem.Particle[2048];
+
+        //
+        private ParticleSystem.Particle[] particles = new ParticleSystem.Particle[2048];
+        //
+        //private ParticleSystem ps;
+        //private ParticleSystem.Particle[] moveParticle = new ParticleSystem.Particle[2048];
 
         [Tooltip("The starting y offset for rain and mist. This will be offset as a percentage of visible height from the top of the visible world.")]
         public float RainHeightMultiplier = 0.15f;
@@ -43,6 +48,7 @@ namespace DigitalRuby.RainMaker
         public float RainMistCollisionMultiplier = 0.75f;
 
         public BoxCollider2D player;
+        public float WindForce;
 
         private void EmitExplosion(ref Vector3 pos)
         {
@@ -108,7 +114,8 @@ namespace DigitalRuby.RainMaker
                     {
                         if (CollisionLifeTimeRain == 0.0f)
                         {
-                            if (hit.collider == player && !hit.collider.gameObject.CompareTag("umbrella")) {
+                            if (hit.collider == player && !hit.collider.gameObject.CompareTag("umbrella"))
+                            {
                                 var wet = player.gameObject.GetComponentInParent<WetnessCounter>();
                                 wet.wetness = Mathf.Min(wet.wetnessSup, wet.wetness + 1);
                                 Debug.Log("濡れた！現在の濡れた量: " + wet.wetness);
@@ -160,7 +167,7 @@ namespace DigitalRuby.RainMaker
             for (int i = 0; i < count; i++)
             {
                 Vector3 pos = particles[i].position + RainMistParticleSystem.transform.position;
-                hit = Physics2D.Raycast(pos, particles[i].velocity.normalized, particles[i].velocity.magnitude* Time.deltaTime, CollisionMask);
+                hit = Physics2D.Raycast(pos, particles[i].velocity.normalized, particles[i].velocity.magnitude * Time.deltaTime, CollisionMask);
                 if (hit.collider != null)
                 {
                     particles[i].velocity *= RainMistCollisionMultiplier;
@@ -204,6 +211,8 @@ namespace DigitalRuby.RainMaker
             visibleBounds.max = Camera.main.ViewportToWorldPoint(Vector3.one);
             visibleWorldWidth = visibleBounds.size.x;
             yOffset = (visibleBounds.max.y - visibleBounds.min.y) * RainHeightMultiplier;
+            var RainVOL = RainFallParticleSystem.velocityOverLifetime;
+            RainVOL.x = WindForce;
 
             TransformParticleSystem(RainFallParticleSystem, initialStartSpeedRain, initialStartSizeRain);
             TransformParticleSystem(RainMistParticleSystem, initialStartSpeedMist, initialStartSizeMist);

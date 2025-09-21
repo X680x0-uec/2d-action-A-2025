@@ -13,5 +13,6 @@ public class rain_fieldscript : MonoBehaviour
     void Update()
     {
         target.RainIntensity = parent.RainIntensity;
+        target.WindForce = parent.WindForce;
     }
 }
