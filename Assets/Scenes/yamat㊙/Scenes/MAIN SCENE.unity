@@ -5761,6 +5761,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 732125189311226469, guid: 7078a4ebd84d9794f97baacc8d846225, type: 3}
+      propertyPath: rainPlace.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 732125189311226469, guid: 7078a4ebd84d9794f97baacc8d846225, type: 3}
+      propertyPath: 'rainPlace.Array.data[0]'
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 732125189311226469, guid: 7078a4ebd84d9794f97baacc8d846225, type: 3}
+      propertyPath: 'rainPlace.Array.data[1]'
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 732125189311226469, guid: 7078a4ebd84d9794f97baacc8d846225, type: 3}
+      propertyPath: rainParamator.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1870952451228415390, guid: 7078a4ebd84d9794f97baacc8d846225, type: 3}
       propertyPath: m_Name
       value: RainManager

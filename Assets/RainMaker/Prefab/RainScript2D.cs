@@ -228,7 +228,7 @@ namespace DigitalRuby.RainMaker
         {
             return initialEmissionRain * RainIntensity;
         }
-/*
+
         protected override bool UseRainMistSoftParticles
         {
             get
@@ -239,8 +239,8 @@ namespace DigitalRuby.RainMaker
         protected void LateUpdate()
         {
                 ParticleDelete(RainFallParticleSystem);
-                ParticleDelete(RainExplosionParticleSystem);
-                ParticleDelete(RainMistParticleSystem);
+            if (RainExplosionParticleSystem != null) { ParticleDelete(RainExplosionParticleSystem); }
+            if (RainMistParticleSystem != null) { ParticleDelete(RainMistParticleSystem); }
         }
         protected void ParticleDelete(ParticleSystem p)
         {
@@ -251,14 +251,13 @@ namespace DigitalRuby.RainMaker
             int count = p.GetParticles(particles);
             for (int i = 0; i < count; i++)
             {
-                Debug.Log(particles[i].position.x - this.transform.position.x);
-                if (Mathf.Abs(particles[i].position.x - this.transform.position.x) > widthLimit / 2)
+                if (Mathf.Abs(particles[i].position.x - p.transform.position.x) > widthLimit / 2)
                 {
                     particles[i].remainingLifetime = 0f;
                 }
             }
-            RainFallParticleSystem.SetParticles(particles, count);
+            p.SetParticles(particles, count);
         }
-*/
+
     }
 }
