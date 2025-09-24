@@ -5,6 +5,7 @@
 
 using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
 
 namespace DigitalRuby.RainMaker
 {
@@ -49,6 +50,7 @@ namespace DigitalRuby.RainMaker
 
         public BoxCollider2D player;
         public float WindForce;
+        public float widthLimit;
 
         private void EmitExplosion(ref Vector3 pos)
         {
@@ -184,7 +186,7 @@ namespace DigitalRuby.RainMaker
         protected override void Start()
         {
             base.Start();
-
+            player = GameObject.Find("Player").GetComponent<BoxCollider2D>();
             initialEmissionRain = RainFallParticleSystem.emission.rateOverTime.constant;
             initialStartSpeedRain = new Vector2(RainFallParticleSystem.main.startSpeed.constantMin, RainFallParticleSystem.main.startSpeed.constantMax);
             initialStartSizeRain = new Vector2(RainFallParticleSystem.main.startSize.constantMin, RainFallParticleSystem.main.startSize.constantMax);
@@ -226,7 +228,7 @@ namespace DigitalRuby.RainMaker
         {
             return initialEmissionRain * RainIntensity;
         }
-
+/*
         protected override bool UseRainMistSoftParticles
         {
             get
@@ -234,5 +236,29 @@ namespace DigitalRuby.RainMaker
                 return false;
             }
         }
+        protected void LateUpdate()
+        {
+                ParticleDelete(RainFallParticleSystem);
+                ParticleDelete(RainExplosionParticleSystem);
+                ParticleDelete(RainMistParticleSystem);
+        }
+        protected void ParticleDelete(ParticleSystem p)
+        {
+            if (particles == null || particles.Length < p.main.maxParticles)
+            {
+                particles = new ParticleSystem.Particle[p.main.maxParticles];
+            }
+            int count = p.GetParticles(particles);
+            for (int i = 0; i < count; i++)
+            {
+                Debug.Log(particles[i].position.x - this.transform.position.x);
+                if (Mathf.Abs(particles[i].position.x - this.transform.position.x) > widthLimit / 2)
+                {
+                    particles[i].remainingLifetime = 0f;
+                }
+            }
+            RainFallParticleSystem.SetParticles(particles, count);
+        }
+*/
     }
 }

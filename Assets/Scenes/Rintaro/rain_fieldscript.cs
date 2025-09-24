@@ -14,5 +14,6 @@ public class rain_fieldscript : MonoBehaviour
     {
         target.RainIntensity = parent.RainIntensity;
         target.WindForce = parent.WindForce;
+        target.widthLimit = parent.widthLimit;
     }
 }
