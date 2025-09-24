@@ -1,5 +1,6 @@
 using System;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class umbrella_enemyMover : MonoBehaviour
@@ -8,12 +9,18 @@ public class umbrella_enemyMover : MonoBehaviour
     [SerializeField] float fps;
     [SerializeField] float probability;
     [SerializeField] float rnd;
+    [SerializeField] float rotationalSpeed;
     private Rigidbody2D rb;
+    [SerializeField] GameObject actor;
+    private Transform transformActor;
+    [SerializeField] GameObject attacker;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        transformActor = actor.GetComponent<Transform>();
         rb.AddForce(new Vector2(-1f, 1.732f).normalized * 5f, ForceMode2D.Impulse);
+        rotationalSpeed = UnityEngine.Random.Range(2f, 5f);
 
     }
 
@@ -30,6 +37,22 @@ public class umbrella_enemyMover : MonoBehaviour
         {
             rb.linearVelocityY = 0f;
             rb.AddForce(Vector2.up * 5f, ForceMode2D.Impulse);
+            rotationalSpeed = UnityEngine.Random.Range(2f, 5f);
+        }
+        transform.rotation *= Quaternion.Euler(0f, 0f, rotationalSpeed); //傘をくるくる
+        /*備忘録：transform.positionのx,y,zプロパティを直接変更することはできないので，このように書く．
+        Vector3 pos = transformActor.position;
+        pos.y = 0f;
+        transformActor.position = pos;*/
+
+
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "walker")
+        {
+            Instantiate(attacker, new Vector3(0, 0, 0), Quaternion.identity);
+            Destroy(this.gameObject);
         }
     }
 }
