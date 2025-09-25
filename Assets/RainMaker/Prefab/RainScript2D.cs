@@ -187,6 +187,7 @@ namespace DigitalRuby.RainMaker
         {
             base.Start();
             player = GameObject.Find("Player").GetComponent<BoxCollider2D>();
+            ParticleReloadFunction();
             initialEmissionRain = RainFallParticleSystem.emission.rateOverTime.constant;
             initialStartSpeedRain = new Vector2(RainFallParticleSystem.main.startSpeed.constantMin, RainFallParticleSystem.main.startSpeed.constantMax);
             initialStartSizeRain = new Vector2(RainFallParticleSystem.main.startSize.constantMin, RainFallParticleSystem.main.startSize.constantMax);
@@ -236,28 +237,23 @@ namespace DigitalRuby.RainMaker
                 return false;
             }
         }
-        protected void LateUpdate()
+        protected void ParticleReloadFunction()
         {
-                ParticleDelete(RainFallParticleSystem);
-            if (RainExplosionParticleSystem != null) { ParticleDelete(RainExplosionParticleSystem); }
-            if (RainMistParticleSystem != null) { ParticleDelete(RainMistParticleSystem); }
+            if (this.gameObject.CompareTag("raindrops"))
+            {
+                ParticleReload(RainFallParticleSystem);
+                if (RainExplosionParticleSystem != null) { ParticleReload(RainExplosionParticleSystem); }
+                if (RainMistParticleSystem != null) { ParticleReload(RainMistParticleSystem); }
+            }
         }
-        protected void ParticleDelete(ParticleSystem p)
+        protected void ParticleReload(ParticleSystem p)
         {
-            if (particles == null || particles.Length < p.main.maxParticles)
-            {
-                particles = new ParticleSystem.Particle[p.main.maxParticles];
-            }
-            int count = p.GetParticles(particles);
-            for (int i = 0; i < count; i++)
-            {
-                if (Mathf.Abs(particles[i].position.x - p.transform.position.x) > widthLimit / 2)
-                {
-                    particles[i].remainingLifetime = 0f;
-                }
-            }
-            p.SetParticles(particles, count);
+            ParticleSystem.EmissionModule emit = p.emission;
+            ParticleSystem.ShapeModule shape = p.shape;
+            float rot = emit.rateOverTime.constant;
+            emit.rateOverTime = new ParticleSystem.MinMaxCurve(rot * widthLimit / 18);
+            float rad = shape.radius;
+            shape.radius /= 18/widthLimit;
         }
-
     }
 }
