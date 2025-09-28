@@ -6,6 +6,6 @@ public class scene_change_1_2 : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("yamato scene"); // ゲーム本編のシーン名
+        SceneManager.LoadScene("MAIN SCENE"); // ゲーム本編のシーン名
     }
 }
