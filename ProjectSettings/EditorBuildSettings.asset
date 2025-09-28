@@ -9,11 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/title scene.unity
     guid: 7819efbb1a0970341941f9b5616f5263
   - enabled: 1
-    path: "Assets/Scenes/yamat\u3299/Scenes/yamato scene.unity"
-    guid: 7395c8f1c218f9043b1d6768cdf00f87
+    path: "Assets/Scenes/yamat\u3299/Scenes/YAMATO scene.unity"
+    guid: 6d23d7f4ea381ca4fa422e4e2b5b5653
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: "Assets/Scenes/yamat\u3299/Scenes/MAIN SCENE.unity"
+    guid: c80330b29b2accd4d96bd76ff1aa4b04
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 35a405cba5b24e044852602fce16a61c, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 67c130e39f566b84c94cb96976b04d8a, type: 3}
