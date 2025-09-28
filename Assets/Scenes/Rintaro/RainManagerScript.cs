@@ -14,7 +14,7 @@ public class RainManagerScript : MonoBehaviour
     public struct RainVector3
     {
         public float locate;
-        //雨の場所(左端)
+        //雨の場所(左端基準)
         public float Strength;
         //雨の強さ(0~1 0.5から霧が出てくる)
         public float Width;
