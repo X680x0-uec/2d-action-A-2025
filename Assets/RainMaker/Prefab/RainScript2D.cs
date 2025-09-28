@@ -24,6 +24,7 @@ namespace DigitalRuby.RainMaker
         private Vector2 initialStartSizeMist;
         private Vector2 initialStartSpeedExplosion;
         private Vector2 initialStartSizeExplosion;
+        private CustomWindZone currentWindZone;
 
         //
         private ParticleSystem.Particle[] particles = new ParticleSystem.Particle[2048];
@@ -253,7 +254,37 @@ namespace DigitalRuby.RainMaker
             float rot = emit.rateOverTime.constant;
             emit.rateOverTime = new ParticleSystem.MinMaxCurve(rot * widthLimit / 18);
             float rad = shape.radius;
-            shape.radius /= 18/widthLimit;
+            shape.radius /= 18 / widthLimit;
+        }
+        public void SetCurrentWindZone(CustomWindZone zone)
+        {
+            currentWindZone = zone;
+        }
+        public void ClearWindZone(CustomWindZone zone)
+        {
+            if (currentWindZone == zone)
+            {
+                currentWindZone = null;
+            }
+        }
+        void FixedUpdate()
+        {
+            Debug.Log(currentWindZone != null);
+            if (currentWindZone != null)
+            {
+                if (currentWindZone.currentDirection.x == 1)
+                {
+                    this.WindForce = currentWindZone.currentStrength;
+                }
+                else
+                {
+                    this.WindForce = -currentWindZone.currentStrength;
+                }
+            }
+            else
+            {
+                this.WindForce = 0;
+            }
         }
     }
 }

@@ -1,17 +1,19 @@
+using DigitalRuby.RainMaker;
 using UnityEngine;
 
 public class CustomWindZone : MonoBehaviour
 {
     public float minStrength = 1f;
     public float maxStrength = 5f;
-    private float currentStrength;
-    private Vector2 currentDirection;
+    public float currentStrength;
+    public Vector2 currentDirection;
     private bool playerInside = false;
 
     public WindUITextControllerTMP windTextController;
 
     public Vector2 WindForce => playerInside ? currentDirection * currentStrength : Vector2.zero;
     public bool IsPlayerInside => playerInside;
+    GameObject[] rains;
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -26,6 +28,12 @@ public class CustomWindZone : MonoBehaviour
 
             // プレイヤーにこの風エリアを通知
             other.GetComponent<PlayerController>()?.SetCurrentWindZone(this);
+            // 雨にも通知
+            rains = GameObject.FindGameObjectsWithTag("raindrops");
+            foreach (GameObject rain in rains)
+            {
+                rain.GetComponent<RainScript2D>()?.SetCurrentWindZone(this);
+            }
         }
     }
 
@@ -38,6 +46,12 @@ public class CustomWindZone : MonoBehaviour
 
             // プレイヤーから風エリアの参照を解除
             other.GetComponent<PlayerController>()?.ClearWindZone(this);
+            // 雨にも通知
+            rains = GameObject.FindGameObjectsWithTag("raindrops");
+            foreach (GameObject rain in rains)
+            {
+                rain.GetComponent<RainScript2D>()?.ClearWindZone(this);
+            }
         }
     }
 }
