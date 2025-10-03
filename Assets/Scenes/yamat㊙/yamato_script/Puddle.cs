@@ -30,7 +30,7 @@ public class Puddle : MonoBehaviour
             wetnessCounter = Actor.GetComponent<WetnessCounter>();
             if (!hasAddedInitialWetness && playerJump != null && !playerJump.isJumping)
             {
-                wetnessCounter.wetness = Mathf.Min(wetnessCounter.wetness + damege1, 200);
+                wetnessCounter.wetness = Mathf.Min(wetnessCounter.wetness + damege1, wetnessCounter.wetnessSup);
                 hasAddedInitialWetness = true;
                 timer = 0f;
                 isPlayerInside = true;
@@ -56,7 +56,7 @@ public class Puddle : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= interval)
             {
-                wetnessCounter.wetness = Mathf.Min(wetnessCounter.wetness + damege2, 200);
+                wetnessCounter.wetness = Mathf.Min(wetnessCounter.wetness + damege2, wetnessCounter.wetnessSup);
                 timer = 0f;
                 Debug.Log("濡れ続け中... 濡れた量: " + wetnessCounter.wetness);
             }
