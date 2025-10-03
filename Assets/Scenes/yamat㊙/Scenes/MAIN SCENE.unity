@@ -5768,7 +5768,7 @@ MonoBehaviour:
   targetCollider: {fileID: 1634546848}
   wetness: 0
   wetnessPercentage: 0
-  wetnessSup: 200
+  wetnessSup: 400
   pl: {fileID: 1634546850}
 --- !u!1001 &1120094585
 PrefabInstance:
