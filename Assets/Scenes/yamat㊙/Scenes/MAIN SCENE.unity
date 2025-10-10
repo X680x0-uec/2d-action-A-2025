@@ -6054,15 +6054,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 732125189311226469, guid: 7078a4ebd84d9794f97baacc8d846225, type: 3}
       propertyPath: rainParamator.Array.size
-      value: 2
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 732125189311226469, guid: 7078a4ebd84d9794f97baacc8d846225, type: 3}
+      propertyPath: rainParamator.Array.data[0].Width
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 732125189311226469, guid: 7078a4ebd84d9794f97baacc8d846225, type: 3}
       propertyPath: rainParamator.Array.data[1].Width
-      value: 10
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 732125189311226469, guid: 7078a4ebd84d9794f97baacc8d846225, type: 3}
+      propertyPath: rainParamator.Array.data[2].Width
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 732125189311226469, guid: 7078a4ebd84d9794f97baacc8d846225, type: 3}
+      propertyPath: rainParamator.Array.data[3].Width
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 732125189311226469, guid: 7078a4ebd84d9794f97baacc8d846225, type: 3}
+      propertyPath: rainParamator.Array.data[4].Width
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 732125189311226469, guid: 7078a4ebd84d9794f97baacc8d846225, type: 3}
+      propertyPath: rainParamator.Array.data[5].Width
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 732125189311226469, guid: 7078a4ebd84d9794f97baacc8d846225, type: 3}
+      propertyPath: rainParamator.Array.data[0].locate
+      value: -20
       objectReference: {fileID: 0}
     - target: {fileID: 732125189311226469, guid: 7078a4ebd84d9794f97baacc8d846225, type: 3}
       propertyPath: rainParamator.Array.data[1].locate
-      value: 14
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 732125189311226469, guid: 7078a4ebd84d9794f97baacc8d846225, type: 3}
+      propertyPath: rainParamator.Array.data[2].locate
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 732125189311226469, guid: 7078a4ebd84d9794f97baacc8d846225, type: 3}
+      propertyPath: rainParamator.Array.data[3].locate
+      value: 280
+      objectReference: {fileID: 0}
+    - target: {fileID: 732125189311226469, guid: 7078a4ebd84d9794f97baacc8d846225, type: 3}
+      propertyPath: rainParamator.Array.data[4].locate
+      value: 380
+      objectReference: {fileID: 0}
+    - target: {fileID: 732125189311226469, guid: 7078a4ebd84d9794f97baacc8d846225, type: 3}
+      propertyPath: rainParamator.Array.data[5].locate
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 732125189311226469, guid: 7078a4ebd84d9794f97baacc8d846225, type: 3}
       propertyPath: rainParamator.Array.data[0].Strength
@@ -6070,7 +6110,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 732125189311226469, guid: 7078a4ebd84d9794f97baacc8d846225, type: 3}
       propertyPath: rainParamator.Array.data[1].Strength
-      value: 0.2
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 732125189311226469, guid: 7078a4ebd84d9794f97baacc8d846225, type: 3}
+      propertyPath: rainParamator.Array.data[2].Strength
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 732125189311226469, guid: 7078a4ebd84d9794f97baacc8d846225, type: 3}
+      propertyPath: rainParamator.Array.data[3].Strength
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 732125189311226469, guid: 7078a4ebd84d9794f97baacc8d846225, type: 3}
+      propertyPath: rainParamator.Array.data[4].Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 732125189311226469, guid: 7078a4ebd84d9794f97baacc8d846225, type: 3}
+      propertyPath: rainParamator.Array.data[5].Strength
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1870952451228415390, guid: 7078a4ebd84d9794f97baacc8d846225, type: 3}
       propertyPath: m_Name

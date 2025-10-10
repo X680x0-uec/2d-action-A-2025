@@ -215,9 +215,11 @@ namespace DigitalRuby.RainMaker
             visibleBounds.max = Camera.main.ViewportToWorldPoint(Vector3.one);
             visibleWorldWidth = visibleBounds.size.x;
             yOffset = (visibleBounds.max.y - visibleBounds.min.y) * RainHeightMultiplier;
-            var RainVOL = RainFallParticleSystem.velocityOverLifetime;
-            RainVOL.x = WindForce;
-
+            if (this.gameObject.name != "RainPrefab2D_field")
+            {
+                var RainVOL = RainFallParticleSystem.velocityOverLifetime;
+                RainVOL.x = WindForce;
+            }
             TransformParticleSystem(RainFallParticleSystem, initialStartSpeedRain, initialStartSizeRain);
             TransformParticleSystem(RainMistParticleSystem, initialStartSpeedMist, initialStartSizeMist);
             TransformParticleSystem(RainExplosionParticleSystem, initialStartSpeedExplosion, initialStartSizeExplosion);
@@ -269,7 +271,6 @@ namespace DigitalRuby.RainMaker
         }
         void FixedUpdate()
         {
-            Debug.Log(currentWindZone != null);
             if (currentWindZone != null)
             {
                 if (currentWindZone.currentDirection.x == 1)
