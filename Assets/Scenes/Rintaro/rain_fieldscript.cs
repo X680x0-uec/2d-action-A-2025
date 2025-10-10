@@ -26,6 +26,7 @@ public class rain_fieldscript : MonoBehaviour
         {
             for (int j = 0; j < parentlimit; j++)
             {
+                Debug.Log(p[i].name == parentp[j].name);
                 if (p[i].name == parentp[j].name)
                 {
                     Debug.Log("true");
@@ -33,6 +34,10 @@ public class rain_fieldscript : MonoBehaviour
                     shape.radius = parentp[j].shape.radius;
                     var emit = p[i].emission;
                     emit.rateOverTime = parentp[j].emission.rateOverTime;
+                    var velocity = p[i].velocityOverLifetime;
+                    velocity.enabled = true;
+                    velocity.x = parentp[j].velocityOverLifetime.x;
+                    Debug.Log(velocity.x);
                 }
             }
         }
