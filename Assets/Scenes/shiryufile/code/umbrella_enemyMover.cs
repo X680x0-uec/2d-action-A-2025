@@ -1,4 +1,5 @@
 using System;
+using System.Data.Common;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -6,6 +7,12 @@ using UnityEngine;
 public class umbrella_enemyMover : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    /*
+    //ここから主人公判定処理用変数
+    [SerializeField] GameObject checkerPrefab;
+    bool isActive = false;
+    public float activateDistance; //有効化するために近づく距離（主人公 - 本オブジェクト）
+    //ここまで*/
     [SerializeField] float fps;
     [SerializeField] float probability;
     [SerializeField] float rnd;
@@ -17,6 +24,17 @@ public class umbrella_enemyMover : MonoBehaviour
 
     void Start()
     {
+        /*//ここから主人公判定処理用設定
+        if (!isActive)
+        {
+
+            GameObject prefabInstance = Instantiate(checkerPrefab, transform.position, transform.rotation);
+            prefabInstance.GetComponent<PlayerChecker>().Initialize(this.gameObject);
+            isActive = true;
+            this.gameObject.SetActive(false);
+
+        }
+        //ここまで*/
         rb = GetComponent<Rigidbody2D>();
         transformActor = actor.GetComponent<Transform>();
         rb.AddForce(new Vector2(-1f, 1.732f).normalized * 5f, ForceMode2D.Impulse);
