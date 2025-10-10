@@ -1,5 +1,6 @@
 using System.Buffers;
 using System.Collections;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,8 @@ public abstract class FieldObjectBase : MonoBehaviour
     public bool isContacted = false;
     public bool isActioned = false;
     private IEnumerator coroutine;
+    private Transform minigameLeader;
+    private GameObject leaderObject;
 
     //静的変数 ほかのオブジェクトが値を変更すると、
     //その結果がほかのオブジェクトにも反映されるってやつ
@@ -27,6 +30,11 @@ public abstract class FieldObjectBase : MonoBehaviour
         {
             isContacted = other.gameObject.CompareTag("walker");
         }
+
+        if (isContacted)
+        {
+            leaderObject.gameObject.SetActive(true);
+        }
     }
 
     //colliderをもつオブジェクトの領域外にでたとき
@@ -36,6 +44,18 @@ public abstract class FieldObjectBase : MonoBehaviour
         {
             isContacted = !other.gameObject.CompareTag("walker");
         }
+
+        if (!isContacted)
+        {
+            leaderObject.gameObject.SetActive(false);
+        }
+    }
+
+    void Start()
+    {
+        minigameLeader = transform.GetChild(0);
+
+        leaderObject = minigameLeader.gameObject;
     }
 
     private void FixedUpdate()

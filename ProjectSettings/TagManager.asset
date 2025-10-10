@@ -48,6 +48,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: fukidashi
+    uniqueID: 4052285667
+    locked: 0
   - name: Player
     uniqueID: 1502086531
     locked: 0
