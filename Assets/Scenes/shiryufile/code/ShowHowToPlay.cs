@@ -3,10 +3,46 @@ using UnityEngine.UI;
 
 public class ShowHowToPlay : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    [SerializeField] Image HowToPlayImage;
-    public void actHowHowToPlay()
+    public GameObject titlePanel;
+    public GameObject howToPlayPanel;
+    public Image howToPlayImage;
+    public Sprite[] howToPlayPages;
+
+    private int currentPage = 0;
+    private bool isShowingHowToPlay = false;
+
+    void Update()
     {
-        HowToPlayImage.gameObject.SetActive(true);
+        if (isShowingHowToPlay && (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)))
+        {
+            AdvancePage();
+        }
     }
+
+
+    public void actHowToPlay()
+    {
+        titlePanel.SetActive(false);
+        howToPlayPanel.SetActive(true);
+        currentPage = 0;
+        howToPlayImage.sprite = howToPlayPages[currentPage];
+        isShowingHowToPlay = true;
+
+    }
+
+        private void AdvancePage()
+    {
+        currentPage++;
+        if (currentPage < howToPlayPages.Length)
+        {
+            howToPlayImage.sprite = howToPlayPages[currentPage];
+        }
+        else
+        {
+            howToPlayPanel.SetActive(false);
+            titlePanel.SetActive(true);
+            isShowingHowToPlay = false;
+        }
+    }
+
 }
