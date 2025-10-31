@@ -43,12 +43,13 @@ public class birdMover : MonoBehaviour
     private bool attack = false;
     private float firstTime;
     private Vector3 firstActorPosition;
+    player_heal healmove;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = walking;
-
         transformActor = Actor.GetComponent<Transform>();
+        healmove = GameObject.FindWithTag("walker").GetComponent<player_heal>();
     }
 
     // Update is called once per frame
@@ -72,6 +73,7 @@ public class birdMover : MonoBehaviour
                 if (Time.time - firstTime >= 3f)  //一定時間たったら自分を削除
                 {
                     Destroy(this.gameObject);
+                    healmove.damaged = false;
                 }
             }
             else
@@ -93,6 +95,7 @@ public class birdMover : MonoBehaviour
         if (other.gameObject.tag == "walker" && !attack)
         {
             attack = true;
+            healmove.damaged = true;
             firstTime = Time.time;
             firstActorPosition = transformActor.position;
         }

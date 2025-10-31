@@ -21,7 +21,7 @@ public class umbrella_enemyMover : MonoBehaviour
     [SerializeField] GameObject actor;
     private Transform transformActor;
     [SerializeField] GameObject attacker;
-
+    public player_heal healmove;
     void Start()
     {
         /*//ここから主人公判定処理用設定
@@ -36,10 +36,11 @@ public class umbrella_enemyMover : MonoBehaviour
         }
         //ここまで*/
         rb = GetComponent<Rigidbody2D>();
+        actor = GameObject.FindWithTag("walker");
         transformActor = actor.GetComponent<Transform>();
         rb.AddForce(new Vector2(-1f, 1.732f).normalized * 5f, ForceMode2D.Impulse);
         rotationalSpeed = UnityEngine.Random.Range(2f, 5f);
-
+        healmove = actor.GetComponent<player_heal>();
     }
 
     // Update is called once per frame
@@ -67,8 +68,10 @@ public class umbrella_enemyMover : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log(other.gameObject.tag == "walker");
         if (other.gameObject.tag == "walker")
         {
+            healmove.damaged = true;
             Instantiate(attacker, new Vector3(0, 0, 0), Quaternion.identity);
             Destroy(this.gameObject);
         }
