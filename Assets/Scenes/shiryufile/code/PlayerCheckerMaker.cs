@@ -6,7 +6,7 @@ public class PlayerCheckerMaker : MonoBehaviour
     [SerializeField] GameObject checkerPrefab;
     bool isActive = false;
     public float activateDistance; //有効化するために近づく距離（主人公 - 本オブジェクト）
-    void Start()
+    void Awake()
     {
         if (!isActive)
         {
