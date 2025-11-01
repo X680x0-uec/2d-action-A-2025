@@ -36,7 +36,7 @@ public class umbrella_enemyMover : MonoBehaviour
         }
         //ここまで*/
         rb = GetComponent<Rigidbody2D>();
-        actor = GameObject.FindWithTag("walker");
+        actor = GameObject.FindWithTag("walker").gameObject;
         transformActor = actor.GetComponent<Transform>();
         rb.AddForce(new Vector2(-1f, 1.732f).normalized * 5f, ForceMode2D.Impulse);
         rotationalSpeed = UnityEngine.Random.Range(2f, 5f);

@@ -48,6 +48,7 @@ public class birdMover : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = walking;
+        Actor = GameObject.FindWithTag("walker").gameObject;
         transformActor = Actor.GetComponent<Transform>();
         healmove = GameObject.FindWithTag("walker").GetComponent<player_heal>();
     }
