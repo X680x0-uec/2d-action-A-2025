@@ -26,7 +26,7 @@ public class PlayerJump : MonoBehaviour
         {
             shadowObject.SetActive(false);
         }
-
+        scriptsToDisable[1] = GetComponent<player_heal>();
         playerCollider = GetComponent<Collider2D>();
     }
 

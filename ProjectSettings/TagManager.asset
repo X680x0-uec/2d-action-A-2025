@@ -11,6 +11,7 @@ TagManager:
   - Car
   - umbrella
   - windZone
+  - textmessage
   layers:
   - Default
   - TransparentFX

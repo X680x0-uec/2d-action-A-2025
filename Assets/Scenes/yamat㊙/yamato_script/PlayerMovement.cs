@@ -22,7 +22,7 @@ public float moveSpeed;
     public Collider2D targetCollider2;
     [SerializeField] float shakeSpeed;
     [SerializeField] GameObject grip;
-
+    private player_heal healmove;
 
 
     void Start()
@@ -30,6 +30,7 @@ public float moveSpeed;
         rb = GetComponent<Rigidbody2D>();
         moveSpeed = normalSpeed; // 初期化
         CAMERA = GameObject.Find("Main Camera");
+        healmove = this.GetComponent<player_heal>();
     }
 
     void Update()
@@ -43,7 +44,7 @@ public float moveSpeed;
 void FixedUpdate()
 {
     Vector2 windForce = currentWindZone != null ? currentWindZone.WindForce : Vector2.zero;
-    Vector2 totalMovement = movement.normalized * moveSpeed * (10 - wetGage.levelOfWetness) / 10 + windForce;
+    Vector2 totalMovement = movement.normalized * moveSpeed * (10 - wetGage.levelOfWetness) / 10 * (healmove.IsHealing? 0 : 1) + windForce;
     rb.linearVelocity = totalMovement;
 }
 
@@ -82,6 +83,7 @@ void OnTriggerEnter2D(Collider2D other)
             }
 
             coroutine = Wait();
+            healmove.damaged = true;
             StartCoroutine(coroutine);
         }
     }
@@ -150,6 +152,7 @@ void OnTriggerEnter2D(Collider2D other)
         yield return new WaitForSeconds(2.0f);
 
         coroutine = null;
+        healmove.damaged = false;
     }
 
     void Accident(Vector3 moveDirection)

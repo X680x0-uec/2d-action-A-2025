@@ -16,6 +16,13 @@ public abstract class FieldObjectBase : MonoBehaviour
     public bool isActioned = false;
     private IEnumerator coroutine;
 
+    private player_heal healmove;
+    //回復中に傘技できないように
+    void Start()
+    {
+        healmove = GameObject.FindGameObjectWithTag("walker").GetComponent<player_heal>();
+    }
+
     //静的変数 ほかのオブジェクトが値を変更すると、
     //その結果がほかのオブジェクトにも反映されるってやつ
     public static bool isActioning = false;
@@ -40,7 +47,7 @@ public abstract class FieldObjectBase : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!isActioning && isContacted && !isActioned && coroutine == null && Input.GetMouseButtonDown(0))
+        if (!isActioning && isContacted && !isActioned && coroutine == null && Input.GetMouseButtonDown(0) && !healmove.IsHealing)
         {
             coroutine = CreateCoroutine();
             //コルーチンの起動

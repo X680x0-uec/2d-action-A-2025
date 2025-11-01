@@ -8,6 +8,7 @@ public class umbrella_enemy_attackMover : MonoBehaviour
     [SerializeField] Vector3 initialpos;
     [SerializeField] float distance; //吹っ飛ばされる距離
     [SerializeField] Vector3 currentpos;
+    player_heal healmove;
 
     private Vector3 finalpos;
     void Start()
@@ -18,7 +19,7 @@ public class umbrella_enemy_attackMover : MonoBehaviour
         finalpos = new Vector3(initialpos.x - distance, initialpos.y, initialpos.z);
 
         currentpos = initialpos;
-        
+        healmove = actor.GetComponent<player_heal>();
     }
 
     // Update is called once per frame
@@ -29,10 +30,12 @@ public class umbrella_enemy_attackMover : MonoBehaviour
 
         if (currentpos.x <= finalpos.x)
         {
+            healmove.damaged = false;
             Destroy(this.gameObject);
         }
         if (transformActor.position.x <= -25f)
         {
+            healmove.damaged = false;
             Destroy(this.gameObject);
         }
     }
