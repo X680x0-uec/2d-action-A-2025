@@ -54,7 +54,7 @@ public class KurukuruMinigame : FieldObjectBase
             {
                 showMessage("Failed... びちょ濡れで足取りが重くなった");
                 PlayerController.moveSpeed = 0.5f * PlayerController.normalSpeed;
-                wet.wetness = Mathf.Max(wet.wetness + 20, wet.wetnessSup);
+                wet.wetness = Mathf.Min(wet.wetness + 20, wet.wetnessSup);
                 yield return new WaitForSeconds(5f);
                 PlayerController.moveSpeed = PlayerController.normalSpeed;
                 yield break;

@@ -43,12 +43,14 @@ public class birdMover : MonoBehaviour
     private bool attack = false;
     private float firstTime;
     private Vector3 firstActorPosition;
+    private PlayerController PC;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sprite = walking;
-
+        Actor = GameObject.FindWithTag("walker").gameObject;
         transformActor = Actor.GetComponent<Transform>();
+        PC = GameObject.FindWithTag("walker").GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -72,6 +74,7 @@ public class birdMover : MonoBehaviour
                 if (Time.time - firstTime >= 3f)  //一定時間たったら自分を削除
                 {
                     Destroy(this.gameObject);
+                    PC.damaged = false;
                 }
             }
             else
@@ -90,9 +93,10 @@ public class birdMover : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "walker" && !attack)
+        if (other.gameObject.tag == "walker" && !attack && !PC.damaged )
         {
             attack = true;
+            PC.damaged = true;
             firstTime = Time.time;
             firstActorPosition = transformActor.position;
         }

@@ -16,6 +16,7 @@ public class PlayerAnimation : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        playerJump = this.GetComponentInParent<PlayerJump>();
     }
 
     void Update()
@@ -23,8 +24,10 @@ public class PlayerAnimation : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
         animator.SetFloat("Walk", movement.sqrMagnitude);
+        Debug.Log(playerJump.isJumping);
     }
 
+    /*呼び出しをプレイヤー側から行うように変更したのでコメント化
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Car") && coroutine == null)
@@ -36,8 +39,9 @@ public class PlayerAnimation : MonoBehaviour
             }
         }
     }
+    */
 
-    IEnumerator CarAccident()
+    public IEnumerator CarAccident()
     {
         // ジャンプ中ならアニメーション処理をスキップ
         if (playerJump != null && playerJump.isJumping)

@@ -6,6 +6,7 @@
 using UnityEngine;
 using System.Collections;
 using Unity.VisualScripting;
+using UnityEditor.ShaderGraph;
 
 namespace DigitalRuby.RainMaker
 {
@@ -112,16 +113,16 @@ namespace DigitalRuby.RainMaker
                 for (int i = 0; i < count; i++)
                 {
                     Vector3 pos = particles[i].position + RainFallParticleSystem.transform.position;
-                    hit = Physics2D.Raycast(pos, particles[i].velocity.normalized, particles[i].velocity.magnitude * Time.deltaTime);
+                    hit = Physics2D.Raycast(pos, particles[i].velocity.normalized, particles[i].velocity.magnitude * Time.deltaTime * 1f);
                     if (hit.collider != null && ((1 << hit.collider.gameObject.layer) & CollisionMask) != 0)
                     {
                         if (CollisionLifeTimeRain == 0.0f)
                         {
-                            if (hit.collider == player && !hit.collider.gameObject.CompareTag("umbrella"))
+                            if (hit.collider.gameObject.CompareTag("player"))
                             {
                                 var wet = player.gameObject.GetComponentInParent<WetnessCounter>();
                                 wet.wetness = Mathf.Min(wet.wetnessSup, wet.wetness + 1);
-                                Debug.Log("濡れた！現在の濡れた量: " + wet.wetness);
+                                Debug.Log("濡れちゃいました");
                             }
                             particles[i].remainingLifetime = 0.0f;
                         }
@@ -253,6 +254,11 @@ namespace DigitalRuby.RainMaker
         {
             ParticleSystem.EmissionModule emit = p.emission;
             ParticleSystem.ShapeModule shape = p.shape;
+            ParticleSystem.TriggerModule trigger = p.trigger;
+            PolygonCollider2D umbrella = GameObject.FindWithTag("umbrella").GetComponent<PolygonCollider2D>();
+            BoxCollider2D player = GameObject.FindWithTag("player").GetComponent<BoxCollider2D>();
+            trigger.SetCollider(0, umbrella);
+            trigger.SetCollider(1, player);
             float rot = emit.rateOverTime.constant;
             emit.rateOverTime = new ParticleSystem.MinMaxCurve(rot * widthLimit / 18);
             float rad = shape.radius;
