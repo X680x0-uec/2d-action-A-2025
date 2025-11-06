@@ -17,8 +17,9 @@ public class CustomWindZone : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("walker"))
+        if (other.CompareTag("player"))
         {
+            GameObject walker = GameObject.FindWithTag("walker");
             playerInside = true;
             currentStrength = Random.Range(minStrength, maxStrength);
             currentDirection = Random.value > 0.5f ? Vector2.right : Vector2.left;
@@ -27,7 +28,7 @@ public class CustomWindZone : MonoBehaviour
             windTextController.ShowWindInfo(currentDirection, currentStrength);
 
             // プレイヤーにこの風エリアを通知
-            other.GetComponent<PlayerController>()?.SetCurrentWindZone(this);
+            walker.GetComponent<PlayerController>()?.SetCurrentWindZone(this);
             // 雨にも通知
             rains = GameObject.FindGameObjectsWithTag("raindrops");
             foreach (GameObject rain in rains)
@@ -39,13 +40,13 @@ public class CustomWindZone : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("walker"))
+        if (other.CompareTag("player"))
         {
             playerInside = false;
             windTextController.HideWindInfo();
 
             // プレイヤーから風エリアの参照を解除
-            other.GetComponent<PlayerController>()?.ClearWindZone(this);
+            GameObject.FindWithTag("walker").GetComponent<PlayerController>()?.ClearWindZone(this);
             // 雨にも通知
             rains = GameObject.FindGameObjectsWithTag("raindrops");
             foreach (GameObject rain in rains)
