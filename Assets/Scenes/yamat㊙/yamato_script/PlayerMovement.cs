@@ -2,6 +2,7 @@ using System.Collections;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using DigitalRuby.RainMaker;
+using Unity.VisualScripting;
 using UnityEditor.ShortcutManagement;
 using UnityEngine;
 
@@ -20,10 +21,13 @@ public float moveSpeed;
     public int flag = 0;
     private IEnumerator coroutine = null;
     public Collider2D targetCollider2;
+    public Vector2 totalMovement;
     [SerializeField] float shakeSpeed;
     [SerializeField] GameObject grip;
     private player_heal healmove;
-
+    private Transform shadowPos;
+    public PlayerAnimation playerAnimation;
+    public bool damaged;
 
     void Start()
     {
@@ -31,6 +35,7 @@ public float moveSpeed;
         moveSpeed = normalSpeed; // 初期化
         CAMERA = GameObject.Find("Main Camera");
         healmove = this.GetComponent<player_heal>();
+        shadowPos = GameObject.FindWithTag("shadow").GetComponent<Transform>();
     }
 
     void Update()
@@ -39,13 +44,16 @@ public float moveSpeed;
         movement.y = Input.GetAxisRaw("Vertical");
     }
 
-   
 
 void FixedUpdate()
 {
     Vector2 windForce = currentWindZone != null ? currentWindZone.WindForce : Vector2.zero;
-    Vector2 totalMovement = movement.normalized * moveSpeed * (10 - wetGage.levelOfWetness) / 10 * (healmove.IsHealing? 0 : 1) + windForce;
+    totalMovement = movement.normalized * moveSpeed * (10 - wetGage.levelOfWetness) / 10 * (healmove.IsHealing? 0.2f : 1f) + windForce;
     rb.linearVelocity = totalMovement;
+    if (shadowPos.position.y <= -8.89 || shadowPos.position.y >= -2.40)
+    {
+            rb.linearVelocityY = 0;
+    }
 }
 
 
@@ -76,14 +84,15 @@ void OnTriggerEnter2D(Collider2D other)
         {
             // ジャンプ中なら処理をスキップ
             PlayerJump playerJump = GetComponent<PlayerJump>();
-            if (playerJump != null && playerJump.isJumping)
-            {
-                Debug.Log("ジャンプ中なので車との衝突処理をスキップ");
-                return;
-            }
-
+                if ((playerJump != null && playerJump.isJumping) || damaged)
+                {
+                    Debug.Log("ジャンプ中あるいはダメージを受けているので車との衝突処理をスキップ");
+                    return;
+                }
+            playerAnimation = GameObject.FindWithTag("player").GetComponent<PlayerAnimation>();
+            playerAnimation.CarAccident();
             coroutine = Wait();
-            healmove.damaged = true;
+            damaged = true;
             StartCoroutine(coroutine);
         }
     }
@@ -152,7 +161,7 @@ void OnTriggerEnter2D(Collider2D other)
         yield return new WaitForSeconds(2.0f);
 
         coroutine = null;
-        healmove.damaged = false;
+        damaged = false;
     }
 
     void Accident(Vector3 moveDirection)

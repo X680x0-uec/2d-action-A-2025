@@ -12,6 +12,8 @@ TagManager:
   - umbrella
   - windZone
   - textmessage
+  - shadow
+  - player
   layers:
   - Default
   - TransparentFX

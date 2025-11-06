@@ -14,17 +14,18 @@ public class player_heal : MonoBehaviour
     public Text text;
     public int heal;
     public float Cooldown;
-    public bool damaged;
     public bool IsHealing;
+    private PlayerController PC;
     void Start()
     {
         mukou = GetComponent<PlayerJump>();
+        PC = GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L) && !IsHealing)
         {
             Debug.Log("started");
             mukou.enabled = false;
@@ -37,7 +38,7 @@ public class player_heal : MonoBehaviour
         float sec = 0;
         window.SetActive(true);
         text.text = "回復中…";
-        while (sec <= Cooldown && !damaged)
+        while (sec <= Cooldown && !PC.damaged)
         {
             sec += Time.deltaTime;
             yield return null;

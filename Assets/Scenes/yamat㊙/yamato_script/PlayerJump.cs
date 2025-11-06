@@ -16,10 +16,11 @@ public class PlayerJump : MonoBehaviour
     public bool isJumping { get; private set; } // 他スクリプトから参照可能
 
     private float jumpTimer = 0f;
-    private float baseY;
+    public float baseY;
+    public float shadowY;
 
     private Collider2D playerCollider;
-
+    private PlayerController PC;
     void Start()
     {
         if (shadowObject != null)
@@ -28,6 +29,7 @@ public class PlayerJump : MonoBehaviour
         }
         scriptsToDisable[1] = GetComponent<player_heal>();
         playerCollider = GetComponent<Collider2D>();
+        PC = GetComponent<PlayerController>();
     }
 
     void Update()
@@ -42,7 +44,9 @@ public class PlayerJump : MonoBehaviour
             jumpTimer += Time.deltaTime;
             float normalizedTime = jumpTimer / jumpDuration;
             float yOffset = Mathf.Sin(normalizedTime * Mathf.PI) * jumpHeight;
+            baseY += PC.totalMovement.y * Time.deltaTime * ((shadowObject.GetComponent<Transform>().position.y <= -8.89 || shadowObject.GetComponent<Transform>().position.y >= -2.40)? 0f:1f);
 
+            shadowY = shadowObject.transform.position.y;
             Vector3 pos = transform.position;
             pos.y = baseY + yOffset;
             transform.position = pos;
