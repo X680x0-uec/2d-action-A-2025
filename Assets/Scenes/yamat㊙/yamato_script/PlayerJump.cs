@@ -34,9 +34,10 @@ public class PlayerJump : MonoBehaviour
 
     void Update()
     {
-        if (!isJumping && Input.GetButtonDown("Jump"))
+        if (!isJumping && Input.GetButtonDown("Jump") && !PC.damaged)
         {
             StartJump();
+            Debug.Log("jump");
         }
 
         if (isJumping)
