@@ -44,12 +44,13 @@ public class PlayerAnimation : MonoBehaviour
     public IEnumerator CarAccident()
     {
         // ジャンプ中ならアニメーション処理をスキップ
+        /*
         if (playerJump != null && playerJump.isJumping)
         {
             Debug.Log("ジャンプ中なのでアニメーション処理をスキップ");
             yield break;
         }
-
+        */
         playerSpriteRenderer.flipX = false;
         animator.SetTrigger("DamagedByCar");
 

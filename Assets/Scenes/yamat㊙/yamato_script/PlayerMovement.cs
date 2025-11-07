@@ -28,7 +28,7 @@ public float moveSpeed;
     private Transform shadowPos;
     public PlayerAnimation playerAnimation;
     public bool damaged;
-
+    public Sprite damagepicture;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -82,15 +82,16 @@ void OnTriggerEnter2D(Collider2D other)
     {
         if (other.IsTouching(targetCollider2))
         {
-            // ジャンプ中なら処理をスキップ
-            PlayerJump playerJump = GetComponent<PlayerJump>();
+                // ジャンプ中なら処理をスキップ
+                PlayerJump playerJump = GetComponent<PlayerJump>();
+
                 if ((playerJump != null && playerJump.isJumping) || damaged)
                 {
                     Debug.Log("ジャンプ中あるいはダメージを受けているので車との衝突処理をスキップ");
                     return;
                 }
             playerAnimation = GameObject.FindWithTag("player").GetComponent<PlayerAnimation>();
-            playerAnimation.CarAccident();
+            StartCoroutine(playerAnimation.CarAccident());
             coroutine = Wait();
             damaged = true;
             StartCoroutine(coroutine);
