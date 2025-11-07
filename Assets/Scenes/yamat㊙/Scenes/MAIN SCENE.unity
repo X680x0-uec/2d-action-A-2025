@@ -51940,15 +51940,11 @@ PrefabInstance:
     - target: {fileID: 211641005099492066, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: Actor
       value: 
-<<<<<<< HEAD
-      objectReference: {fileID: 396751925}
-=======
       objectReference: {fileID: 0}
     - target: {fileID: 505690600724696688, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 436.41
       objectReference: {fileID: 0}
->>>>>>> bff9fe79ea2e3eec2ffe46de6d8a0ae10c91ffa9
     - target: {fileID: 1042611006656266155, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: Actor
       value: 
@@ -63733,8 +63729,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 10.557724, y: 5.983177}
   m_EdgeRadius: 0
-<<<<<<< HEAD
-=======
 --- !u!4 &1461378381 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5503936382157905042, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
@@ -63759,7 +63753,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checkerPrefab: {fileID: 3083020379809443309, guid: 8799d290ddd719e4a812fcb3c5eb73f4, type: 3}
   activateDistance: -20
->>>>>>> bff9fe79ea2e3eec2ffe46de6d8a0ae10c91ffa9
 --- !u!1001 &1474646746
 PrefabInstance:
   m_ObjectHideFlags: 0
