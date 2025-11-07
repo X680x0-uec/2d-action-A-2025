@@ -27,7 +27,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         Move(direction); //左へ進む
         
 
-        if (transform.position.x <= -20.0f)
+        if (transform.position.x <= -50.0f || transform.position.x >= 450f)
         {
             Destroy(this.gameObject);
         }

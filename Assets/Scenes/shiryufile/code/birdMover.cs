@@ -62,6 +62,7 @@ public class birdMover : MonoBehaviour
             firstDirection = (transformActor.position - new Vector3(0,1,0)) - transform.position;
             firstDirection.z = 0f; //z軸方向に余計に動かないように調整
             firstDirection.Normalize(); //正規化
+            firstTime = Time.time;
         }
 
         if (spriteRenderer.sprite == flying)
@@ -86,6 +87,10 @@ public class birdMover : MonoBehaviour
                     float angle = SignedAngleIgnoreZ(firstDirection, (transformActor.position - new Vector3(0, 1, 0)) - transform.position);
                     firstDirection = RotateInXY(firstDirection, angle / 2);
                 }
+            }
+            if (Time.time - firstTime >= 10f)  //一定時間たったら自分を削除
+            {
+                Destroy(this.gameObject);
             }
             
         }
