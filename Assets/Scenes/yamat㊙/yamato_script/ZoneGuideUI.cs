@@ -1,8 +1,10 @@
+
 using UnityEngine;
 
-public class ZoneGuideUI : MonoBehaviour
+public class ZoneGuideUI2D : MonoBehaviour
 {
-    public GameObject guideUI; // UI全体（Image + Text）
+    public GameObject guideUI;
+    private bool isDisplaying = false;
 
     private void Start()
     {
@@ -15,6 +17,7 @@ public class ZoneGuideUI : MonoBehaviour
         if (other.CompareTag("walker") && guideUI != null)
         {
             guideUI.SetActive(true);
+            isDisplaying = true;
         }
     }
 
@@ -23,6 +26,16 @@ public class ZoneGuideUI : MonoBehaviour
         if (other.CompareTag("walker") && guideUI != null)
         {
             guideUI.SetActive(false);
+            isDisplaying = false;
+        }
+    }
+
+    private void Update()
+    {
+        if (isDisplaying && Input.GetMouseButtonDown(0)) // 左クリック
+        {
+            guideUI.SetActive(false);
+            isDisplaying = false;
         }
     }
 }

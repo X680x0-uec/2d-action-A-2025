@@ -1,0 +1,23 @@
+diff a/Assets/Scenes/Rintaro/RainPrefab2D Variant.prefab b/Assets/Scenes/Rintaro/RainPrefab2D Variant.prefab	(rejected hunks)
+@@ -60,6 +60,10 @@
+       propertyPath: widthLimit
+       value: 0
+       objectReference: {fileID: 0}
++    - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
++      propertyPath: RainSoundAudioMixer
++      value: 
++      objectReference: {fileID: -1808886923488891953, guid: 040bf4e0a810cfc4b8379d36d7675e77, type: 2}
+     - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+       propertyPath: RainWidthMultiplier
+       value: 1
+@@ -195,6 +199,10 @@
+       propertyPath: player
+       value: 
+       objectReference: {fileID: 0}
++    - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
++      propertyPath: RainSoundAudioMixer
++      value: 
++      objectReference: {fileID: -1808886923488891953, guid: 040bf4e0a810cfc4b8379d36d7675e77, type: 2}
+     - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+       propertyPath: RainWidthMultiplier
+       value: 1

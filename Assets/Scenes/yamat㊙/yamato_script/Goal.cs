@@ -8,6 +8,9 @@ public class Goal : FieldObjectBase
     public TextMeshProUGUI scoreText;
     public RectTransform umbrellaImage; // 三角形のUI（傘）
     
+public AudioSource audioSource;
+public AudioClip flapSound;
+
 
     private Vector3 lastMousePosition;
     private int moveCount = 0;
@@ -36,11 +39,19 @@ public class Goal : FieldObjectBase
                 int currentDirection = deltaY > 0 ? 1 : -1;
 
                 // 傘の開閉（スケール変更）
-                if (currentDirection == 1)
-                {
-                    // 開く（拡大）
-                    umbrellaImage.localScale = new Vector3(1.5f, 1f, 1f);
-                }
+               
+if (currentDirection == 1)
+{
+    // 開く（拡大）
+    umbrellaImage.localScale = new Vector3(1.5f, 1f, 1f);
+
+    // 音が再生中でなければ再生
+    if (!audioSource.isPlaying)
+    {
+        audioSource.PlayOneShot(flapSound);
+    }
+}
+
                 else if (currentDirection == -1)
                 {
                     // 閉じる（縮小）

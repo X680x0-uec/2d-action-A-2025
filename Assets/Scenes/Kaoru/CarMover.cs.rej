@@ -1,0 +1,10 @@
+diff a/Assets/Scenes/Kaoru/CarMover.cs b/Assets/Scenes/Kaoru/CarMover.cs	(rejected hunks)
+@@ -27,7 +27,7 @@
+         Move(direction); //左へ進む
+         
+ 
+-        if (transform.position.x <= -20.0f)
++        if (transform.position.x <= -50.0f || transform.position.x >= 450f)
+         {
+             Destroy(this.gameObject);
+         }
