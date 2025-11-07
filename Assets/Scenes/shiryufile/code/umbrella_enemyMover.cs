@@ -63,6 +63,10 @@ public class umbrella_enemyMover : MonoBehaviour
         Vector3 pos = transformActor.position;
         pos.y = 0f;
         transformActor.position = pos;*/
+        if (transform.position.x - transformActor.position.x < -20)
+        {
+            Destroy(this.gameObject);
+        }
 
 
     }
