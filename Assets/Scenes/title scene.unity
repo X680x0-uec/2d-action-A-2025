@@ -566,8 +566,11 @@ MonoBehaviour:
   howToPlayPanel: {fileID: 1647894907}
   howToPlayImage: {fileID: 1647894908}
   howToPlayPages:
+  - {fileID: -1588548189037043037, guid: 07144aba714d4464ca8be5caa31fe49e, type: 3}
   - {fileID: -27737496651928001, guid: ebc6b50f250564e4088d7905bfe75099, type: 3}
   - {fileID: -7062337345786286778, guid: c970dec23007786488ddfb758cec11c2, type: 3}
+  - {fileID: -6338530619935486167, guid: f4ec310f72b25fd4da44ce1ffae3c62e, type: 3}
+  - {fileID: 4828253612740883323, guid: f6c20698a01bf4e4d99ab1d2e44c9f8d, type: 3}
 --- !u!1 &594163864
 GameObject:
   m_ObjectHideFlags: 0
