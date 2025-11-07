@@ -460,6 +460,8 @@ MonoBehaviour:
   interval: 0.1
   damege1: 5
   damege2: 1
+  audioSource: {fileID: 0}
+  ameSound: {fileID: 0}
   Actor: {fileID: 1634546848}
 --- !u!483693784 &69993228
 TilemapRenderer:
@@ -10734,7 +10736,7 @@ PrefabInstance:
     - target: {fileID: 4384083033588216719, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 7027843156704912090, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: m_Name
       value: bird (1)
@@ -10871,71 +10873,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97a72fe78c591a2478fce1e880d61e0b, type: 3}
---- !u!1001 &209546428
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1052573600}
-    m_Modifications:
-    - target: {fileID: 1220431680200529909, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
-      propertyPath: actor
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5378620152408618976, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
-      propertyPath: m_Name
-      value: umbrella_enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 5378620152408618976, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5503936382157905042, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -13.057141
-      objectReference: {fileID: 0}
-    - target: {fileID: 5503936382157905042, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.3737473
-      objectReference: {fileID: 0}
-    - target: {fileID: 5503936382157905042, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.3611995
-      objectReference: {fileID: 0}
-    - target: {fileID: 5503936382157905042, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5503936382157905042, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5503936382157905042, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5503936382157905042, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5503936382157905042, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5503936382157905042, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5503936382157905042, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
 --- !u!1001 &210562777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11011,9 +10948,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 518689310}
     m_Modifications:
     - target: {fileID: 1220431680200529909, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
+      propertyPath: PC
+      value: 
+      objectReference: {fileID: 1634546853}
+    - target: {fileID: 1220431680200529909, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
       propertyPath: actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 5378620152408618976, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
       propertyPath: m_Name
       value: umbrella_enemy (6)
@@ -11087,9 +11028,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 518689310}
     m_Modifications:
     - target: {fileID: 1220431680200529909, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
+      propertyPath: PC
+      value: 
+      objectReference: {fileID: 1634546853}
+    - target: {fileID: 1220431680200529909, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
       propertyPath: actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 5378620152408618976, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
       propertyPath: m_Name
       value: umbrella_enemy (4)
@@ -50243,9 +50188,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 518689310}
     m_Modifications:
     - target: {fileID: 1220431680200529909, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
+      propertyPath: PC
+      value: 
+      objectReference: {fileID: 1634546853}
+    - target: {fileID: 1220431680200529909, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
       propertyPath: actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 5378620152408618976, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
       propertyPath: m_Name
       value: umbrella_enemy (5)
@@ -50648,7 +50597,7 @@ PrefabInstance:
     - target: {fileID: 4384083033588216719, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 7027843156704912090, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: m_Name
       value: bird (3)
@@ -50978,7 +50927,7 @@ PrefabInstance:
     - target: {fileID: 4384083033588216719, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 7027843156704912090, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: m_Name
       value: bird (6)
@@ -51276,7 +51225,7 @@ PrefabInstance:
     - target: {fileID: 4384083033588216719, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 7027843156704912090, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: m_Name
       value: bird (9)
@@ -51341,7 +51290,7 @@ PrefabInstance:
     - target: {fileID: 4384083033588216719, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 7027843156704912090, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: m_Name
       value: bird (2)
@@ -51452,47 +51401,47 @@ PrefabInstance:
     - target: {fileID: 59009874343708518, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 211641005099492066, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 1042611006656266155, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 1443988816228434245, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 1532907483059505258, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 1963914568478692294, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 2188748868669902782, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 2448677103560732479, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 3008661187577767847, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 4543881967302146307, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 5299357431094714563, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 5376329865875426575, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: m_Name
       value: birds files
@@ -51500,7 +51449,7 @@ PrefabInstance:
     - target: {fileID: 6280239117956264807, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 7074452659280508165, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.28577
@@ -51544,11 +51493,11 @@ PrefabInstance:
     - target: {fileID: 8588259084685364499, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 8790532300121865583, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -51682,7 +51631,7 @@ PrefabInstance:
     - target: {fileID: 4384083033588216719, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 7027843156704912090, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: m_Name
       value: bird (11)
@@ -51840,7 +51789,7 @@ PrefabInstance:
     - target: {fileID: 4384083033588216719, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 7027843156704912090, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: m_Name
       value: bird (13)
@@ -61834,38 +61783,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1052573599
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1052573600}
-  m_Layer: 0
-  m_Name: umbrella file
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1052573600
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1052573599}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.057141, y: -2.3737473, z: -0.3611995}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1461378381}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1089434083 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 596324926883866070, guid: 97a72fe78c591a2478fce1e880d61e0b, type: 3}
@@ -62047,9 +61964,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 518689310}
     m_Modifications:
     - target: {fileID: 1220431680200529909, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
+      propertyPath: PC
+      value: 
+      objectReference: {fileID: 1634546853}
+    - target: {fileID: 1220431680200529909, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
       propertyPath: actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 5378620152408618976, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
       propertyPath: m_Name
       value: umbrella_enemy (2)
@@ -62269,7 +62190,7 @@ PrefabInstance:
     - target: {fileID: 4384083033588216719, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 7027843156704912090, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: m_Name
       value: bird (12)
@@ -63089,11 +63010,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 10.557724, y: 5.983177}
   m_EdgeRadius: 0
---- !u!4 &1461378381 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5503936382157905042, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
-  m_PrefabInstance: {fileID: 209546428}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1474646746
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63145,7 +63061,7 @@ PrefabInstance:
     - target: {fileID: 4384083033588216719, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 7027843156704912090, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: m_Name
       value: bird (7)
@@ -63523,7 +63439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7285467132963741296, guid: 41a5e6fe158fe9147a477a5684a934e3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -64175,7 +64091,7 @@ PrefabInstance:
     - target: {fileID: 4384083033588216719, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 7027843156704912090, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: m_Name
       value: bird
@@ -64441,10 +64357,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1800155930}
     m_Modifications:
-    - target: {fileID: 2543822529326811013, guid: 97a72fe78c591a2478fce1e880d61e0b, type: 3}
-      propertyPath: m_Name
-      value: Cars_0 (9)
-      objectReference: {fileID: 0}
     - target: {fileID: 1220431680200529909, guid: 9a09c46997d9e6d4cace6ec1aa6e48aa, type: 3}
       propertyPath: actor
       value: 
@@ -64505,6 +64417,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2543822529326811013, guid: 97a72fe78c591a2478fce1e880d61e0b, type: 3}
+      propertyPath: m_Name
+      value: Cars_0 (9)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -64561,7 +64477,7 @@ PrefabInstance:
     - target: {fileID: 4384083033588216719, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 7027843156704912090, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: m_Name
       value: bird (10)
@@ -64688,7 +64604,7 @@ PrefabInstance:
     - target: {fileID: 4384083033588216719, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 7027843156704912090, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: m_Name
       value: bird (5)
@@ -65184,7 +65100,7 @@ PrefabInstance:
     - target: {fileID: 4384083033588216719, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: Actor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 396751925}
     - target: {fileID: 7027843156704912090, guid: e0fad25147e9ba441827b6ae00273a43, type: 3}
       propertyPath: m_Name
       value: bird (8)
@@ -65383,4 +65299,3 @@ SceneRoots:
   - {fileID: 313724533}
   - {fileID: 1522326680}
   - {fileID: 1800155930}
-  - {fileID: 1052573600}

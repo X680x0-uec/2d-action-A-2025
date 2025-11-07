@@ -8,6 +8,9 @@ public class Goal : FieldObjectBase
     public TextMeshProUGUI scoreText;
     public RectTransform umbrellaImage; // 三角形のUI（傘）
     
+public AudioSource audioSource;
+public AudioClip flapSound;
+
 
     private Vector3 lastMousePosition;
     private int moveCount = 0;
@@ -40,6 +43,7 @@ public class Goal : FieldObjectBase
                 {
                     // 開く（拡大）
                     umbrellaImage.localScale = new Vector3(1.5f, 1f, 1f);
+                    audioSource.PlayOneShot(flapSound); // 音を再生
                 }
                 else if (currentDirection == -1)
                 {
