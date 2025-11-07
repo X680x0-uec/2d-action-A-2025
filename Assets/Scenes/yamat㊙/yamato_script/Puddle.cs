@@ -5,6 +5,9 @@ public class Puddle : MonoBehaviour
     public float interval = 0.5f;
     public int damege1 = 10; // float → int に変更
     public int damege2 = 2;  // float → int に変更
+    public AudioSource audioSource;
+public AudioClip ameSound;
+
 
     private float timer = 0f;
     private WetnessCounter wetnessCounter;
@@ -30,6 +33,8 @@ public class Puddle : MonoBehaviour
             wetnessCounter = Actor.GetComponent<WetnessCounter>();
             if (!hasAddedInitialWetness && playerJump != null && !playerJump.isJumping)
             {
+                audioSource.PlayOneShot(ameSound); // 音を再生
+                audioSource.loop = true;
                 wetnessCounter.wetness = Mathf.Min(wetnessCounter.wetness + damege1, wetnessCounter.wetnessSup);
                 hasAddedInitialWetness = true;
                 timer = 0f;
@@ -46,6 +51,7 @@ public class Puddle : MonoBehaviour
             isPlayerInside = false;
             hasAddedInitialWetness = false;
             wetnessCounter = null;
+            audioSource.Stop();
         }
     }
 
@@ -61,5 +67,6 @@ public class Puddle : MonoBehaviour
                 Debug.Log("濡れ続け中... 濡れた量: " + wetnessCounter.wetness);
             }
         }
+        
     }
 }
