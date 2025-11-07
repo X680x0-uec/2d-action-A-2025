@@ -39,12 +39,19 @@ public AudioClip flapSound;
                 int currentDirection = deltaY > 0 ? 1 : -1;
 
                 // 傘の開閉（スケール変更）
-                if (currentDirection == 1)
-                {
-                    // 開く（拡大）
-                    umbrellaImage.localScale = new Vector3(1.5f, 1f, 1f);
-                    audioSource.PlayOneShot(flapSound); // 音を再生
-                }
+               
+if (currentDirection == 1)
+{
+    // 開く（拡大）
+    umbrellaImage.localScale = new Vector3(1.5f, 1f, 1f);
+
+    // 音が再生中でなければ再生
+    if (!audioSource.isPlaying)
+    {
+        audioSource.PlayOneShot(flapSound);
+    }
+}
+
                 else if (currentDirection == -1)
                 {
                     // 閉じる（縮小）

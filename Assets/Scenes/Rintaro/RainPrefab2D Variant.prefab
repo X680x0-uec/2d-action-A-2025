@@ -61,6 +61,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+      propertyPath: RainSoundAudioMixer
+      value: 
+      objectReference: {fileID: -1808886923488891953, guid: 040bf4e0a810cfc4b8379d36d7675e77, type: 2}
+    - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
       propertyPath: RainWidthMultiplier
       value: 1
       objectReference: {fileID: 0}
@@ -195,6 +199,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
+      propertyPath: RainSoundAudioMixer
+      value: 
+      objectReference: {fileID: -1808886923488891953, guid: 040bf4e0a810cfc4b8379d36d7675e77, type: 2}
     - target: {fileID: 11475408, guid: b046278bb9b6e104790392b566667ba5, type: 3}
       propertyPath: RainWidthMultiplier
       value: 1
