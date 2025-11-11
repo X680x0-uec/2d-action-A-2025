@@ -5,6 +5,8 @@ public class ZoneGuideUI2D : MonoBehaviour
 {
     public GameObject guideUI;
     private bool isDisplaying = false;
+    public AudioSource audioSource;
+    public AudioClip kizuki;
 
     private void Start()
     {
@@ -16,6 +18,9 @@ public class ZoneGuideUI2D : MonoBehaviour
     {
         if (other.CompareTag("walker") && guideUI != null)
         {
+            audioSource.clip = kizuki;
+   
+    audioSource.Play();
             guideUI.SetActive(true);
             isDisplaying = true;
         }

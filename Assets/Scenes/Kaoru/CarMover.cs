@@ -6,6 +6,9 @@ public class NewMonoBehaviourScript : MonoBehaviour
     [SerializeField] private float moveSpeed = 10f;
     SpriteRenderer sr;
     Vector2 direction;
+    public AudioSource audioSource;
+    public AudioClip flapSound;
+  
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -13,12 +16,18 @@ public class NewMonoBehaviourScript : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         if (sr.flipX)
         {
+           
             direction = Vector2.right; //左へ進む
         }
         else
         {
             direction = Vector2.left;
         }
+        
+audioSource.clip = flapSound;
+   
+    audioSource.Play();
+
     }
 
     // Update is called once per frame
