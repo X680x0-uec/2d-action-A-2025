@@ -38,6 +38,7 @@ public float moveSpeed;
     public bool windOption;
     [Header("移動速度が風速に負けたとき、逆走させるかどうか")]
     public bool move_windOption;
+    private PlayerJump playerjump;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -62,11 +63,7 @@ void FixedUpdate()
         {
             movement.x = 0;
         }
-    rb.linearVelocity = totalMovement;
-    if (shadowPos.position.y <= -8.89 || shadowPos.position.y >= -2.40)
-    {
-            rb.linearVelocityY = 0;
-    }
+        rb.linearVelocity = totalMovement;
 }
 
 
