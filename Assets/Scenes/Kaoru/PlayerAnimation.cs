@@ -8,6 +8,9 @@ public class PlayerAnimation : MonoBehaviour
     private Vector2 movement;
     private IEnumerator coroutine = null;
     public Collider2D targetCollider3;
+    public AudioClip ClashSound;
+  public AudioSource audioSource;
+
     [SerializeField] private SpriteRenderer playerSpriteRenderer;
 
     // プレイヤーのジャンプ状態を参照するための public 変数
@@ -54,11 +57,11 @@ public class PlayerAnimation : MonoBehaviour
         }
         */
         animator.SetTrigger("DamagedByCar");
-
+        audioSource.clip = ClashSound;
+        audioSource.Play();
         yield return new WaitForSeconds(0.5f);
         PC.Accident(new Vector3(0,0,0));
         yield return new WaitForSeconds(5.5f);
-
         coroutine = null;
     }
 }

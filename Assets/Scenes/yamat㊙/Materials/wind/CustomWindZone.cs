@@ -13,12 +13,15 @@ public class CustomWindZone : MonoBehaviour
 
     public Vector2 WindForce => playerInside ? currentDirection * currentStrength : Vector2.zero;
     public bool IsPlayerInside => playerInside;
+    public AudioSource audioSource;
     GameObject[] rains;
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("player"))
         {
+             
+             audioSource.Play();
             GameObject walker = GameObject.FindWithTag("walker");
             playerInside = true;
             currentStrength = Random.Range(minStrength, maxStrength);
@@ -43,6 +46,7 @@ public class CustomWindZone : MonoBehaviour
         if (other.CompareTag("player"))
         {
             playerInside = false;
+            audioSource.Stop();
             windTextController.HideWindInfo();
 
             // プレイヤーから風エリアの参照を解除

@@ -42,19 +42,27 @@ public AudioClip flapSound;
                
 if (currentDirection == 1)
 {
-    // 開く（拡大）
-    umbrellaImage.localScale = new Vector3(1.5f, 1f, 1f);
+                    // 開く（拡大）
+                    umbrellaImage.localScale = new Vector3(1.5f, 1f, 1f);
+    
 
-    // 音が再生中でなければ再生
+  // 傘の開閉音を1回ずつ確実に鳴らす
     if (!audioSource.isPlaying)
     {
-        audioSource.PlayOneShot(flapSound);
+        audioSource.clip = flapSound;
+        audioSource.Play();
     }
 }
+
+
+
 
                 else if (currentDirection == -1)
                 {
                     // 閉じる（縮小）
+                
+   
+
                     umbrellaImage.localScale = new Vector3(0.5f, 2f, 1f);
                 }
 
@@ -76,7 +84,7 @@ if (currentDirection == 1)
             timer -= Time.deltaTime;
             yield return null;
         }
-
+audioSource.Stop();
         showMessage("終了！");
         scoreText.text = $"総水量: {moveCount} ｍｌ";
         umbrellaImage.gameObject.SetActive(false); // 傘を非表示
