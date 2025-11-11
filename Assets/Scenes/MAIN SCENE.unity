@@ -11993,8 +11993,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guideUI: {fileID: 361892377}
-  audioSource: {fileID: 0}
-  kizuki: {fileID: 0}
+  audioSource: {fileID: 1634546860}
+  kizuki: {fileID: 8300000, guid: 8123647e588de8542b96115492546da2, type: 3}
 --- !u!4 &248549563 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9095805615803129851, guid: 42ab4bd0c5fc9764f96853c64c11aba6, type: 3}
@@ -69544,7 +69544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4813100399626120196, guid: ead6625473fdf374ca584612816589ca, type: 3}
       propertyPath: windOption
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4813100399626120196, guid: ead6625473fdf374ca584612816589ca, type: 3}
       propertyPath: normalSpeed
@@ -71798,8 +71798,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guideUI: {fileID: 361892377}
-  audioSource: {fileID: 0}
-  kizuki: {fileID: 0}
+  audioSource: {fileID: 1634546860}
+  kizuki: {fileID: 8300000, guid: 8123647e588de8542b96115492546da2, type: 3}
 --- !u!1 &2124619773 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1131150423379688457, guid: ead6625473fdf374ca584612816589ca, type: 3}
