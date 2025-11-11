@@ -58,7 +58,7 @@ public float moveSpeed;
 void FixedUpdate()
 {
     Vector2 windForce = currentWindZone != null ? currentWindZone.WindForce : Vector2.zero;
-    totalMovement = movement.normalized * moveSpeed * (10 - wetGage.levelOfWetness) / 10 * (healmove.IsHealing ? 0.2f : 1f) + ((!windOption && movement == Vector2.zero) ? Vector2.zero : windForce);
+    totalMovement = movement.normalized * moveSpeed * (10 - wetGage.levelOfWetness) / 10 * (healmove.IsHealing ? 0f : 1f) + ((healmove.IsHealing || (movement == Vector2.zero) && (!windOption) ? Vector2.zero : windForce));
         if (!move_windOption && totalMovement.x * movement.x < 0)
         {
             movement.x = 0;
