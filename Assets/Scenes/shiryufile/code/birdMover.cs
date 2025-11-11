@@ -44,6 +44,9 @@ public class birdMover : MonoBehaviour
     private float firstTime;
     private Vector3 firstActorPosition;
     private PlayerController PC;
+    public AudioSource audioSource;
+    public AudioClip tobitatu;
+public AudioClip kougeki;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -58,6 +61,8 @@ public class birdMover : MonoBehaviour
     {
         if (spriteRenderer.sprite == walking && transform.position.x - transformActor.position.x <= 10f) //ある程度近づいたら飛び始める
         {
+             audioSource.clip = tobitatu;
+        audioSource.Play();
             spriteRenderer.sprite = flying;
             firstDirection = (transformActor.position - new Vector3(0,1,0)) - transform.position;
             firstDirection.z = 0f; //z軸方向に余計に動かないように調整
@@ -69,8 +74,10 @@ public class birdMover : MonoBehaviour
         {
             if (attack)
             {
+                
                 transform.position = firstActorPosition + new Vector3(UnityEngine.Random.Range(-1f, 1f), UnityEngine.Random.Range(-1f, 1f), -2); //攻撃モーション．もっと良いのがあれば良いのだが…．
                 transformActor.position = firstActorPosition; //動けなくする
+                 
 
                 if (Time.time - firstTime >= 3f)  //一定時間たったら自分を削除
                 {
@@ -100,6 +107,8 @@ public class birdMover : MonoBehaviour
     {
         if (other.gameObject.tag == "walker" && !attack && !PC.damaged )
         {
+            audioSource.clip = kougeki;
+        audioSource.Play();
             attack = true;
             PC.damaged = true;
             firstTime = Time.time;

@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: "Assets/Scenes/yamat\u3299/Scenes/MAIN SCENE.unity"
+    path: Assets/Scenes/MAIN SCENE.unity
     guid: c80330b29b2accd4d96bd76ff1aa4b04
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 35a405cba5b24e044852602fce16a61c, type: 2}

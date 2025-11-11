@@ -6,6 +6,8 @@ public class healscript : MonoBehaviour
     public Collider2D Actor;
     private WetnessCounter wetnessCounter;
     private PlayerJump playerJump;
+    public AudioSource audioSource;
+    public AudioClip kaihuku;
     private void Start()
     {
         Actor = GameObject.FindWithTag("walker").GetComponent<Collider2D>();
@@ -21,6 +23,8 @@ public class healscript : MonoBehaviour
     {
         if (collision == Actor)
         {
+            audioSource.clip = kaihuku;
+        audioSource.Play();
             wetnessCounter = Actor.GetComponent<WetnessCounter>();
             if (playerJump != null && !playerJump.isJumping)
             {
