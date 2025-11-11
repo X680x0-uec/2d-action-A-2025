@@ -21,6 +21,8 @@ public class PlayerJump : MonoBehaviour
 
     private Collider2D playerCollider;
     private PlayerController PC;
+    public AudioSource audioSource;
+    public AudioClip jump;
     void Start()
     {
         if (shadowObject != null)
@@ -34,9 +36,12 @@ public class PlayerJump : MonoBehaviour
 
     void Update()
     {
-        if (!isJumping && Input.GetButtonDown("Jump"))
+        if (!isJumping && Input.GetButtonDown("Jump") && !PC.damaged)
         {
+             audioSource.clip = jump;
+        audioSource.Play();
             StartJump();
+            Debug.Log("jump");
         }
 
         if (isJumping)

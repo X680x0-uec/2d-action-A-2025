@@ -40,7 +40,7 @@ namespace DigitalRuby.RainMaker
         public float RainWidthMultiplier = 1.5f;
 
         [Tooltip("Collision mask for the rain particles")]
-        public LayerMask CollisionMask = -1;
+        public LayerMask CollisionMask = LayerMask.GetMask("actor","field");
 
         [Tooltip("Lifetime to assign to rain particles that have collided. 0 for instant death. This can allow the rain to penetrate a little bit beyond the collision point.")]
         [Range(0.0f, 0.5f)]
@@ -113,11 +113,12 @@ namespace DigitalRuby.RainMaker
                 for (int i = 0; i < count; i++)
                 {
                     Vector3 pos = particles[i].position + RainFallParticleSystem.transform.position;
-                    hit = Physics2D.Raycast(pos, particles[i].velocity.normalized, particles[i].velocity.magnitude * Time.deltaTime * 1f);
+                    hit = Physics2D.Raycast(pos, particles[i].velocity.normalized, particles[i].velocity.magnitude * Time.deltaTime * 1f, CollisionMask);
                     if (hit.collider != null && ((1 << hit.collider.gameObject.layer) & CollisionMask) != 0)
                     {
                         if (CollisionLifeTimeRain == 0.0f)
                         {
+                            Debug.Log(hit.collider);
                             if (hit.collider.gameObject.CompareTag("player"))
                             {
                                 var wet = player.gameObject.GetComponentInParent<WetnessCounter>();

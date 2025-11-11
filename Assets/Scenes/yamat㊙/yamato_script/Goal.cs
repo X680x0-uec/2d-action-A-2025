@@ -8,6 +8,9 @@ public class Goal : FieldObjectBase
     public TextMeshProUGUI scoreText;
     public RectTransform umbrellaImage; // 三角形のUI（傘）
     
+public AudioSource audioSource;
+public AudioClip flapSound;
+
 
     private Vector3 lastMousePosition;
     private int moveCount = 0;
@@ -36,14 +39,30 @@ public class Goal : FieldObjectBase
                 int currentDirection = deltaY > 0 ? 1 : -1;
 
                 // 傘の開閉（スケール変更）
-                if (currentDirection == 1)
-                {
+               
+if (currentDirection == 1)
+{
                     // 開く（拡大）
                     umbrellaImage.localScale = new Vector3(1.5f, 1f, 1f);
-                }
+    
+
+  // 傘の開閉音を1回ずつ確実に鳴らす
+    if (!audioSource.isPlaying)
+    {
+        audioSource.clip = flapSound;
+        audioSource.Play();
+    }
+}
+
+
+
+
                 else if (currentDirection == -1)
                 {
                     // 閉じる（縮小）
+                
+   
+
                     umbrellaImage.localScale = new Vector3(0.5f, 2f, 1f);
                 }
 
@@ -65,7 +84,7 @@ public class Goal : FieldObjectBase
             timer -= Time.deltaTime;
             yield return null;
         }
-
+audioSource.Stop();
         showMessage("終了！");
         scoreText.text = $"総水量: {moveCount} ｍｌ";
         umbrellaImage.gameObject.SetActive(false); // 傘を非表示
