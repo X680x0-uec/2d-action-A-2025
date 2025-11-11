@@ -12,11 +12,13 @@ public class PlayerAnimation : MonoBehaviour
 
     // プレイヤーのジャンプ状態を参照するための public 変数
     public PlayerJump playerJump;
+    public PlayerController PC;
 
     void Start()
     {
         animator = GetComponent<Animator>();
         playerJump = this.GetComponentInParent<PlayerJump>();
+        PC = GameObject.FindWithTag("walker").GetComponent<PlayerController>();
     }
 
     void Update()
@@ -51,14 +53,11 @@ public class PlayerAnimation : MonoBehaviour
             yield break;
         }
         */
-        playerSpriteRenderer.flipX = false;
         animator.SetTrigger("DamagedByCar");
 
-        yield return new WaitForSeconds(4.0f);
-
-        playerSpriteRenderer.flipX = true;
-
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(0.5f);
+        PC.Accident(new Vector3(0,0,0));
+        yield return new WaitForSeconds(5.5f);
 
         coroutine = null;
     }
