@@ -38,8 +38,8 @@ public class PlayerJump : MonoBehaviour
     {
         if (!isJumping && Input.GetButtonDown("Jump") && !PC.damaged)
         {
-             audioSource.clip = jump;
-        audioSource.Play();
+            audioSource.clip = jump;
+            audioSource.Play();
             StartJump();
             Debug.Log("jump");
         }
