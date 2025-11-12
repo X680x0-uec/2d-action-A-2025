@@ -8,7 +8,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-   
+   /*
+     25緒方 より 変更点まとめ
+     ・何も入力していないときに風の影響を受けないように
+     ・風が強い＆濡れすぎてると右に行こうとしても逆走
+     →インスペクターでやるかどうか変更可能
+   */
 public float moveSpeed;
     public float normalSpeed;
     private Rigidbody2D rb;
@@ -28,14 +33,19 @@ public float moveSpeed;
     private Transform shadowPos;
     public PlayerAnimation playerAnimation;
     public bool damaged;
-    public Sprite damagepicture;
+
+    [Header("入力がニュートラル時に風の影響を受けるかどうか")]
+    public bool windOption;
+    [Header("移動速度が風速に負けたとき、逆走させるかどうか")]
+    public bool move_windOption;
+    private PlayerJump playerjump;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         moveSpeed = normalSpeed; // 初期化
         CAMERA = GameObject.Find("Main Camera");
         healmove = this.GetComponent<player_heal>();
-        shadowPos = GameObject.FindWithTag("shadow").GetComponent<Transform>();
+        shadowPos = this.GetComponent<PlayerJump>().shadowObject.GetComponent<Transform>();
     }
 
     void Update()
@@ -48,12 +58,12 @@ public float moveSpeed;
 void FixedUpdate()
 {
     Vector2 windForce = currentWindZone != null ? currentWindZone.WindForce : Vector2.zero;
-    totalMovement = movement.normalized * moveSpeed * (10 - wetGage.levelOfWetness) / 10 * (healmove.IsHealing? 0.2f : 1f) + windForce;
-    rb.linearVelocity = totalMovement;
-    if (shadowPos.position.y <= -8.89 || shadowPos.position.y >= -2.40)
-    {
-            rb.linearVelocityY = 0;
-    }
+    totalMovement = movement.normalized * moveSpeed * (10 - wetGage.levelOfWetness) / 10 * (healmove.IsHealing ? 0f : 1f) + ((healmove.IsHealing || (movement == Vector2.zero) && (!windOption) ? Vector2.zero : windForce));
+        if (!move_windOption && totalMovement.x * movement.x < 0)
+        {
+            movement.x = 0;
+        }
+        rb.linearVelocity = totalMovement;
 }
 
 
@@ -149,10 +159,8 @@ void OnTriggerEnter2D(Collider2D other)
         moveSpeed = 0;
 
         yield return null;
-
-        Accident(v1);
-
-        yield return new WaitForSeconds(4.0f);
+        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(3.5f);
         grip.SetActive(true);
 
         moveSpeed = normalSpeed;
@@ -165,10 +173,10 @@ void OnTriggerEnter2D(Collider2D other)
         damaged = false;
     }
 
-    void Accident(Vector3 moveDirection)
+    public void Accident(Vector3 moveDirection)
     {
-        var posNew = transform.position;
-        posNew = new Vector3(transform.position.x,-1,-1);
-        transform.position = posNew;
+        var posNew = this.transform.position;
+        posNew = new Vector3(this.transform.position.x,-1,-1);
+        this.transform.position = posNew;
     }
 }

@@ -29,7 +29,7 @@ public class guard_game : FieldObjectBase
         correct = 0;
         failed = 0;
         gage_canvas.gameObject.SetActive(true);
-        showMessage("Push Space on green area! Press space");
+        showMessage("タイミングよくクリックせよ！クリックで開始");
         //左クリックで開始っていうことをしたい
     
 yield return new WaitUntil(() => !Input.GetMouseButton(0));
@@ -37,7 +37,7 @@ yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
 yield return new WaitUntil(() => !Input.GetMouseButton(0));
 
         //ここまでそれ
-        StartCoroutine(targets.Move());
+        StartCoroutine(targets.Move(this));
 
         yield return new WaitUntil(() => targets.finished || !isContacted);
 
