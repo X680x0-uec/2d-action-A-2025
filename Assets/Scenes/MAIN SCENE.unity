@@ -52098,8 +52098,8 @@ MonoBehaviour:
   ClashSound: {fileID: 8300000, guid: 27715d99e562db348a0c5a7e670f88bf, type: 3}
   audioSource: {fileID: 1634546860}
   playerSpriteRenderer: {fileID: 329643291}
-  playerJump: {fileID: 0}
-  PC: {fileID: 0}
+  playerJump: {fileID: 1634546849}
+  PC: {fileID: 1634546853}
 --- !u!61 &329643296
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -69720,6 +69720,10 @@ PrefabInstance:
       objectReference: {fileID: 2124619774}
     - target: {fileID: 3408589612277827897, guid: ead6625473fdf374ca584612816589ca, type: 3}
       propertyPath: tiltSpeed
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3408589612277827897, guid: ead6625473fdf374ca584612816589ca, type: 3}
+      propertyPath: dragSensitivity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3574091811268122985, guid: ead6625473fdf374ca584612816589ca, type: 3}
