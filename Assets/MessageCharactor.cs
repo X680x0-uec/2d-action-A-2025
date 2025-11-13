@@ -44,6 +44,8 @@ public class MessageCharactor : FieldObjectBase
             showMessage("Success! 服が乾いて身軽になった気がする");
             PlayerController.moveSpeed = 2 * PlayerController.normalSpeed;
             wet.wetness = Mathf.Max(wet.wetness - 20, 0);
+            source.clip = kasaCorrect;
+            source.Play();
             GUM.AddScore(scoreAmount);
             yield return new WaitForSeconds(5f);
             PlayerController.moveSpeed = PlayerController.normalSpeed;
@@ -54,6 +56,8 @@ public class MessageCharactor : FieldObjectBase
             showMessage("Failed... びちょ濡れで足取りが重くなった");
             PlayerController.moveSpeed = 0.5f * PlayerController.normalSpeed;
             wet.wetness = Mathf.Min(wet.wetness + 20, wet.wetnessSup);
+            source.clip = kasaFailed;
+            source.Play();
             yield return new WaitForSeconds(5f);
             PlayerController.moveSpeed = PlayerController.normalSpeed;
             yield break;

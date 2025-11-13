@@ -46,6 +46,8 @@ public class KurukuruMinigame : FieldObjectBase
                 PlayerController.moveSpeed = 2 * PlayerController.normalSpeed;
                 wet.wetness = Mathf.Max(wet.wetness - 20, 0);
                 GUM.AddScore(scoreAmount);
+                source.clip = kasaCorrect;
+                source.Play();
                 yield return new WaitForSeconds(5f);
                 PlayerController.moveSpeed = PlayerController.normalSpeed;
                 yield break;
@@ -55,6 +57,8 @@ public class KurukuruMinigame : FieldObjectBase
                 showMessage("Failed... びちょ濡れで足取りが重くなった");
                 PlayerController.moveSpeed = 0.5f * PlayerController.normalSpeed;
                 wet.wetness = Mathf.Min(wet.wetness + 20, wet.wetnessSup);
+                source.clip = kasaFailed;
+                source.Play();
                 yield return new WaitForSeconds(5f);
                 PlayerController.moveSpeed = PlayerController.normalSpeed;
                 yield break;

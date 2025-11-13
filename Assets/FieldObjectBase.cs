@@ -19,11 +19,16 @@ public abstract class FieldObjectBase : MonoBehaviour
     private Transform minigameLeader;
     private GameObject leaderObject;
 
-    private player_heal healmove;
+    public player_heal healmove;
     //回復中に傘技できないように
+
+    public AudioSource source;
+    public AudioClip kasaCorrect;
+    public AudioClip kasaFailed;
     void Start()
     {
-        healmove = GameObject.FindGameObjectWithTag("walker").GetComponent<player_heal>();
+        source = GameObject.FindWithTag("walker").GetComponent<AudioSource>();
+        healmove = GameObject.FindWithTag("walker").GetComponent<player_heal>();
     }
 
     //静的変数 ほかのオブジェクトが値を変更すると、

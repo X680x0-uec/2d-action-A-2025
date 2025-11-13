@@ -39,6 +39,8 @@ public float moveSpeed;
     [Header("移動速度が風速に負けたとき、逆走させるかどうか")]
     public bool move_windOption;
     private PlayerJump playerjump;
+    public AudioClip Count;
+    public AudioSource audioSource;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -46,6 +48,16 @@ public float moveSpeed;
         CAMERA = GameObject.Find("Main Camera");
         healmove = this.GetComponent<player_heal>();
         shadowPos = this.GetComponent<PlayerJump>().shadowObject.GetComponent<Transform>();
+        Time.timeScale = 0f;
+        StartCoroutine(Countdown());
+    }
+    IEnumerator Countdown()
+    {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = Count;
+        audioSource.Play();
+        yield return new WaitForSecondsRealtime(3.5f);
+        Time.timeScale = 1f;
     }
 
     void Update()

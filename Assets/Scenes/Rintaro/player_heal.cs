@@ -16,16 +16,19 @@ public class player_heal : MonoBehaviour
     public float Cooldown;
     public bool IsHealing;
     private PlayerController PC;
+    private AudioSource audioSource;
+    public AudioClip healingSE;
     void Start()
     {
         mukou = GetComponent<PlayerJump>();
         PC = GetComponent<PlayerController>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L) && !IsHealing)
+        if (Input.GetKeyDown(KeyCode.Z) && !IsHealing && !PC.damaged)
         {
             Debug.Log("started");
             mukou.enabled = false;
@@ -37,7 +40,9 @@ public class player_heal : MonoBehaviour
     {
         float sec = 0;
         window.SetActive(true);
-        text.text = "回復中…";
+        audioSource.clip = healingSE;
+        audioSource.Play();
+        text.text = "服を絞り中…";
         while (sec <= Cooldown && !PC.damaged)
         {
             sec += Time.deltaTime;
@@ -52,7 +57,7 @@ public class player_heal : MonoBehaviour
         else
         {
             IsHealing = false;
-            text.text = "failed...";
+            text.text = "妨害された！";
             yield return new WaitForSeconds(1f);
         }
         window.SetActive(false);

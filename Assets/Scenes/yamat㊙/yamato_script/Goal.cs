@@ -9,7 +9,10 @@ public class Goal : FieldObjectBase
     public RectTransform umbrellaImage; // 三角形のUI（傘）
     
 public AudioSource audioSource;
-public AudioClip flapSound;
+    public AudioClip flapSound;
+    //最後の傘技でもスコアが加算されるように
+    public GameUIManager GUM;
+    public int scoreAmount;
 
 
     private Vector3 lastMousePosition;
@@ -88,6 +91,7 @@ audioSource.Stop();
         showMessage("終了！");
         scoreText.text = $"総水量: {moveCount} ｍｌ";
         umbrellaImage.gameObject.SetActive(false); // 傘を非表示
+        GUM.AddScore(scoreAmount);
         yield return new WaitForSeconds(2f);
 
         scoreText.gameObject.SetActive(false);
