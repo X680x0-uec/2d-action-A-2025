@@ -71361,7 +71361,7 @@ MonoBehaviour:
   targetCollider: {fileID: 1634546848}
   wetness: 0
   wetnessPercentage: 0
-  wetnessSup: 400
+  wetnessSup: 200
   pl: {fileID: 1634546853}
 --- !u!114 &1634546853 stripped
 MonoBehaviour:
