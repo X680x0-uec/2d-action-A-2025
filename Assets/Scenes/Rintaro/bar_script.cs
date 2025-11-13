@@ -11,6 +11,13 @@ public class bar_script : MonoBehaviour
     public bool finished = false;
     bool pushed = false;
     bool started = false;
+    public AudioSource source;
+    public AudioClip acCorrect;
+    public AudioClip acFailed;
+    void OnEnable()
+    {
+        source = GameObject.FindWithTag("walker").GetComponent<AudioSource>();
+    } 
 
     public IEnumerator Move(guard_game gm)
     {
@@ -38,6 +45,8 @@ public class bar_script : MonoBehaviour
                 pushed = false;
                 rec.anchoredPosition = new Vector2(-limit, 0);
                 score.failed += 1;
+                source.clip = acFailed;
+                source.Play();
                 score.showMessage("ミス...");
             }
             yield return null;
@@ -53,17 +62,23 @@ public class bar_script : MonoBehaviour
                 if (!pushed)
                 {
                     score.correct += 1;
+                    source.clip = acCorrect;
+                    source.Play();
                     score.showMessage("OK!");
                 }
                 else
                 {
                     score.failed += 1;
+                    source.clip = acFailed;
+                    source.Play();
                     score.showMessage("ミス...");
                 }
             }
             else
             {
                 score.failed += 1;
+                source.clip = acFailed;
+                source.Play();
                 score.showMessage("ミス...");
             }
             rec.anchoredPosition = new Vector2(-limit, 0);
