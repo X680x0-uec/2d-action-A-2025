@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      pool_bath_towel_0: 8093389799587432611
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

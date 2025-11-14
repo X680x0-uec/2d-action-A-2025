@@ -91,7 +91,7 @@ audioSource.Stop();
         showMessage("終了！");
         scoreText.text = $"総水量: {moveCount} ｍｌ";
         umbrellaImage.gameObject.SetActive(false); // 傘を非表示
-        GUM.AddScore(scoreAmount);
+        GUM.AddScore(moveCount*scoreAmount);
         yield return new WaitForSeconds(2f);
 
         scoreText.gameObject.SetActive(false);
