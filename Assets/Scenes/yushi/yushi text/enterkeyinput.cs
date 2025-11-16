@@ -31,7 +31,7 @@ public class enterkeyinput : MonoBehaviour
         // Enterキーが押された時に実行するコード
         
         kariscore.text = inputField.text;
-                //InputField コンポーネントを取得
+        //InputField コンポーネントを取得
         InputField form = GameObject.Find("SInputField (Legacy)").GetComponent<InputField>();
         form.text = "";
 
