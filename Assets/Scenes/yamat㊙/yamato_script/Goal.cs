@@ -2,6 +2,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.InputSystem;
+using Unity.Collections.LowLevel.Unsafe;
 
 public class Goal : FieldObjectBase
 {
@@ -16,9 +18,10 @@ public AudioSource audioSource;
 
 
     private Vector3 lastMousePosition;
+    private float lastStickPosision = 0f;
     private int moveCount = 0;
     private int lastDirection = 0; // -1: 下, 1: 上, 0: 初期
-
+    private int currentDirection;
     protected override IEnumerator OnAction()
     {
         showMessage("水パシャターイム！！");
@@ -37,9 +40,18 @@ public AudioSource audioSource;
             Vector3 currentMousePosition = Input.mousePosition;
             float deltaY = currentMousePosition.y - lastMousePosition.y;
 
-            if (Mathf.Abs(deltaY) > 30f)
+            if (Gamepad.current != null || Mathf.Abs(deltaY) > 30f)
             {
-                int currentDirection = deltaY > 0 ? 1 : -1;
+                if (Gamepad.current == null)
+                {
+                    currentDirection = deltaY > 0 ? 1 : -1;
+                }
+                else
+                {
+                    currentDirection = Input.GetAxis("Vertical2") > 0 ? 1 : -1;
+                    Debug.Log("pashapaha");
+                }
+                
 
                 // 傘の開閉（スケール変更）
                
