@@ -80,11 +80,11 @@ public class Tfirst : MonoBehaviour
 
     void ResetButtonClicked()
     {
-        TFirstscorehozon.text = "0";
-        TSecondscorehozon.text = "0";
-        TThirdscorehozon.text = "0";
-        TForthscorehozon.text = "0";
-        TFifthscorehozon.text = "0";
+        TFirstscorehozon.text = "00:00";
+        TSecondscorehozon.text = "00:00";
+        TThirdscorehozon.text = "00:00";
+        TForthscorehozon.text = "00:00";
+        TFifthscorehozon.text = "00:00";
         
     }
 }

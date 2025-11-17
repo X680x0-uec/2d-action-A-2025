@@ -39,7 +39,7 @@ public class Tnarabekae : MonoBehaviour
 
     int TimeStringToInt(string time)
     {
-        if (time == "0")
+        if (time == "00:00")
         {
             return 0;
         }

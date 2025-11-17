@@ -5,13 +5,14 @@ using UnityEngine.EventSystems;
 public class enterkeyinput : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public InputField inputField;
+    // public InputField inputField;
     public Text kariscore;
 
     void Start()
     {
-        inputField.onEndEdit.AddListener(EnterPressed);
+        // inputField.onEndEdit.AddListener(EnterPressed);
     }
+    /*
     void OnDestroy()
     {
         inputField.onEndEdit.RemoveListener(EnterPressed);
@@ -34,6 +35,6 @@ public class enterkeyinput : MonoBehaviour
         //InputField コンポーネントを取得
         InputField form = GameObject.Find("SInputField (Legacy)").GetComponent<InputField>();
         form.text = "";
-
     }
+    */
 }

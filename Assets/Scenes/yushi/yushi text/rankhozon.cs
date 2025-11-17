@@ -63,11 +63,11 @@ public class first : MonoBehaviour
 
     void ResetButtonClicked()
     {
-        Firstscorehozon.text = "000000";
-        Secondscorehozon.text = "000000";
-        Thirdscorehozon.text = "000000";
-        Forthscorehozon.text = "000000";
-        Fifthscorehozon.text = "000000";
+        Firstscorehozon.text = "0";
+        Secondscorehozon.text = "0";
+        Thirdscorehozon.text = "0";
+        Forthscorehozon.text = "0";
+        Fifthscorehozon.text = "0";
         
     }
 }

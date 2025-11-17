@@ -5,21 +5,22 @@ using UnityEngine.EventSystems;
 public class Tenterkeyinput : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public InputField TimeinputField;
+    // public InputField TimeinputField;
     public Text Timekariscore;
     public Text kariscore;
     string time;
     void Start()
     {
-        TimeinputField.onEndEdit.AddListener(EnterPressed);
+        //TimeinputField.onEndEdit.AddListener(EnterPressed);
         int totalscore = GameUIManager.score;
-        float finaltime = GameUIManager.remaining;
+        float finaltime = 600 - GameUIManager.remaining;
         int minute = (int)(finaltime/60);
         int second = (int)(finaltime%60);
         time = $"{minute:D2}" +":"+ $"{second:D2}";
         Timekariscore.text = time;
         kariscore.text = totalscore.ToString();
     }
+    /*
     void OnDestroy()
     {
         TimeinputField.onEndEdit.RemoveListener(EnterPressed);
@@ -42,4 +43,5 @@ public class Tenterkeyinput : MonoBehaviour
         InputField form = GameObject.Find("TInputField (Legacy)").GetComponent<InputField>();
         form.text = "";
     }
+    */
 }
