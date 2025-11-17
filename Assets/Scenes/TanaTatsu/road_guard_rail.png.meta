@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      road_guard_rail_0: 5649806953158209696
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

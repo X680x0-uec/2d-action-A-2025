@@ -11,7 +11,7 @@ public class DragRotate2D : MonoBehaviour
     private bool windTiltApplied = false;
 
     private PlayerController player;
-
+    public float dragSensitivity = 1f;
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
@@ -35,9 +35,14 @@ public class DragRotate2D : MonoBehaviour
 
         if (dragging)
         {
-            float angleDelta = Vector2.SignedAngle(initialMouseDir, currentMouseDir.normalized);
-            pivot.rotation = Quaternion.Euler(0f, 0f, pivot.rotation.eulerAngles.z + angleDelta);
-            initialMouseDir = currentMouseDir.normalized;
+            
+if (dragging)
+{
+    float angleDelta = Vector2.SignedAngle(initialMouseDir, currentMouseDir.normalized);
+    pivot.Rotate(0f, 0f, angleDelta * dragSensitivity); // 感度を反映
+    initialMouseDir = currentMouseDir.normalized;
+}
+
         }
 
         // 風による傾き処理
