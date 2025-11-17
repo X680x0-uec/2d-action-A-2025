@@ -255,8 +255,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 38, y: -70.4}
-  m_SizeDelta: {x: 102.4973, y: 31.7}
+  m_AnchoredPosition: {x: 40.9, y: -71.64}
+  m_SizeDelta: {x: 108.3, y: 34.18}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &435376838
 MonoBehaviour:
@@ -1252,7 +1252,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: "RESET (\u304A\u3055\u306A\u3044\u3067)\n"
 --- !u!222 &937119833
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1771,6 +1771,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Timekariscore: {fileID: 1851861944}
   kariscore: {fileID: 396820714}
+  kasaScorePercent: 1
+  scoreMultiple: 100
 --- !u!1 &1283170747
 GameObject:
   m_ObjectHideFlags: 0
@@ -1841,7 +1843,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: "RESET (\u304A\u3055\u306A\u3044\u3067)"
 --- !u!222 &1283170750
 CanvasRenderer:
   m_ObjectHideFlags: 0

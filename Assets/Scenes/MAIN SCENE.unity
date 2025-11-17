@@ -11786,7 +11786,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: bee4b2e310661f244adb1cb91db9641b, type: 3}
     - target: {fileID: 3905801785475368384, guid: b0627798ba9d536409c24a6e9513dfe2, type: 3}
       propertyPath: scoreAmount
-      value: 300
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5422000940977822467, guid: b0627798ba9d536409c24a6e9513dfe2, type: 3}
       propertyPath: m_Name
@@ -52088,7 +52088,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: bee4b2e310661f244adb1cb91db9641b, type: 3}
     - target: {fileID: 3905801785475368384, guid: b0627798ba9d536409c24a6e9513dfe2, type: 3}
       propertyPath: scoreAmount
-      value: 300
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5422000940977822467, guid: b0627798ba9d536409c24a6e9513dfe2, type: 3}
       propertyPath: m_Name
@@ -52531,7 +52531,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: bee4b2e310661f244adb1cb91db9641b, type: 3}
     - target: {fileID: 3905801785475368384, guid: b0627798ba9d536409c24a6e9513dfe2, type: 3}
       propertyPath: scoreAmount
-      value: 300
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5422000940977822467, guid: b0627798ba9d536409c24a6e9513dfe2, type: 3}
       propertyPath: m_Name
@@ -55471,7 +55471,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: bee4b2e310661f244adb1cb91db9641b, type: 3}
     - target: {fileID: 2709962030728651613, guid: ba9e22ceb01aa0b4eb6e08952066da40, type: 3}
       propertyPath: scoreAmount
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2815541471280105761, guid: ba9e22ceb01aa0b4eb6e08952066da40, type: 3}
       propertyPath: m_LocalScale.x
@@ -68260,7 +68260,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: bee4b2e310661f244adb1cb91db9641b, type: 3}
     - target: {fileID: 2709962030728651613, guid: ba9e22ceb01aa0b4eb6e08952066da40, type: 3}
       propertyPath: scoreAmount
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2815541471280105761, guid: ba9e22ceb01aa0b4eb6e08952066da40, type: 3}
       propertyPath: m_LocalScale.x
@@ -74181,7 +74181,7 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: bee4b2e310661f244adb1cb91db9641b, type: 3}
     - target: {fileID: 2709962030728651613, guid: ba9e22ceb01aa0b4eb6e08952066da40, type: 3}
       propertyPath: scoreAmount
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2815541471280105761, guid: ba9e22ceb01aa0b4eb6e08952066da40, type: 3}
       propertyPath: m_LocalScale.x

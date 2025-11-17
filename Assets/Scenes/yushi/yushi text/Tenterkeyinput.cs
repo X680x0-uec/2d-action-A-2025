@@ -9,11 +9,15 @@ public class Tenterkeyinput : MonoBehaviour
     public Text Timekariscore;
     public Text kariscore;
     string time;
+    public float kasaScorePercent;
+    public int scoreMultiple;
     void Start()
     {
         //TimeinputField.onEndEdit.AddListener(EnterPressed);
-        int totalscore = GameUIManager.score;
+        int totalscore = (int)GameUIManager.remaining * scoreMultiple;
+        Debug.Log(totalscore); //900点+α 1000点で10%とか？
         float finaltime = 600 - GameUIManager.remaining;
+        totalscore += (int)(totalscore * ((GameUIManager.score / 100) * (kasaScorePercent)))/100;
         int minute = (int)(finaltime/60);
         int second = (int)(finaltime%60);
         time = $"{minute:D2}" +":"+ $"{second:D2}";
