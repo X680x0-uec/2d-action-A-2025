@@ -7,10 +7,18 @@ public class Tenterkeyinput : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public InputField TimeinputField;
     public Text Timekariscore;
-
+    public Text kariscore;
+    string time;
     void Start()
     {
         TimeinputField.onEndEdit.AddListener(EnterPressed);
+        int totalscore = GameUIManager.score;
+        float finaltime = GameUIManager.remaining;
+        int minute = (int)(finaltime/60);
+        int second = (int)(finaltime%60);
+        time = $"{minute:D2}" +":"+ $"{second:D2}";
+        Timekariscore.text = time;
+        kariscore.text = totalscore.ToString();
     }
     void OnDestroy()
     {
@@ -29,11 +37,9 @@ public class Tenterkeyinput : MonoBehaviour
     private void YourFunction()
     {
         // Enterキーが押された時に実行するコード
-        
-        Timekariscore.text = TimeinputField.text;
+        Timekariscore.text = time;
                 //InputField コンポーネントを取得
         InputField form = GameObject.Find("TInputField (Legacy)").GetComponent<InputField>();
         form.text = "";
-
     }
 }

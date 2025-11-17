@@ -1794,6 +1794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeinputField: {fileID: 1267957224}
   Timekariscore: {fileID: 1851861944}
+  kariscore: {fileID: 396820714}
 --- !u!1 &1283170747
 GameObject:
   m_ObjectHideFlags: 0
@@ -3371,6 +3372,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1098567302115528407, guid: f56f90ece8da0a74bbe71141b881b415, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1122617343186817406, guid: f56f90ece8da0a74bbe71141b881b415, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.42
