@@ -63,14 +63,6 @@ public abstract class FieldObjectBase : MonoBehaviour
             leaderObject.gameObject.SetActive(false);
         }
     }
-
-    void Start()
-    {
-        minigameLeader = transform.GetChild(0);
-
-        leaderObject = minigameLeader.gameObject;
-    }
-
     private void FixedUpdate()
     {
         if (!isActioning && isContacted && !isActioned && coroutine == null && (Input.GetMouseButtonDown(0) || Input.GetKey("joystick button 1")) && !healmove.IsHealing)
