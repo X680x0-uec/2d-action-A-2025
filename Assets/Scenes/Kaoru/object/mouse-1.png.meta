@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 12393b53f476bc1409188f8515e403f6
+guid: 474921bdd1cae8045bf00d86c94274c0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4016945060787368
-    second: haisuikou_0
+      213: -6227122226712119811
+    second: mouse-1_0
+  - first:
+      213: 8902961976563131443
+    second: mouse-1_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +99,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: haisuikou_0
+      name: mouse-1_0
       rect:
         serializedVersion: 2
-        x: 138
-        y: 212
-        width: 332
-        height: 280
+        x: 83
+        y: 291
+        width: 122
+        height: 157
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 85bc1981c9ab1fff0800000000000000
-      internalID: -4016945060787368
+      spriteID: df572e7d351d499a0800000000000000
+      internalID: -6227122226712119811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mouse-1_1
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 109
+        width: 184
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 334eadd6fbcad8b70800000000000000
+      internalID: 8902961976563131443
       vertices: []
       indices: 
       edges: []
@@ -147,8 +159,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      haisuikou_0: -4016945060787368
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

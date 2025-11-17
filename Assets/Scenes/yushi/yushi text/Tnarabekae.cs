@@ -1,7 +1,9 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;//ここ注意
+using UnityEngine.UI;
+using Unity.Multiplayer.Center.Common;
+using JetBrains.Annotations;//ここ注意
 
 
 public class Tnarabekae : MonoBehaviour
@@ -27,7 +29,7 @@ public class Tnarabekae : MonoBehaviour
 
     void Update()
     {
-        int Tcurrentscore = int.Parse(TClearscore.text);
+        int Tcurrentscore = (int)GameUIManager.remaining;
         if (Tcurrentscore != TpreviousClearScore)
         {
             TpreviousClearScore = Tcurrentscore;
@@ -35,15 +37,33 @@ public class Tnarabekae : MonoBehaviour
         }
     }
 
+    int TimeStringToInt(string time)
+    {
+        if (time == "00:00")
+        {
+            return 0;
+        }
+        string[] parts = time.Split(':');
+        int minutes = int.Parse(parts[0]);
+        int seconds = int.Parse(parts[1]);
+        return minutes * 60 + seconds;
+    }
+    string SecondsToTimeString(int totalSeconds)
+    {
+        int minutes = totalSeconds / 60;
+        int seconds = totalSeconds % 60;
+        return $"{minutes:D2}:{seconds:D2}";
+    }
+
     void Scorechanged()
     {
 
-        TClearscoreInt = int.Parse(TClearscore.text);
-        TFirstscoreInt = int.Parse(TFirstscore.text);
-        TSecondscoreInt = int.Parse(TSecondscore.text);
-        TThirdscoreInt = int.Parse(TThirdscore.text);
-        TForthscoreInt = int.Parse(TForthscore.text);
-        TFifthscoreInt = int.Parse(TFifthscore.text);
+        TClearscoreInt = TimeStringToInt(TClearscore.text);
+        TFirstscoreInt = TimeStringToInt(TFirstscore.text);
+        TSecondscoreInt = TimeStringToInt(TSecondscore.text);
+        TThirdscoreInt = TimeStringToInt(TThirdscore.text);
+        TForthscoreInt = TimeStringToInt(TForthscore.text);
+        TFifthscoreInt = TimeStringToInt(TFifthscore.text);
 
 
 

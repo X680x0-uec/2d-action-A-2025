@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 12393b53f476bc1409188f8515e403f6
+guid: ec756377ce5e3bf4c8a83072131c048c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4016945060787368
-    second: haisuikou_0
+      213: 7125765574004244843
+    second: "\u98DB\u3076\u4E88\u5099\u900F\u904E\u53CD\u8EE2_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,30 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: haisuikou_0
+      name: "\u98DB\u3076\u4E88\u5099\u900F\u904E\u53CD\u8EE2_0"
       rect:
         serializedVersion: 2
-        x: 138
-        y: 212
-        width: 332
-        height: 280
+        x: 231
+        y: 183
+        width: 146
+        height: 234
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 85bc1981c9ab1fff0800000000000000
-      internalID: -4016945060787368
+      spriteID: b610b3f190ec3e260800000000000000
+      internalID: 7125765574004244843
       vertices: []
       indices: 
       edges: []
@@ -147,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      haisuikou_0: -4016945060787368
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

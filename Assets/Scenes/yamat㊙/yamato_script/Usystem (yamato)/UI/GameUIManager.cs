@@ -11,10 +11,11 @@ public class GameUIManager : MonoBehaviour
     private System.DateTime gameStartTime;
     private float elapsedRealTime = 0f;
     private float totalGameSeconds = 600f; // 10分
+    public static float remaining;
 
     [Header("スコア表示")]
     public TextMeshProUGUI scoreText;
-    private int score = 0;
+    public static int score = 0;
 
     void Start()
     {
@@ -37,7 +38,7 @@ public class GameUIManager : MonoBehaviour
             System.DateTime currentGameTime = gameStartTime.AddSeconds(gameElapsedSeconds);
             currentTimeText.text = currentGameTime.ToString("HH:mm:ss");
 
-            float remaining = totalGameSeconds - gameElapsedSeconds;
+            remaining = totalGameSeconds - gameElapsedSeconds;
             int minutes = Mathf.FloorToInt(remaining / 60f);
             int seconds = Mathf.FloorToInt(remaining % 60f);
             remainingTimeText.text = $"遅刻まで: {minutes:D2}:{seconds:D2}";

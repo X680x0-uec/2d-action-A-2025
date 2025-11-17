@@ -23,21 +23,38 @@ public class Tfirst : MonoBehaviour
     {
         TResetButton.onClick.AddListener(ResetButtonClicked);
     }
+    int TimeStringToInt(string time)
+    {
+        if (time == "0")
+        {
+            return 0;
+        }
+        string[] parts = time.Split(':');
+        int minutes = int.Parse(parts[0]);
+        int seconds = int.Parse(parts[1]);
+        return minutes * 60 + seconds;
+    }
+    string SecondsToTimeString(int totalSeconds)
+    {
+        int minutes = totalSeconds / 60;
+        int seconds = totalSeconds % 60;
+        return $"{minutes:D2}:{seconds:D2}";
+    }
     void Update()
     {
-        TFirstscoreInt = int.Parse(TFirstscorehozon.text);
+        TFirstscoreInt = TimeStringToInt(TFirstscorehozon.text);
         PlayerPrefs.SetInt("t1st", TFirstscoreInt);
 
-        TSecondscoreInt = int.Parse(TSecondscorehozon.text);
+        TSecondscoreInt = TimeStringToInt(TSecondscorehozon.text);
         PlayerPrefs.SetInt("t2nd", TSecondscoreInt);
 
-        TThirdscoreInt = int.Parse(TThirdscorehozon.text);
+        TThirdscoreInt = TimeStringToInt(TThirdscorehozon.text);
         PlayerPrefs.SetInt("t3rd", TThirdscoreInt);
 
-        TForthscoreInt = int.Parse(TForthscorehozon.text);
+        TForthscoreInt = TimeStringToInt(TForthscorehozon.text);
         PlayerPrefs.SetInt("t4th", TForthscoreInt);
 
-        TFifthscoreInt = int.Parse(TFifthscorehozon.text);
+        TFifthscoreInt = TimeStringToInt(TFifthscorehozon.text);
         PlayerPrefs.SetInt("t5th", TFifthscoreInt);
 
         
@@ -45,29 +62,29 @@ public class Tfirst : MonoBehaviour
     private void Awake()
     {
         TFirstscoreInt = PlayerPrefs.GetInt("t1st", TFirstscoreInt);
-        TFirstscorehozon.text = TFirstscoreInt.ToString();
+        TFirstscorehozon.text = SecondsToTimeString(TFirstscoreInt);
 
         TSecondscoreInt = PlayerPrefs.GetInt("t2nd", TSecondscoreInt);
-        TSecondscorehozon.text = TSecondscoreInt.ToString();
+        TSecondscorehozon.text = SecondsToTimeString(TSecondscoreInt);
 
         TThirdscoreInt = PlayerPrefs.GetInt("t3rd", TThirdscoreInt);
-        TThirdscorehozon.text = TThirdscoreInt.ToString();
+        TThirdscorehozon.text = SecondsToTimeString(TThirdscoreInt);
 
         TForthscoreInt = PlayerPrefs.GetInt("t4th", TForthscoreInt);
-        TForthscorehozon.text = TForthscoreInt.ToString();
+        TForthscorehozon.text = SecondsToTimeString(TForthscoreInt);
 
         TFifthscoreInt = PlayerPrefs.GetInt("t5th", TFifthscoreInt);
-        TFifthscorehozon.text = TFifthscoreInt.ToString();
+        TFifthscorehozon.text = SecondsToTimeString(TFifthscoreInt);
         
     }
 
     void ResetButtonClicked()
     {
-        TFirstscorehozon.text = "000000";
-        TSecondscorehozon.text = "000000";
-        TThirdscorehozon.text = "000000";
-        TForthscorehozon.text = "000000";
-        TFifthscorehozon.text = "000000";
+        TFirstscorehozon.text = "00:00";
+        TSecondscorehozon.text = "00:00";
+        TThirdscorehozon.text = "00:00";
+        TForthscorehozon.text = "00:00";
+        TFifthscorehozon.text = "00:00";
         
     }
 }

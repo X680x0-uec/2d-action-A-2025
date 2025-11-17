@@ -13,6 +13,7 @@ public class DragRotate2D : MonoBehaviour
 
     private PlayerController player;
     private Gamepad gamepad;
+    public float dragSensitivity = 1f;
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
@@ -43,7 +44,7 @@ public class DragRotate2D : MonoBehaviour
             if (dragging)
             {
                 float angleDelta = Vector2.SignedAngle(initialMouseDir, currentMouseDir.normalized);
-                pivot.rotation = Quaternion.Euler(0f, 0f, pivot.rotation.eulerAngles.z + angleDelta);
+                pivot.Rotate(0f, 0f, angleDelta * dragSensitivity); // 感度を反映
                 initialMouseDir = currentMouseDir.normalized;
                 
             }
