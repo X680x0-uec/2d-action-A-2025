@@ -26,12 +26,30 @@
                 },
                 {
                     "name": "mouse",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "60119605-db2f-4434-9d5c-6455b8c4eb73",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "New action",
+                    "type": "Button",
+                    "id": "2365cecc-e250-4e8b-a861-f9c478601364",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "umbrellaLeft",
+                    "type": "Value",
+                    "id": "2f9f6250-fe49-43df-b718-0e6657c42858",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -60,7 +78,7 @@
                 {
                     "name": "",
                     "id": "257ee93c-0106-4714-bc00-132a99f48043",
-                    "path": "<Gamepad>/buttonNorth",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -81,12 +99,23 @@
                 },
                 {
                     "name": "",
-                    "id": "d33add8d-2fc7-4832-a386-289c7ff9edd6",
+                    "id": "ea56f9dd-4916-4f9a-817d-c72771de67af",
                     "path": "",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "mouse",
+                    "action": "New action",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f8780e5f-24a2-4bad-b654-bafd86fbbe90",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "umbrellaLeft",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

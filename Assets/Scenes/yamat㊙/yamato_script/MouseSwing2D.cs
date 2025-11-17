@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class DragRotate2D : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class DragRotate2D : MonoBehaviour
     private bool windTiltApplied = false;
 
     private PlayerController player;
-
+    private Gamepad gamepad;
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
@@ -19,26 +20,46 @@ public class DragRotate2D : MonoBehaviour
 
     void Update()
     {
-        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 currentMouseDir = (Vector2)(mouseWorldPos - pivot.position);
+        gamepad = Gamepad.current;
+        //if (gamepad == null) return;
 
-        if (Input.GetMouseButtonDown(1))
-        {
-            initialMouseDir = currentMouseDir.normalized;
-            dragging = true;
-        }
 
-        if (Input.GetMouseButtonUp(1))
+        if (gamepad == null) //ゲームパッドつながってるか？つながってなかったらマウスで傘操作
         {
-            dragging = false;
-        }
+            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 currentMouseDir = (Vector2)(mouseWorldPos - pivot.position);
 
-        if (dragging)
-        {
-            float angleDelta = Vector2.SignedAngle(initialMouseDir, currentMouseDir.normalized);
-            pivot.rotation = Quaternion.Euler(0f, 0f, pivot.rotation.eulerAngles.z + angleDelta);
-            initialMouseDir = currentMouseDir.normalized;
+            if (Input.GetMouseButtonDown(1))
+            {
+                initialMouseDir = currentMouseDir.normalized;
+                dragging = true;
+            }
+
+            if (Input.GetMouseButtonUp(1))
+            {
+                dragging = false;
+            }
+
+            if (dragging)
+            {
+                float angleDelta = Vector2.SignedAngle(initialMouseDir, currentMouseDir.normalized);
+                pivot.rotation = Quaternion.Euler(0f, 0f, pivot.rotation.eulerAngles.z + angleDelta);
+                initialMouseDir = currentMouseDir.normalized;
+                
+            }
         }
+        else //ゲームパッドつながってるなら，背面ボタンで傘操作
+        {
+            if (Input.GetKey("joystick button 4"))
+            {
+                pivot.rotation = Quaternion.Euler(0f, 0f, pivot.rotation.eulerAngles.z + 7.0f);
+            }
+            else if (Input.GetKey("joystick button 5"))
+            {
+                pivot.rotation = Quaternion.Euler(0f, 0f, pivot.rotation.eulerAngles.z - 7.0f);
+            }
+        }
+        
 
         // 風による傾き処理
         if (player != null)
@@ -63,4 +84,11 @@ public class DragRotate2D : MonoBehaviour
             }
         }
     }
+    /*
+    public void OnUmbrellaLeft(InputValue value)
+    {
+        // 入力値（Vector2型）を取得
+        Debug.Log("ｓｗｄｒｔｙｈｊｋｆｇｋｊｌ");
+    }
+    */
 }
