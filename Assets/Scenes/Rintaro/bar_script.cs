@@ -55,7 +55,7 @@ public class bar_script : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && started && !finished)
+        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown("joystick button 1")) && started && !finished)
         {
             if (0.4f <= rec.anchoredPosition.x)
             {

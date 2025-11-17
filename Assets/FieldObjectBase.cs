@@ -2,6 +2,7 @@ using System.Buffers;
 using System.Collections;
 using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 //「abstract」抽象クラス・・・「抽象メソッド」という中身の処理が記述されていないメソッドを持つクラスのこと。
@@ -72,7 +73,7 @@ public abstract class FieldObjectBase : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!isActioning && isContacted && !isActioned && coroutine == null && Input.GetMouseButtonDown(0) && !healmove.IsHealing)
+        if (!isActioning && isContacted && !isActioned && coroutine == null && (Input.GetMouseButtonDown(0) || Input.GetKey("joystick button 1")) && !healmove.IsHealing)
         {
             coroutine = CreateCoroutine();
             //コルーチンの起動
