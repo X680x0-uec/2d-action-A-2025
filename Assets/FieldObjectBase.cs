@@ -57,11 +57,6 @@ public abstract class FieldObjectBase : MonoBehaviour
         {
             isContacted = !other.gameObject.CompareTag("walker");
         }
-
-        if (!isContacted)
-        {
-            leaderObject.gameObject.SetActive(false);
-        }
     }
     private void FixedUpdate()
     {
