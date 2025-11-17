@@ -32,9 +32,9 @@ public class guard_game : FieldObjectBase
         showMessage("タイミングよくクリックせよ！クリックで開始");
         //左クリックで開始っていうことをしたい
     
-yield return new WaitUntil(() => !Input.GetMouseButton(0) || !Input.GetKey("joystick button 1"));
-yield return new WaitUntil(() => Input.GetMouseButtonDown(0) || Input.GetKeyDown("joystick button 1"));
-yield return new WaitUntil(() => !Input.GetMouseButton(0) || !Input.GetKey("joystick button 1"));
+yield return new WaitUntil(() => !Input.GetMouseButton(0) || !Input.GetKey("joystick button 1") || !isContacted);
+yield return new WaitUntil((() => Input.GetMouseButtonDown(0) || Input.GetKeyDown("joystick button 1") || !isContacted));
+yield return new WaitUntil(() => !Input.GetMouseButton(0) || !Input.GetKey("joystick button 1") || !isContacted);
 
         //ここまでそれ
         StartCoroutine(targets.Move(this));
