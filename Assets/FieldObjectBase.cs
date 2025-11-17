@@ -1,5 +1,6 @@
 using System.Buffers;
 using System.Collections;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +16,8 @@ public abstract class FieldObjectBase : MonoBehaviour
     public bool isContacted = false;
     public bool isActioned = false;
     private IEnumerator coroutine;
+    private Transform minigameLeader;
+    private GameObject leaderObject;
 
     public player_heal healmove;
     //回復中に傘技できないように
@@ -39,6 +42,11 @@ public abstract class FieldObjectBase : MonoBehaviour
         {
             isContacted = other.gameObject.CompareTag("walker");
         }
+
+        if (isContacted)
+        {
+            leaderObject.gameObject.SetActive(true);
+        }
     }
 
     //colliderをもつオブジェクトの領域外にでたとき
@@ -48,6 +56,18 @@ public abstract class FieldObjectBase : MonoBehaviour
         {
             isContacted = !other.gameObject.CompareTag("walker");
         }
+
+        if (!isContacted)
+        {
+            leaderObject.gameObject.SetActive(false);
+        }
+    }
+
+    void Start()
+    {
+        minigameLeader = transform.GetChild(0);
+
+        leaderObject = minigameLeader.gameObject;
     }
 
     private void FixedUpdate()
