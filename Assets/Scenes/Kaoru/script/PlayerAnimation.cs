@@ -30,6 +30,11 @@ public class PlayerAnimation : MonoBehaviour
         movement.y = Input.GetAxisRaw("Vertical");
         animator.SetFloat("Walk", movement.sqrMagnitude);
         Debug.Log(playerJump.isJumping);
+
+        if (!playerJump.isJumping && Input.GetButtonDown("Jump") && !PC.damaged)
+        {
+            animator.SetTrigger("Jump");
+        }
     }
 
     /*呼び出しをプレイヤー側から行うように変更したのでコメント化
