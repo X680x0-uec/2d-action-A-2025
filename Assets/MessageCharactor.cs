@@ -23,8 +23,7 @@ public class MessageCharactor : FieldObjectBase
         for (i = 0; i < pushGoal; ++i)
         {
             yield return null;
-
-            showMessage(messages + " " + (pushGoal - i) + "!");
+            showMessage("左クリック/Bボタンを" + (pushGoal - i) + "回連打！");
 
             yield return new WaitUntil(() => Input.GetMouseButtonDown(0) || !isContacted || Input.GetKeyDown("joystick button 1"));
 

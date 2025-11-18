@@ -28,7 +28,7 @@ public class player_heal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Z) && !IsHealing && !PC.damaged)
+        if ((Input.GetKeyDown(KeyCode.Z)|| Input.GetButtonDown("Heal")) && !IsHealing && !PC.damaged)
         {
             Debug.Log("started");
             mukou.enabled = false;

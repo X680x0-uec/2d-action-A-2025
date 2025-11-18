@@ -1,5 +1,6 @@
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MouseMoveTest : MonoBehaviour
 {
@@ -24,12 +25,20 @@ public class MouseMoveTest : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 lookDir = mousePos - rb.position;
-
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        float angle = 0;
+        if (Gamepad.current != null){
+            float yoko = Input.GetAxis("Horizontal2");
+            float tate = Input.GetAxis("Vertical2");
+            angle = Mathf.Atan2(tate, yoko) * Mathf.Rad2Deg - 90f;
+            Debug.Log(Mathf.Atan2(tate, yoko));
+        }
+        else
+        {
+            Vector2 lookDir = mousePos - rb.position;
+            angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        }
 
         MyRb.rotation = angle;
-
         switch (flag)
         {
             case 1:
