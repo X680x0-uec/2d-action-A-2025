@@ -74033,7 +74033,7 @@ PrefabInstance:
       objectReference: {fileID: 96148055}
     - target: {fileID: 1809429236243934877, guid: 75ad44005f761f047abd13866dc5f3dd, type: 3}
       propertyPath: messages
-      value: Click left
+      value: "\u5DE6\u30AF\u30EA\u30C3\u30AF or B\u30DC\u30BF\u30F3\u9023\u6253\uFF01"
       objectReference: {fileID: 0}
     - target: {fileID: 1809429236243934877, guid: 75ad44005f761f047abd13866dc5f3dd, type: 3}
       propertyPath: kasaFailed
