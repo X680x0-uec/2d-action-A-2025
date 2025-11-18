@@ -54644,9 +54644,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 396751925}
     - target: {fileID: 59009874343708518, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: flying
+      value: 
+      objectReference: {fileID: 3181142111720165709, guid: 5b82c0a79fc732844904c662f4435e7a, type: 3}
+    - target: {fileID: 59009874343708518, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: kougeki
       value: 
       objectReference: {fileID: 8300000, guid: 2e6b7f0e6f923bd4e9fdc93b0ef3e290, type: 3}
+    - target: {fileID: 59009874343708518, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: walking
+      value: 
+      objectReference: {fileID: 6246591552992895687, guid: c1ad6939946da0d49a83f2da0ed7526b, type: 3}
     - target: {fileID: 59009874343708518, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: tobitatu
       value: 
@@ -54655,14 +54663,26 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1634546860}
+    - target: {fileID: 151526407054004744, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 211641005099492066, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: Actor
       value: 
       objectReference: {fileID: 396751925}
     - target: {fileID: 211641005099492066, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: flying
+      value: 
+      objectReference: {fileID: 3181142111720165709, guid: 5b82c0a79fc732844904c662f4435e7a, type: 3}
+    - target: {fileID: 211641005099492066, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: kougeki
       value: 
       objectReference: {fileID: 8300000, guid: 2e6b7f0e6f923bd4e9fdc93b0ef3e290, type: 3}
+    - target: {fileID: 211641005099492066, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: walking
+      value: 
+      objectReference: {fileID: 6246591552992895687, guid: c1ad6939946da0d49a83f2da0ed7526b, type: 3}
     - target: {fileID: 211641005099492066, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: tobitatu
       value: 
@@ -54675,14 +54695,34 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 436.41
       objectReference: {fileID: 0}
+    - target: {fileID: 505690600724696688, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 598907439017811187, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 648606526052554204, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 1042611006656266155, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: Actor
       value: 
       objectReference: {fileID: 396751925}
     - target: {fileID: 1042611006656266155, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: flying
+      value: 
+      objectReference: {fileID: 3181142111720165709, guid: 5b82c0a79fc732844904c662f4435e7a, type: 3}
+    - target: {fileID: 1042611006656266155, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: kougeki
       value: 
       objectReference: {fileID: 8300000, guid: 2e6b7f0e6f923bd4e9fdc93b0ef3e290, type: 3}
+    - target: {fileID: 1042611006656266155, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: walking
+      value: 
+      objectReference: {fileID: 6246591552992895687, guid: c1ad6939946da0d49a83f2da0ed7526b, type: 3}
     - target: {fileID: 1042611006656266155, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: tobitatu
       value: 
@@ -54691,14 +54731,26 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1634546860}
+    - target: {fileID: 1314402545824211485, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 1443988816228434245, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: Actor
       value: 
       objectReference: {fileID: 396751925}
     - target: {fileID: 1443988816228434245, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: flying
+      value: 
+      objectReference: {fileID: 3181142111720165709, guid: 5b82c0a79fc732844904c662f4435e7a, type: 3}
+    - target: {fileID: 1443988816228434245, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: kougeki
       value: 
       objectReference: {fileID: 8300000, guid: 2e6b7f0e6f923bd4e9fdc93b0ef3e290, type: 3}
+    - target: {fileID: 1443988816228434245, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: walking
+      value: 
+      objectReference: {fileID: 6246591552992895687, guid: c1ad6939946da0d49a83f2da0ed7526b, type: 3}
     - target: {fileID: 1443988816228434245, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: tobitatu
       value: 
@@ -54712,9 +54764,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 396751925}
     - target: {fileID: 1532907483059505258, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: flying
+      value: 
+      objectReference: {fileID: 3181142111720165709, guid: 5b82c0a79fc732844904c662f4435e7a, type: 3}
+    - target: {fileID: 1532907483059505258, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: kougeki
       value: 
       objectReference: {fileID: 8300000, guid: 2e6b7f0e6f923bd4e9fdc93b0ef3e290, type: 3}
+    - target: {fileID: 1532907483059505258, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: walking
+      value: 
+      objectReference: {fileID: 6246591552992895687, guid: c1ad6939946da0d49a83f2da0ed7526b, type: 3}
     - target: {fileID: 1532907483059505258, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: tobitatu
       value: 
@@ -54728,9 +54788,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 396751925}
     - target: {fileID: 1963914568478692294, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: flying
+      value: 
+      objectReference: {fileID: 3181142111720165709, guid: 5b82c0a79fc732844904c662f4435e7a, type: 3}
+    - target: {fileID: 1963914568478692294, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: kougeki
       value: 
       objectReference: {fileID: 8300000, guid: 2e6b7f0e6f923bd4e9fdc93b0ef3e290, type: 3}
+    - target: {fileID: 1963914568478692294, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: walking
+      value: 
+      objectReference: {fileID: 6246591552992895687, guid: c1ad6939946da0d49a83f2da0ed7526b, type: 3}
     - target: {fileID: 1963914568478692294, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: tobitatu
       value: 
@@ -54739,14 +54807,26 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1634546860}
+    - target: {fileID: 2059286468931574480, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 2188748868669902782, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: Actor
       value: 
       objectReference: {fileID: 396751925}
     - target: {fileID: 2188748868669902782, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: flying
+      value: 
+      objectReference: {fileID: 3181142111720165709, guid: 5b82c0a79fc732844904c662f4435e7a, type: 3}
+    - target: {fileID: 2188748868669902782, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: kougeki
       value: 
       objectReference: {fileID: 8300000, guid: 2e6b7f0e6f923bd4e9fdc93b0ef3e290, type: 3}
+    - target: {fileID: 2188748868669902782, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: walking
+      value: 
+      objectReference: {fileID: 6246591552992895687, guid: c1ad6939946da0d49a83f2da0ed7526b, type: 3}
     - target: {fileID: 2188748868669902782, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: tobitatu
       value: 
@@ -54755,14 +54835,26 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1634546860}
+    - target: {fileID: 2209663600850419540, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 2448677103560732479, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: Actor
       value: 
       objectReference: {fileID: 396751925}
     - target: {fileID: 2448677103560732479, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: flying
+      value: 
+      objectReference: {fileID: 3181142111720165709, guid: 5b82c0a79fc732844904c662f4435e7a, type: 3}
+    - target: {fileID: 2448677103560732479, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: kougeki
       value: 
       objectReference: {fileID: 8300000, guid: 2e6b7f0e6f923bd4e9fdc93b0ef3e290, type: 3}
+    - target: {fileID: 2448677103560732479, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: walking
+      value: 
+      objectReference: {fileID: 6246591552992895687, guid: c1ad6939946da0d49a83f2da0ed7526b, type: 3}
     - target: {fileID: 2448677103560732479, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: tobitatu
       value: 
@@ -54771,14 +54863,26 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1634546860}
+    - target: {fileID: 2543046812248892597, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 3008661187577767847, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: Actor
       value: 
       objectReference: {fileID: 396751925}
     - target: {fileID: 3008661187577767847, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: flying
+      value: 
+      objectReference: {fileID: 3181142111720165709, guid: 5b82c0a79fc732844904c662f4435e7a, type: 3}
+    - target: {fileID: 3008661187577767847, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: kougeki
       value: 
       objectReference: {fileID: 8300000, guid: 2e6b7f0e6f923bd4e9fdc93b0ef3e290, type: 3}
+    - target: {fileID: 3008661187577767847, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: walking
+      value: 
+      objectReference: {fileID: 6246591552992895687, guid: c1ad6939946da0d49a83f2da0ed7526b, type: 3}
     - target: {fileID: 3008661187577767847, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: tobitatu
       value: 
@@ -54787,14 +54891,30 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 1634546860}
+    - target: {fileID: 3856561643882543633, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4449232982658429577, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 4543881967302146307, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: Actor
       value: 
       objectReference: {fileID: 396751925}
     - target: {fileID: 4543881967302146307, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: flying
+      value: 
+      objectReference: {fileID: 3181142111720165709, guid: 5b82c0a79fc732844904c662f4435e7a, type: 3}
+    - target: {fileID: 4543881967302146307, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: kougeki
       value: 
       objectReference: {fileID: 8300000, guid: 2e6b7f0e6f923bd4e9fdc93b0ef3e290, type: 3}
+    - target: {fileID: 4543881967302146307, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: walking
+      value: 
+      objectReference: {fileID: 6246591552992895687, guid: c1ad6939946da0d49a83f2da0ed7526b, type: 3}
     - target: {fileID: 4543881967302146307, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: tobitatu
       value: 
@@ -54808,9 +54928,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 396751925}
     - target: {fileID: 5299357431094714563, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: flying
+      value: 
+      objectReference: {fileID: 3181142111720165709, guid: 5b82c0a79fc732844904c662f4435e7a, type: 3}
+    - target: {fileID: 5299357431094714563, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: kougeki
       value: 
       objectReference: {fileID: 8300000, guid: 2e6b7f0e6f923bd4e9fdc93b0ef3e290, type: 3}
+    - target: {fileID: 5299357431094714563, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: walking
+      value: 
+      objectReference: {fileID: 6246591552992895687, guid: c1ad6939946da0d49a83f2da0ed7526b, type: 3}
     - target: {fileID: 5299357431094714563, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: tobitatu
       value: 
@@ -54823,14 +54951,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: birds files
       objectReference: {fileID: 0}
+    - target: {fileID: 5431991224567049937, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6183075638349020533, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 6280239117956264807, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: Actor
       value: 
       objectReference: {fileID: 396751925}
     - target: {fileID: 6280239117956264807, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: flying
+      value: 
+      objectReference: {fileID: 3181142111720165709, guid: 5b82c0a79fc732844904c662f4435e7a, type: 3}
+    - target: {fileID: 6280239117956264807, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: kougeki
       value: 
       objectReference: {fileID: 8300000, guid: 2e6b7f0e6f923bd4e9fdc93b0ef3e290, type: 3}
+    - target: {fileID: 6280239117956264807, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: walking
+      value: 
+      objectReference: {fileID: 6246591552992895687, guid: c1ad6939946da0d49a83f2da0ed7526b, type: 3}
     - target: {fileID: 6280239117956264807, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: tobitatu
       value: 
@@ -54879,14 +55023,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7330617214762770649, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7740011191260500133, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
     - target: {fileID: 8588259084685364499, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: Actor
       value: 
       objectReference: {fileID: 396751925}
     - target: {fileID: 8588259084685364499, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: flying
+      value: 
+      objectReference: {fileID: 3181142111720165709, guid: 5b82c0a79fc732844904c662f4435e7a, type: 3}
+    - target: {fileID: 8588259084685364499, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: kougeki
       value: 
       objectReference: {fileID: 8300000, guid: 2e6b7f0e6f923bd4e9fdc93b0ef3e290, type: 3}
+    - target: {fileID: 8588259084685364499, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: walking
+      value: 
+      objectReference: {fileID: 6246591552992895687, guid: c1ad6939946da0d49a83f2da0ed7526b, type: 3}
     - target: {fileID: 8588259084685364499, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: tobitatu
       value: 
@@ -54900,9 +55060,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 396751925}
     - target: {fileID: 8790532300121865583, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: flying
+      value: 
+      objectReference: {fileID: 3181142111720165709, guid: 5b82c0a79fc732844904c662f4435e7a, type: 3}
+    - target: {fileID: 8790532300121865583, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: kougeki
       value: 
       objectReference: {fileID: 8300000, guid: 2e6b7f0e6f923bd4e9fdc93b0ef3e290, type: 3}
+    - target: {fileID: 8790532300121865583, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
+      propertyPath: walking
+      value: 
+      objectReference: {fileID: 6246591552992895687, guid: c1ad6939946da0d49a83f2da0ed7526b, type: 3}
     - target: {fileID: 8790532300121865583, guid: 8d92a7a68e51908448df1cb3a40874bd, type: 3}
       propertyPath: tobitatu
       value: 

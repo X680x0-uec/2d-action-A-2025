@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ec756377ce5e3bf4c8a83072131c048c
+guid: c1ad6939946da0d49a83f2da0ed7526b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7125765574004244843
-    second: "\u98DB\u3076\u4E88\u5099\u900F\u904E\u53CD\u8EE2_0"
+      213: 6246591552992895687
+    second: normalbird_touk_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u98DB\u3076\u4E88\u5099\u900F\u904E\u53CD\u8EE2_0"
+      name: normalbird_touk_0
       rect:
         serializedVersion: 2
-        x: 231
-        y: 183
-        width: 146
-        height: 234
+        x: 166
+        y: 127
+        width: 451
+        height: 362
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b610b3f190ec3e260800000000000000
-      internalID: 7125765574004244843
+      spriteID: 7c2e81debe950b650800000000000000
+      internalID: 6246591552992895687
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      "\u98DB\u3076\u4E88\u5099\u900F\u904E\u53CD\u8EE2_0": 7125765574004244843
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
