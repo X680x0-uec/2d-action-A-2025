@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: f3229bea30de47042944a5c9c41446f4
+guid: 91eaf5d45830e4948ad512a0eb44cc88
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5237501756485454344
-    second: "\u30BF\u30A4\u30C8\u30EB_0"
+      213: 7802366197400797621
+    second: title_touka_2_0
+  - first:
+      213: -3106029762807646425
+    second: title_touka_2_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "\u30BF\u30A4\u30C8\u30EB_0"
+      name: title_touka_2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 3307
-        height: 2205
+        x: 73
+        y: 276
+        width: 528
+        height: 343
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 80accc919185fa840800000000000000
-      internalID: 5237501756485454344
+      spriteID: 5b10793c7b2974c60800000000000000
+      internalID: 7802366197400797621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: title_touka_2_1
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 547
+        width: 285
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7273f0e136a25e4d0800000000000000
+      internalID: -3106029762807646425
       vertices: []
       indices: 
       edges: []
@@ -147,8 +172,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      "\u30BF\u30A4\u30C8\u30EB_0": 5237501756485454344
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
