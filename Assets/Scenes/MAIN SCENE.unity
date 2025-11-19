@@ -55442,6 +55442,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3212514039053485837, guid: 4c69e7498c6148043b0d61c7148ac9be, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1921930439}
+    - targetCorrespondingSourceObject: {fileID: 3212514039053485837, guid: 4c69e7498c6148043b0d61c7148ac9be, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1921930445}
   m_SourcePrefab: {fileID: 100100000, guid: 4c69e7498c6148043b0d61c7148ac9be, type: 3}
 --- !u!4 &944812011 stripped
 Transform:
@@ -55659,7 +55662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2815541471280105761, guid: ba9e22ceb01aa0b4eb6e08952066da40, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1
+      value: -1.76
       objectReference: {fileID: 0}
     - target: {fileID: 2815541471280105761, guid: ba9e22ceb01aa0b4eb6e08952066da40, type: 3}
       propertyPath: m_LocalRotation.w
@@ -72682,6 +72685,21 @@ MonoBehaviour:
   guideUI: {fileID: 361892377}
   audioSource: {fileID: 1634546860}
   kizuki: {fileID: 8300000, guid: 8123647e588de8542b96115492546da2, type: 3}
+--- !u!114 &1921930445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921930432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9b5b5c98734b314c8793dfe2617cc5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorCodeA: '#A4B75F'
+  colorCodeB: '#E4F79F'
+  cycleDuration: 1
 --- !u!1 &1963255216 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 812559560645440621, guid: 41a5e6fe158fe9147a477a5684a934e3, type: 3}
@@ -74177,7 +74195,7 @@ PrefabInstance:
       objectReference: {fileID: -2697933892460840033, guid: bbb23a89c31c7b648a47990fe920eff6, type: 3}
     - target: {fileID: 702268056403299180, guid: 75ad44005f761f047abd13866dc5f3dd, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0.75157225
       objectReference: {fileID: 0}
     - target: {fileID: 702268056403299180, guid: 75ad44005f761f047abd13866dc5f3dd, type: 3}
       propertyPath: m_Color.g
@@ -74185,7 +74203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 702268056403299180, guid: 75ad44005f761f047abd13866dc5f3dd, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.8680615
       objectReference: {fileID: 0}
     - target: {fileID: 1809429236243934877, guid: 75ad44005f761f047abd13866dc5f3dd, type: 3}
       propertyPath: GUM

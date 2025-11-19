@@ -16,7 +16,7 @@ public class Tenterkeyinput : MonoBehaviour
         //TimeinputField.onEndEdit.AddListener(EnterPressed);
         int totalscore = (int)GameUIManager.remaining * scoreMultiple;
         Debug.Log(totalscore); //900点+α 1000点で10%とか？
-        float finaltime = 600 - GameUIManager.remaining;
+        float finaltime = GameUIManager.remaining;
         totalscore += (int)(totalscore * ((GameUIManager.score / 100) * (kasaScorePercent)))/100;
         int minute = (int)(finaltime/60);
         int second = (int)(finaltime%60);

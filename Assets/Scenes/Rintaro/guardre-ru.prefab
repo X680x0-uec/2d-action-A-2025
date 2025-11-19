@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8858574135250433344}
   - component: {fileID: 958919208930934816}
   - component: {fileID: 2709962030728651613}
+  - component: {fileID: 6611588596067743186}
   m_Layer: 0
   m_Name: guardre-ru
   m_TagString: Untagged
@@ -180,6 +181,10 @@ MonoBehaviour:
   target: {fileID: 0}
   isContacted: 0
   isActioned: 0
+  healmove: {fileID: 0}
+  source: {fileID: 0}
+  kasaCorrect: {fileID: 0}
+  kasaFailed: {fileID: 0}
   pushGoal: 5
   correct: 0
   failed: 0
@@ -188,6 +193,21 @@ MonoBehaviour:
   gage_canvas: {fileID: 0}
   GUM: {fileID: 0}
   scoreAmount: 100
+--- !u!114 &6611588596067743186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3489661716240641790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9b5b5c98734b314c8793dfe2617cc5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorCodeA: '#FFFFFF'
+  colorCodeB: '#A0FFA0'
+  cycleDuration: 1
 --- !u!1001 &2642681911194039141
 PrefabInstance:
   m_ObjectHideFlags: 0

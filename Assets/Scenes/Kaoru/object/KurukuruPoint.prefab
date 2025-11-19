@@ -368,6 +368,7 @@ GameObject:
   - component: {fileID: 3254112059659641352}
   - component: {fileID: 3905801785475368384}
   - component: {fileID: 6374655757529688327}
+  - component: {fileID: 6512409156934186018}
   m_Layer: 0
   m_Name: KurukuruPoint
   m_TagString: Untagged
@@ -464,6 +465,10 @@ MonoBehaviour:
   target: {fileID: 0}
   isContacted: 0
   isActioned: 0
+  healmove: {fileID: 0}
+  source: {fileID: 0}
+  kasaCorrect: {fileID: 0}
+  kasaFailed: {fileID: 0}
   KurukuruKasa: {fileID: 742315985378898121}
   GUM: {fileID: 0}
   scoreAmount: 20
@@ -513,6 +518,21 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6512409156934186018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5422000940977822467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9b5b5c98734b314c8793dfe2617cc5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorCodeA: '#FFFFFF'
+  colorCodeB: '#A0FFA0'
+  cycleDuration: 1
 --- !u!1001 &1846561738862460693
 PrefabInstance:
   m_ObjectHideFlags: 0
