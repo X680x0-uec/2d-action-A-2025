@@ -567,12 +567,21 @@ MonoBehaviour:
   titlePanel: {fileID: 1899608539}
   howToPlayPanel: {fileID: 1647894907}
   howToPlayImage: {fileID: 1647894908}
-  howToPlayPages:
-  - {fileID: -1588548189037043037, guid: 07144aba714d4464ca8be5caa31fe49e, type: 3}
-  - {fileID: -27737496651928001, guid: ebc6b50f250564e4088d7905bfe75099, type: 3}
-  - {fileID: -7062337345786286778, guid: c970dec23007786488ddfb758cec11c2, type: 3}
-  - {fileID: -6338530619935486167, guid: f4ec310f72b25fd4da44ce1ffae3c62e, type: 3}
-  - {fileID: 4828253612740883323, guid: f6c20698a01bf4e4d99ab1d2e44c9f8d, type: 3}
+  howToPlayPagesForKeyboard:
+  - {fileID: -8274493183312187283, guid: 911a6a320aa300946ba7b597410626fc, type: 3}
+  - {fileID: 1618321236808987324, guid: 108c605fdd807654c98a780daa9a965b, type: 3}
+  - {fileID: -6286460872176101167, guid: 948df0acdc3a0bf42be9939e8e830ef6, type: 3}
+  - {fileID: -929969845793545829, guid: 73c255c5deb2b6a4399f6ed8babd0ce4, type: 3}
+  - {fileID: -9028871431231334318, guid: dec199a7465aad0438ed6c5414b40198, type: 3}
+  - {fileID: 1759021973109504721, guid: 63eb655544badd24e8cf1fda962635d7, type: 3}
+  howToPlayPagesForGamepad:
+  - {fileID: 3160794038976389498, guid: bfbefd3f263649244a90bb2da6551e97, type: 3}
+  - {fileID: -7122396898179759415, guid: baeea722104116b49a2a8b8c3158c4be, type: 3}
+  - {fileID: -2027272972818655545, guid: 3fb7828f163974e43a88c703b61cd118, type: 3}
+  - {fileID: -7715654229072617867, guid: 784f112712fe442438478eaab944bb98, type: 3}
+  - {fileID: -3019213784979456836, guid: 9c395343dead4834e87e844481f32a00, type: 3}
+  - {fileID: 2960445585710551575, guid: e7ecf46e14525d8488ae150b3a800d5e, type: 3}
+  howToPlayPages: []
 --- !u!82 &510033160
 AudioSource:
   m_ObjectHideFlags: 0
@@ -869,7 +878,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 107832167}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &621840400
