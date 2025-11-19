@@ -11113,6 +11113,7 @@ GameObject:
   - component: {fileID: 155194105}
   - component: {fileID: 155194107}
   - component: {fileID: 155194106}
+  - component: {fileID: 155194108}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -11177,6 +11178,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155194104}
   m_CullTransparentMesh: 1
+--- !u!114 &155194108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155194104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fe5a8b8c2533c04cb0d7215def98fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouse: {fileID: 21300000, guid: fd1a0dff4c167f04898c69eedd2b810c, type: 3}
+  padButton: {fileID: -1429734176464381715, guid: 85174698a79124844b05e68c10ffd558, type: 3}
 --- !u!1 &155653568
 GameObject:
   m_ObjectHideFlags: 0
@@ -52458,7 +52473,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &361892378
 RectTransform:
   m_ObjectHideFlags: 0
@@ -74299,6 +74314,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7538061245479222972, guid: 75ad44005f761f047abd13866dc5f3dd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143449963108707336, guid: 75ad44005f761f047abd13866dc5f3dd, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
